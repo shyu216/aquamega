@@ -6,14 +6,7 @@
     <description>Recent content on Dale的水硕生活</description>
     <generator>Hugo -- 0.125.4</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 26 Apr 2024 14:22:49 +1000</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Welcome</title>
-      <link>http://localhost:1313/aquamega/posts/welcome/</link>
-      <pubDate>Fri, 26 Apr 2024 14:22:49 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/welcome/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
