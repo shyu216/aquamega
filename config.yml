@@ -1,0 +1,20 @@
+params:
+  profileMode:
+    enabled: true
+    title: "Dale的水硕生活" # optional default will be site title
+    subtitle: "长恨此身非我有，何时忘却营营"
+    imageUrl: "https://github.com/shyu216.png" # optional
+    imageTitle: "shyu216" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Unimelb
+        url: "/unimelb"
+      - name: Github
+        url: "https://github.com/shyu216"
+
+  socialIcons: # optional
+    - name: "<platform>"
+      url: "<link>"
+    - name: "<platform 2>"
+      url: "<link2>"

@@ -6,7 +6,42 @@
     <description>Recent content in Posts on Dale的水硕生活</description>
     <generator>Hugo -- 0.125.4</generator>
     <language>cn-zh</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2024 14:56:11 +1000</lastBuildDate>
     <atom:link href="http://localhost:1313/aquamega/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geom90008</title>
+      <link>http://localhost:1313/aquamega/posts/geom90008/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:11 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/geom90008/</guid>
+      <description>Geom90008 Spatial Data Management The Geom90008 Spatial Data Management course offered by the University of Melbourne provides a comprehensive understanding of managing and analyzing spatial data within spatial databases. Students learn about data modeling, querying and analyzing spatial data, efficient data access techniques, advances in data management, and practical implementation. The course emphasizes the unique properties of spatial data and covers topics such as spatial reference systems, vector geometries, topological analysis, network models, and raster data handling.</description>
+    </item>
+    <item>
+      <title>Comp90042</title>
+      <link>http://localhost:1313/aquamega/posts/comp90042/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/comp90042/</guid>
+      <description>Comp90042 Natural Language Processing </description>
+    </item>
+    <item>
+      <title>Comp90077</title>
+      <link>http://localhost:1313/aquamega/posts/comp90077/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:58 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/comp90077/</guid>
+      <description>Comp90077 Advanced Algorithms and Data Structures </description>
+    </item>
+    <item>
+      <title>Comp90054</title>
+      <link>http://localhost:1313/aquamega/posts/comp90054/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:43 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/comp90054/</guid>
+      <description>Comp90054 AI Planning for Autonomy </description>
+    </item>
+    <item>
+      <title>Welcome</title>
+      <link>http://localhost:1313/aquamega/posts/welcome/</link>
+      <pubDate>Fri, 26 Apr 2024 14:22:49 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/welcome/</guid>
+      <description>Hello World!</description>
+    </item>
   </channel>
 </rss>
