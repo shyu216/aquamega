@@ -64,6 +64,8 @@ params:
     imageHeight: 120
     imageTitle: shyu216
     buttons:
+      - name: Course
+        url: course
       - name: Posts
         url: posts
       - name: Categories
