@@ -49,7 +49,7 @@ POMDP是部分可观察的，概率状态模型：
 
 # Value Iteration
 
-A kind of dynamic programming algorithm for finding the optimal policy for a Markov Decision Process (MDP).
+一种动态规划算法，用于计算MDP的最优策略。
 
 ```python
 def value_iteration(states, actions, P, r, gamma, theta):
@@ -65,3 +65,27 @@ def value_iteration(states, actions, P, r, gamma, theta):
             break
     return V
 ```
+
+## Bellman Optimality Equation
+
+利用了Bellman最优方程：
+$$
+V^*(s) = \max_{a \in A(s)} \sum_{s'} P_a(s'|s) \left[ R_a(s'|s) + \gamma V^*(s') \right]
+$$
+
+## Q-Value
+
+对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：
+$$
+Q(s,a) = \sum_{s'} P_a(s'|s) \left[ R_a(s'|s) + \gamma V^*(s') \right]
+$$
+
+其中 $\gamma$ 是折扣，越接近1，越重视长期奖励，越接近0，越重视短期奖励。
+
+```
+0.95, 0.9025, 0.857375, 0.81450625...
+0.9, 0.81, 0.729, 0.6561...
+0.8, 0.64, 0.512, 0.4096...
+0.7, 0.49, 0.343, 0.2401...
+```
+

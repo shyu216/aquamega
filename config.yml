@@ -66,8 +66,10 @@ params:
     buttons:
       - name: Course
         url: course
-      - name: Pseudocode
-        url: pseudocode
+      - name: Algorithm
+        url: algorithm
+      - name: DataType
+        url: datatype
 
   # home-info mode
   homeInfoParams:
