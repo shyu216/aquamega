@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pseudocodes on Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/pseudocode/</link>
+    <description>Recent content in Pseudocodes on Aqua Mega</description>
+    <image>
+      <title>Aqua Mega</title>
+      <url>https://github.com/shyu216.png</url>
+      <link>https://github.com/shyu216.png</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 May 2024 11:13:45 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/aquamega/pseudocode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A*</title>
+      <link>http://localhost:1313/aquamega/pseudocode/astar/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/pseudocode/astar/</guid>
+      <description>A*算法（带有重复检测和重新打开） 设 open 为新的优先级队列，按照 g(state(σ)) + h(state(σ)) 升序排列 open.insert(make-root-node(init())) 设 closed 为空集 设 best-g 为空集 /* 将状态映射到数字 */ 当 open 不为空时： σ := open.pop-min() 如果 state(σ) 不在 closed 中或 g(σ) &amp;lt; best-g(state(σ))： /* 如果 g 更好则重新打开；注意所有具有相同状态但 g 较差的 σ′ 都在 open 中位于 σ 后面，并且在轮到它们时将被跳过 */ closed := closed ∪{state(σ)} best-g(state(σ)) := g(σ) 如果 is-goal(state(σ))：返回 extract-solution(σ) 对于每个 (a,s′) ∈succ(state(σ))： σ′ := make-node(σ,a,s′) 如果 h(state(σ′)) &amp;lt; ∞：open.insert(σ′) 返回 unsolvable </description>
+    </item>
+    <item>
+      <title>Hill Climbing</title>
+      <link>http://localhost:1313/aquamega/pseudocode/hill_climbing/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/pseudocode/hill_climbing/</guid>
+      <description>爬山算法 σ := make-root-node(init()) 永远执行以下操作： 如果 is-goal(state(σ))： 返回 extract-solution(σ) Σ′ := {make-node(σ,a,s′) |(a,s′) ∈succ(state(σ)) } σ := 选择 Σ′ 中 h 值最小的元素 /* （随机打破平局） */ </description>
+    </item>
+    <item>
+      <title>MDPs</title>
+      <link>http://localhost:1313/aquamega/pseudocode/mdps/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/pseudocode/mdps/</guid>
+      <description>Markov Decision Processes（MDPs）马尔可夫决策过程 MDP是完全可观察的，概率状态模型：
+状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 动作成本 $c(a,s) &gt; 0$ 其中：
+解决方案是将状态映射到动作的函数（策略） 最优解最小化预期的前往目标的成本 Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程 POMDP是部分可观察的，概率状态模型：
+状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型 其中：</description>
+    </item>
+  </channel>
+</rss>

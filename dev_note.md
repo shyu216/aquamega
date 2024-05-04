@@ -1,0 +1,2 @@
+hugo new pseudocode/
+

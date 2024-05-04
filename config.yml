@@ -66,12 +66,8 @@ params:
     buttons:
       - name: Course
         url: course
-      - name: Posts
-        url: posts
-      - name: Categories
-        url: categories
-      - name: Tags
-        url: tags
+      - name: Pseudocode
+        url: pseudocode
 
   # home-info mode
   homeInfoParams:
