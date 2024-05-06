@@ -12,33 +12,33 @@ params:
 # Markov Decision Processes（MDPs）马尔可夫决策过程
 
 MDP是完全可观察的，概率状态模型：
-```
-状态空间 $S$
-初始状态 $s_0 \in S$
-一组目标状态 $G \subseteq S$
-在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$
-对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s'|s)$
-动作成本 $c(a,s) > 0$
-```
 
-其中：
-解决方案是将状态映射到动作的函数（策略）
+状态空间 $S$ \
+初始状态 $s_0 \in S$ \
+一组目标状态 $G \subseteq S$ \
+在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ \
+对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s'|s)$ \
+动作成本 $c(a,s) > 0$
+
+
+其中：\
+解决方案是将状态映射到动作的函数（策略）\
 最优解最小化预期的前往目标的成本
 
 # Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
 POMDP是部分可观察的，概率状态模型：
-```
-状态 $s \in S$
-在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$
-对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s'|s)$
-初始信念状态 $b_0$
-最终信念状态 $b_f$
-由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型
-```
 
-其中：
-信念状态是关于 $S$ 的概率分布
-解决方案是将信念状态映射到动作的策略
+状态 $s \in S$ \
+在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ \
+对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s'|s)$ \
+初始信念状态 $b_0$ \
+最终信念状态 $b_f$ \
+由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型
+
+
+其中：\
+信念状态是关于 $S$ 的概率分布 \
+解决方案是将信念状态映射到动作的策略 \
 最优策略最小化从 $b_0$ 到 $G$ 的预期成本
 
 
@@ -89,3 +89,37 @@ $$
 0.7, 0.49, 0.343, 0.2401...
 ```
 
+
+
+# Q-Learning
+
+**Input**: MDP $M = \langle S, s_0, A, P_a(s' | s), r(s, a, s') \rangle$ \
+**Output**: Q-function $Q$ \
+Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ \
+**repeat**\
+$\quad$ $s \leftarrow$ the first state in episode $e$\
+$\quad$ **repeat** (for each step in episode $e$)\
+$\quad\quad$ Select action $a$ to apply in $s$; e.g. using $Q$ and a multi-armed bandit algorithm such as $\epsilon$-greedy\
+$\quad\quad$ Execute action $a$ in state $s$\
+$\quad\quad$ Observe reward $r$ and new state $s'$\
+$\quad\quad$ $\delta \leftarrow r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a)$\
+$\quad\quad$ $Q(s, a) \leftarrow Q(s, a) + \alpha \cdot \delta$\
+$\quad\quad$ $s \leftarrow s'$\
+$\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
+**until** $Q$ converges
+
+# SARSA
+**Input**: MDP $M = \langle S, s_0, A, P_a(s' | s), r(s, a, s') \rangle$ \
+**Output**: Q-function $Q$ \
+Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ \
+**repeat**\
+$\quad$ $s \leftarrow$ the first state in episode $e$\
+$\quad$ Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy)\
+$\quad$ **repeat** (for each step in episode $e$)\
+$\quad\quad$ Take action $a$, observe $r$, $s'$\
+$\quad\quad$ Choose $a'$ from $s'$ using policy derived from $Q$ (e.g., $\epsilon$-greedy)\
+$\quad\quad$ $\delta \leftarrow r + \gamma \cdot Q(s', a') - Q(s, a)$\
+$\quad\quad$ $Q(s, a) \leftarrow Q(s, a) + \alpha \cdot \delta$\
+$\quad\quad$ $s \leftarrow s'$, $a \leftarrow a'$\
+$\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
+**until** $Q$ converges
