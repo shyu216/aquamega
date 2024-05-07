@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Comp90077 on Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/tags/comp90077/</link>
+    <description>Recent content in Comp90077 on Aqua Mega</description>
+    <image>
+      <title>Aqua Mega</title>
+      <url>https://github.com/shyu216.png</url>
+      <link>https://github.com/shyu216.png</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Apr 2024 14:55:58 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/aquamega/tags/comp90077/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comp90077</title>
+      <link>http://localhost:1313/aquamega/course/comp90077/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:58 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90077/</guid>
+      <description>Advanced Algorithms and Data Structures Learn some advanced algorithms and data structures.
+Treap
+Admortized Analysis: Prepaid/Potential
+Quake Heap
+Splay Tree
+Perfect Hashing/Cuckoo Hashing
+Range Tree
+Min Cut/Max Flow
+Karger&amp;rsquo;s algorithm: 找最小割, 找多次取最优, 随机地找两个节点合并, 直到只剩下两个节点
+Ford-Fulkerson algorithm: 最早的最大流算法, 重复地找增广路径, 直到找不到
+Edmonds-Karp algorithm: 用BFS找增广路径, complexity更低
+Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小
+Vocabs conservation node: 保守节点, a node that has the same flow in and out
+residual graph: 残余图, a graph that represents the remaining capacity of each edge</description>
+    </item>
+  </channel>
+</rss>

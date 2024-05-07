@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/</link>
+    <description>Recent content on Aqua Mega</description>
+    <image>
+      <title>Aqua Mega</title>
+      <url>https://github.com/shyu216.png</url>
+      <link>https://github.com/shyu216.png</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 May 2024 11:13:45 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A*</title>
+      <link>http://localhost:1313/aquamega/algorithm/astar/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/astar/</guid>
+      <description>A*算法（带有重复检测和重新打开） 设 open 为新的优先级队列，按照 g(state(σ)) + h(state(σ)) 升序排列 open.insert(make-root-node(init())) 设 closed 为空集 设 best-g 为空集 /* 将状态映射到数字 */ 当 open 不为空时： σ := open.pop-min() 如果 state(σ) 不在 closed 中或 g(σ) &amp;lt; best-g(state(σ))： /* 如果 g 更好则重新打开；注意所有具有相同状态但 g 较差的 σ′ 都在 open 中位于 σ 后面，并且在轮到它们时将被跳过 */ closed := closed ∪{state(σ)} best-g(state(σ)) := g(σ) 如果 is-goal(state(σ))：返回 extract-solution(σ) 对于每个 (a,s′) ∈succ(state(σ))： σ′ := make-node(σ,a,s′) 如果 h(state(σ′)) &amp;lt; ∞：open.insert(σ′) 返回 unsolvable def aStarSearch(problem, heuristic=nullHeuristic): &amp;#34;&amp;#34;&amp;#34;Search the node that has the lowest combined cost and heuristic first.</description>
+    </item>
+    <item>
+      <title>BFS</title>
+      <link>http://localhost:1313/aquamega/algorithm/bfs/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/bfs/</guid>
+      <description>广度优先搜索（BFS） 队列，先进先出，后进后出。
+def breadthFirstSearch(problem): candidate_queue = util.Queue() init_state = problem.getStartState() init_path = [] candidate_queue.push((init_state,init_path)) viewed = [] while not candidate_queue.isEmpty(): state,path = candidate_queue.pop() if problem.isGoalState(state): return path if state not in viewed: viewed.append(state) for child_state, child_action, _ in problem.getSuccessors(state): # ignore cost as we are blind child_path = path + [child_action] candidate_queue.push((child_state,child_path)) return None </description>
+    </item>
+    <item>
+      <title>DFS</title>
+      <link>http://localhost:1313/aquamega/algorithm/dfs/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/dfs/</guid>
+      <description>深度优先搜索（DFS） 栈，先进后出，后进先出。
+搜索空间可能无限大（无限深）。
+def depthFirstSearch(problem): candidate_stack = util.Stack() init_state = problem.getStartState() init_path = [] candidate_stack.push((init_state,init_path)) viewed = [] while not candidate_stack.isEmpty(): state,path = candidate_stack.pop() if problem.isGoalState(state): return path if state not in viewed: viewed.append(state) for child_state, child_action, _ in problem.getSuccessors(state): # ignore cost as we are blind child_path = path + [child_action] candidate_stack.push((child_state,child_path)) return None </description>
+    </item>
+    <item>
+      <title>Hill Climbing</title>
+      <link>http://localhost:1313/aquamega/algorithm/hill_climbing/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/hill_climbing/</guid>
+      <description>爬山算法 σ := make-root-node(init()) 永远执行以下操作： 如果 is-goal(state(σ))： 返回 extract-solution(σ) Σ′ := {make-node(σ,a,s′) |(a,s′) ∈succ(state(σ)) } σ := 选择 Σ′ 中 h 值最小的元素 /* （随机打破平局） */ </description>
+    </item>
+    <item>
+      <title>MDPs</title>
+      <link>http://localhost:1313/aquamega/algorithm/mdps/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/mdps/</guid>
+      <description>Markov Decision Processes（MDPs）马尔可夫决策过程 MDP是完全可观察的，概率状态模型：
+状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 动作成本 $c(a,s) &amp;gt; 0$ 其中： 解决方案是将状态映射到动作的函数（策略） 最优解最小化预期的前往目标的成本
+Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程 POMDP是部分可观察的，概率状态模型：
+状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型 其中： 信念状态是关于 $S$ 的概率分布 解决方案是将信念状态映射到动作的策略 最优策略最小化从 $b_0$ 到 $G$ 的预期成本</description>
+    </item>
+    <item>
+      <title>Geom90008</title>
+      <link>http://localhost:1313/aquamega/course/geom90008/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:11 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/geom90008/</guid>
+      <description>Spatial Data Management Course notebook: https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/.
+Goal: Learn Postgre(pgAdmin 4) and GIS(QGIS). Help staff with herbarium data.
+Vocabs scope creep: 任务蔓延 schema: 数据库的结构 query: 查询 ACID: Atomicity 原子性, Consistency 一致性, Isolation 隔离性, Durability 持久性 waterfall: 瀑布模型, 一次性完成所有工作 agile: 敏捷开发, 分阶段完成工作 ERD/ERM: Entity Relationship Diagram/Model, 实体关系图/模型 entity, attribute, relationship: 实体, 属性, 关系 location: space and time position: reference to a coordinate system 地理學第一定律: 所有事物都與其他事物相關, 但是近處的事物比遠處的事物更相關 longitude: 经度 latitude: 纬度 altitude: 海拔 wgs84: 地球坐标系, 经典的经纬度 polynomial: 多项式 ployline: 折线 polygon: 多边形 vertex: 顶点 vector: 向量 raster: 栅格 sphere: 球体 spheroid: 椭球体 Ideas 因为板块漂移, 会导致地理坐标系的变化 </description>
+    </item>
+    <item>
+      <title>Comp90042</title>
+      <link>http://localhost:1313/aquamega/course/comp90042/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
+      <description>Natural Language Processing </description>
+    </item>
+    <item>
+      <title>Comp90077</title>
+      <link>http://localhost:1313/aquamega/course/comp90077/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:58 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90077/</guid>
+      <description>Advanced Algorithms and Data Structures Learn some advanced algorithms and data structures.
+Treap
+Admortized Analysis: Prepaid/Potential
+Quake Heap
+Splay Tree
+Perfect Hashing/Cuckoo Hashing
+Range Tree
+Min Cut/Max Flow
+Karger&amp;rsquo;s algorithm: 找最小割, 找多次取最优, 随机地找两个节点合并, 直到只剩下两个节点
+Ford-Fulkerson algorithm: 最早的最大流算法, 重复地找增广路径, 直到找不到
+Edmonds-Karp algorithm: 用BFS找增广路径, complexity更低
+Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小
+Vocabs conservation node: 保守节点, a node that has the same flow in and out
+residual graph: 残余图, a graph that represents the remaining capacity of each edge</description>
+    </item>
+    <item>
+      <title>Comp90054</title>
+      <link>http://localhost:1313/aquamega/course/comp90054/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:43 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90054/</guid>
+      <description>AI Planning for Autonomy classical planning (blind/heuristic): https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf PDDL relaxation reinforcement learning: https://gibberblot.github.io/rl-notes/index.html Vocabs Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解
+non-deterministic: countless outcomes 安全/目标感知/可接受/一致性
+假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, G)$，并且$h$是$\Pi$的一个启发式。如果启发式满足以下条件，那么它被称为：
+安全（Safe）：如果对于所有$h(s) = \infty$的状态$s \in S$，都有$h^*(s) = \infty$，则启发式被称为安全。
+目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。
+可接受（Admissible）：如果对于所有状态$s \in S$，都有$h(s) \leq h^*(s)$，则启发式被称为可接受。
+一致（Consistent）：如果对于所有$s \xrightarrow{a} s&#39;$的转移，都有$h(s) \leq h(s&#39;) + c(a)$，则启发式被称为一致。
+命题：假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, S_G)$，并且$h$是$\Pi$的一个启发式。
+如果$h$是一致的和目标感知的，则$h$是可接受的。 如果$h$是可接受的，则$h$是目标感知的。 如果$h$是可接受的，则$h$是安全的。 没有其他这种形式的蕴含关系成立。 STRIPS: 问题是一个四元组$P = \langle F,O,I,G \rangle$：</description>
+    </item>
+    <item>
+      <title>Welcome</title>
+      <link>http://localhost:1313/aquamega/posts/welcome/</link>
+      <pubDate>Fri, 26 Apr 2024 14:22:49 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/posts/welcome/</guid>
+      <description>Hello World!</description>
+    </item>
+  </channel>
+</rss>

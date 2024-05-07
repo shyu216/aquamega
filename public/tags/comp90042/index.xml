@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Comp90042 on Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/tags/comp90042/</link>
+    <description>Recent content in Comp90042 on Aqua Mega</description>
+    <image>
+      <title>Aqua Mega</title>
+      <url>https://github.com/shyu216.png</url>
+      <link>https://github.com/shyu216.png</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Apr 2024 14:56:05 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/aquamega/tags/comp90042/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comp90042</title>
+      <link>http://localhost:1313/aquamega/course/comp90042/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
+      <description>Natural Language Processing </description>
+    </item>
+  </channel>
+</rss>

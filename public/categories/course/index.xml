@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Course on Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/categories/course/</link>
+    <description>Recent content in Course on Aqua Mega</description>
+    <image>
+      <title>Aqua Mega</title>
+      <url>https://github.com/shyu216.png</url>
+      <link>https://github.com/shyu216.png</link>
+    </image>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Apr 2024 14:56:11 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/aquamega/categories/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geom90008</title>
+      <link>http://localhost:1313/aquamega/course/geom90008/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:11 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/geom90008/</guid>
+      <description>Spatial Data Management Course notebook: https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/.
+Goal: Learn Postgre(pgAdmin 4) and GIS(QGIS). Help staff with herbarium data.
+Vocabs scope creep: 任务蔓延 schema: 数据库的结构 query: 查询 ACID: Atomicity 原子性, Consistency 一致性, Isolation 隔离性, Durability 持久性 waterfall: 瀑布模型, 一次性完成所有工作 agile: 敏捷开发, 分阶段完成工作 ERD/ERM: Entity Relationship Diagram/Model, 实体关系图/模型 entity, attribute, relationship: 实体, 属性, 关系 location: space and time position: reference to a coordinate system 地理學第一定律: 所有事物都與其他事物相關, 但是近處的事物比遠處的事物更相關 longitude: 经度 latitude: 纬度 altitude: 海拔 wgs84: 地球坐标系, 经典的经纬度 polynomial: 多项式 ployline: 折线 polygon: 多边形 vertex: 顶点 vector: 向量 raster: 栅格 sphere: 球体 spheroid: 椭球体 Ideas 因为板块漂移, 会导致地理坐标系的变化 </description>
+    </item>
+    <item>
+      <title>Comp90042</title>
+      <link>http://localhost:1313/aquamega/course/comp90042/</link>
+      <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
+      <description>Natural Language Processing </description>
+    </item>
+    <item>
+      <title>Comp90077</title>
+      <link>http://localhost:1313/aquamega/course/comp90077/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:58 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90077/</guid>
+      <description>Advanced Algorithms and Data Structures Learn some advanced algorithms and data structures.
+Treap
+Admortized Analysis: Prepaid/Potential
+Quake Heap
+Splay Tree
+Perfect Hashing/Cuckoo Hashing
+Range Tree
+Min Cut/Max Flow
+Karger&amp;rsquo;s algorithm: 找最小割, 找多次取最优, 随机地找两个节点合并, 直到只剩下两个节点
+Ford-Fulkerson algorithm: 最早的最大流算法, 重复地找增广路径, 直到找不到
+Edmonds-Karp algorithm: 用BFS找增广路径, complexity更低
+Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小
+Vocabs conservation node: 保守节点, a node that has the same flow in and out
+residual graph: 残余图, a graph that represents the remaining capacity of each edge</description>
+    </item>
+    <item>
+      <title>Comp90054</title>
+      <link>http://localhost:1313/aquamega/course/comp90054/</link>
+      <pubDate>Fri, 26 Apr 2024 14:55:43 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/course/comp90054/</guid>
+      <description>AI Planning for Autonomy classical planning (blind/heuristic): https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf PDDL relaxation reinforcement learning: https://gibberblot.github.io/rl-notes/index.html Vocabs Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解
+non-deterministic: countless outcomes 安全/目标感知/可接受/一致性
+假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, G)$，并且$h$是$\Pi$的一个启发式。如果启发式满足以下条件，那么它被称为：
+安全（Safe）：如果对于所有$h(s) = \infty$的状态$s \in S$，都有$h^*(s) = \infty$，则启发式被称为安全。
+目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。
+可接受（Admissible）：如果对于所有状态$s \in S$，都有$h(s) \leq h^*(s)$，则启发式被称为可接受。
+一致（Consistent）：如果对于所有$s \xrightarrow{a} s&#39;$的转移，都有$h(s) \leq h(s&#39;) + c(a)$，则启发式被称为一致。
+命题：假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, S_G)$，并且$h$是$\Pi$的一个启发式。
+如果$h$是一致的和目标感知的，则$h$是可接受的。 如果$h$是可接受的，则$h$是目标感知的。 如果$h$是可接受的，则$h$是安全的。 没有其他这种形式的蕴含关系成立。 STRIPS: 问题是一个四元组$P = \langle F,O,I,G \rangle$：</description>
+    </item>
+  </channel>
+</rss>
