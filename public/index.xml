@@ -38,6 +38,13 @@ def breadthFirstSearch(problem): candidate_queue = util.Queue() init_state = pro
 def depthFirstSearch(problem): candidate_stack = util.Stack() init_state = problem.getStartState() init_path = [] candidate_stack.push((init_state,init_path)) viewed = [] while not candidate_stack.isEmpty(): state,path = candidate_stack.pop() if problem.isGoalState(state): return path if state not in viewed: viewed.append(state) for child_state, child_action, _ in problem.getSuccessors(state): # ignore cost as we are blind child_path = path + [child_action] candidate_stack.push((child_state,child_path)) return None </description>
     </item>
     <item>
+      <title>Dynamic Array</title>
+      <link>http://localhost:1313/aquamega/datatype/array/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/datatype/array/</guid>
+      <description>Insertion: O(1) expected, O(n) worst case Search: O(n) expected, O(n) worst case Deletion: O(n) expected, O(n) worst case class DynamicArray: def __init__(self): self.n = 0 # Number of elements self.capacity = 1 # Initial capacity self.A = self._make_array(self.capacity) def __len__(self): return self.n def __getitem__(self, k): if not 0 &amp;lt;= k &amp;lt; self.n: raise IndexError(&amp;#39;invalid index&amp;#39;) return self.A[k] def insert(self, element): &amp;#34;&amp;#34;&amp;#34; element = (id,key) &amp;#34;&amp;#34;&amp;#34; if self.n == self.capacity: self.</description>
+    </item>
+    <item>
       <title>Hill Climbing</title>
       <link>http://localhost:1313/aquamega/algorithm/hill_climbing/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
@@ -50,9 +57,19 @@ def depthFirstSearch(problem): candidate_stack = util.Stack() init_state = probl
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/algorithm/mdps/</guid>
       <description>Markov Decision Processes（MDPs）马尔可夫决策过程 MDP是完全可观察的，概率状态模型：
-状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 动作成本 $c(a,s) &amp;gt; 0$ 其中： 解决方案是将状态映射到动作的函数（策略） 最优解最小化预期的前往目标的成本
+状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 动作成本 $c(a,s) &gt; 0$
+其中：
+解决方案是将状态映射到动作的函数（策略）
+最优解最小化预期的前往目标的成本
 Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程 POMDP是部分可观察的，概率状态模型：
-状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型 其中： 信念状态是关于 $S$ 的概率分布 解决方案是将信念状态映射到动作的策略 最优策略最小化从 $b_0$ 到 $G$ 的预期成本</description>
+状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型</description>
+    </item>
+    <item>
+      <title>Treap</title>
+      <link>http://localhost:1313/aquamega/datatype/treap/</link>
+      <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/datatype/treap/</guid>
+      <description>Tree + Heap = Treap Insertion: O(log n) expected, O(n) worst case Search: O(log n) expected, O(n) worst case Deletion: O(log n) expected, O(n) worst case import random class Node: def __init__(self, id, key, priority): self.id = id self.key = key self.priority = priority self.left = None self.right = None class Treap: def __init__(self): self.root = None def _left_rotate(self, node): right_child = node.right node.right = right_child.left right_child.left = node return right_child def _right_rotate(self, node): left_child = node.</description>
     </item>
     <item>
       <title>Geom90008</title>
@@ -68,7 +85,7 @@ Vocabs scope creep: 任务蔓延 schema: 数据库的结构 query: 查询 ACID: 
       <link>http://localhost:1313/aquamega/course/comp90042/</link>
       <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
-      <description>Natural Language Processing </description>
+      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT </description>
     </item>
     <item>
       <title>Comp90077</title>

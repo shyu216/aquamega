@@ -50,9 +50,12 @@ def depthFirstSearch(problem): candidate_stack = util.Stack() init_state = probl
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/algorithm/mdps/</guid>
       <description>Markov Decision Processes（MDPs）马尔可夫决策过程 MDP是完全可观察的，概率状态模型：
-状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 动作成本 $c(a,s) &amp;gt; 0$ 其中： 解决方案是将状态映射到动作的函数（策略） 最优解最小化预期的前往目标的成本
+状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 动作成本 $c(a,s) &gt; 0$
+其中：
+解决方案是将状态映射到动作的函数（策略）
+最优解最小化预期的前往目标的成本
 Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程 POMDP是部分可观察的，概率状态模型：
-状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型 其中： 信念状态是关于 $S$ 的概率分布 解决方案是将信念状态映射到动作的策略 最优策略最小化从 $b_0$ 到 $G$ 的预期成本</description>
+状态 $s \in S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 初始信念状态 $b_0$ 最终信念状态 $b_f$ 由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型</description>
     </item>
   </channel>
 </rss>
