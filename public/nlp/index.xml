@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Comp90042 on Aqua Mega</title>
-    <link>http://localhost:1313/aquamega/tags/comp90042/</link>
-    <description>Recent content in Comp90042 on Aqua Mega</description>
+    <title>Nlps on Aqua Mega</title>
+    <link>http://localhost:1313/aquamega/nlp/</link>
+    <description>Recent content in Nlps on Aqua Mega</description>
     <image>
       <title>Aqua Mega</title>
       <url>https://github.com/shyu216.png</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.125.4</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 May 2024 14:56:05 +1000</lastBuildDate>
-    <atom:link href="http://localhost:1313/aquamega/tags/comp90042/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/aquamega/nlp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Part-of-Speech Tagging</title>
       <link>http://localhost:1313/aquamega/nlp/pos/</link>
@@ -47,13 +47,6 @@ $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$</description>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/nlp/classification/</guid>
       <description>Topic classification Sentiment analysis Native language identification Natual language inference Automatic fact-checking Paraphrase Topic Classification Motivation: library science, information retrieval, etc. Classes: topic categories Features: bag-of-words, n-grams, etc. Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags Sentiment Analysis Motivation: opinion mining, business analytics Classes: positive, negative, neutral Features: n-grams, polarity lexicons, etc. Corpus: movie reviews, SEMEVAL twitter polarity dataset Native Language Identification Motivation: forensic linguistics, educational applications Classes: native languages Features: character n-grams, syntactic features (POS), phonological features Corpus: TOEFL/IELTS essays Natural Language Inference (textual entailment 文本蕴含) Motivation: language understanding Classes: entailment, contradiction, neutral Features: word overlap, length difference, etc.</description>
-    </item>
-    <item>
-      <title>Comp90042</title>
-      <link>http://localhost:1313/aquamega/course/comp90042/</link>
-      <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
-      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT </description>
     </item>
   </channel>
 </rss>
