@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/aquamega/tags/comp90042/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neual Networks</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/nn/</link>
+      <link>http://localhost:1313/aquamega/nlp/nn/</link>
       <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/nn/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/nn/</guid>
       <description>非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。 常见的非线性激活函数包括：
 ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。
 Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。
@@ -27,17 +27,17 @@ Regularization 正则化 L1 Norm L2 Norm Dropout </description>
     </item>
     <item>
       <title>Part-of-Speech Tagging</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/pos/</link>
+      <link>http://localhost:1313/aquamega/nlp/pos/</link>
       <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/pos/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/pos/</guid>
       <description>Part-of-Speech(词类) Colourless green ideas sleep furiously.
 Open Classes (Content Words) Noun Verb Adjective Adverb Closed Classes (Function Words) (Fixed number of words) Preposition Determiner Pronoun Conjunction Interjection Ambiguity: A word can have multiple meanings. A sentence can have multiple interpretations.</description>
     </item>
     <item>
       <title>N-gram Language Model</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/n-gram/</link>
+      <link>http://localhost:1313/aquamega/nlp/n-gram/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/n-gram/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/n-gram/</guid>
       <description>Language Model To explain language, based on probability, for generation.
 Query completion(搜索引擎) Optical character recognition(OCR) Translation N-gram $$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$ Maximum Likelihood Estimation $$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$ Use special tags to denote the beginning and end of a sentence, i.e. &amp;lt;s&amp;gt;, &amp;lt;/s&amp;gt;.
 Smoothing Handle unseen words.
@@ -48,16 +48,16 @@ $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$</description>
     </item>
     <item>
       <title>Preprocessing</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/preprocessing/</link>
+      <link>http://localhost:1313/aquamega/nlp/preprocessing/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/preprocessing/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/preprocessing/</guid>
       <description>Preprocessing Word Sentence: words Document: sentences Corpus: documents Word Token: word instance Word Type: verb, noun, etc. Lexicon: word types Steps Remove unwnated formatting, i.e. HTML tags Sentecne segmentation, break text into sentences Tokenization, break sentences into words Normalization, transform words into canonical form, i.e. lower case Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc. Max Match Algorithm Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.</description>
     </item>
     <item>
       <title>Text Classification</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/classification/</link>
+      <link>http://localhost:1313/aquamega/nlp/classification/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/classification/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/classification/</guid>
       <description>Topic classification Sentiment analysis Native language identification Natual language inference Automatic fact-checking Paraphrase Topic Classification Motivation: library science, information retrieval, etc. Classes: topic categories Features: bag-of-words, n-grams, etc. Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags Sentiment Analysis Motivation: opinion mining, business analytics Classes: positive, negative, neutral Features: n-grams, polarity lexicons, etc. Corpus: movie reviews, SEMEVAL twitter polarity dataset Native Language Identification Motivation: forensic linguistics, educational applications Classes: native languages Features: character n-grams, syntactic features (POS), phonological features Corpus: TOEFL/IELTS essays Natural Language Inference (textual entailment 文本蕴含) Motivation: language understanding Classes: entailment, contradiction, neutral Features: word overlap, length difference, etc.</description>
     </item>
     <item>

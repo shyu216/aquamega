@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Game Theory</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/game/</link>
+      <link>http://localhost:1313/aquamega/algorithm/game/</link>
       <pubDate>Thu, 30 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/game/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/game/</guid>
       <description>pure Strategy: single action
 mixed Strategy: probability distribution over actions
 weakly dominate: $\leq$
@@ -29,9 +29,9 @@ Utility Function U_i(a): what can agent i get from action a</description>
     </item>
     <item>
       <title>Greedy Relaxed Planning</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/relax/</link>
+      <link>http://localhost:1313/aquamega/algorithm/relax/</link>
       <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/relax/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/relax/</guid>
       <description>h*: the optimal heuristic
 h pre&amp;amp;del: the heuristic ignoring preconditions and delete effects, adimissible and consistent, &amp;ldquo;subset sum&amp;rdquo; problem, NP-hard
 h goal_count: the number of goals not yet achieved, neither admissible nor consistent
@@ -43,9 +43,9 @@ Removing preconditions and delete effects is efficiently constructive but not co
     </item>
     <item>
       <title>UCB and Greedy BFS</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/uniform/</link>
+      <link>http://localhost:1313/aquamega/algorithm/uniform/</link>
       <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/uniform/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/uniform/</guid>
       <description>Uniform Cost Search Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。
 Breath First Search属于Uniform Cost Search的特例，即每个节点的路径成本都是1。
 UCS只看到了路径成本，没有考虑启发式。
@@ -55,9 +55,9 @@ def bestFirstSearch(problem, heuristic=nullHeuristic): candidate_pq = util.Prior
     </item>
     <item>
       <title>Neual Networks</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/nn/</link>
+      <link>http://localhost:1313/aquamega/nlp/nn/</link>
       <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/nn/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/nn/</guid>
       <description>非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。 常见的非线性激活函数包括：
 ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。
 Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。
@@ -67,17 +67,17 @@ Regularization 正则化 L1 Norm L2 Norm Dropout </description>
     </item>
     <item>
       <title>Part-of-Speech Tagging</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/pos/</link>
+      <link>http://localhost:1313/aquamega/nlp/pos/</link>
       <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/pos/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/pos/</guid>
       <description>Part-of-Speech(词类) Colourless green ideas sleep furiously.
 Open Classes (Content Words) Noun Verb Adjective Adverb Closed Classes (Function Words) (Fixed number of words) Preposition Determiner Pronoun Conjunction Interjection Ambiguity: A word can have multiple meanings. A sentence can have multiple interpretations.</description>
     </item>
     <item>
       <title>N-gram Language Model</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/n-gram/</link>
+      <link>http://localhost:1313/aquamega/nlp/n-gram/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/n-gram/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/n-gram/</guid>
       <description>Language Model To explain language, based on probability, for generation.
 Query completion(搜索引擎) Optical character recognition(OCR) Translation N-gram $$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$ Maximum Likelihood Estimation $$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$ Use special tags to denote the beginning and end of a sentence, i.e. &amp;lt;s&amp;gt;, &amp;lt;/s&amp;gt;.
 Smoothing Handle unseen words.
@@ -88,30 +88,30 @@ $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$</description>
     </item>
     <item>
       <title>Preprocessing</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/preprocessing/</link>
+      <link>http://localhost:1313/aquamega/nlp/preprocessing/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/preprocessing/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/preprocessing/</guid>
       <description>Preprocessing Word Sentence: words Document: sentences Corpus: documents Word Token: word instance Word Type: verb, noun, etc. Lexicon: word types Steps Remove unwnated formatting, i.e. HTML tags Sentecne segmentation, break text into sentences Tokenization, break sentences into words Normalization, transform words into canonical form, i.e. lower case Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc. Max Match Algorithm Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.</description>
     </item>
     <item>
       <title>Text Classification</title>
-      <link>http://localhost:1313/aquamega/posts/nlp/classification/</link>
+      <link>http://localhost:1313/aquamega/nlp/classification/</link>
       <pubDate>Mon, 27 May 2024 14:56:05 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/nlp/classification/</guid>
+      <guid>http://localhost:1313/aquamega/nlp/classification/</guid>
       <description>Topic classification Sentiment analysis Native language identification Natual language inference Automatic fact-checking Paraphrase Topic Classification Motivation: library science, information retrieval, etc. Classes: topic categories Features: bag-of-words, n-grams, etc. Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags Sentiment Analysis Motivation: opinion mining, business analytics Classes: positive, negative, neutral Features: n-grams, polarity lexicons, etc. Corpus: movie reviews, SEMEVAL twitter polarity dataset Native Language Identification Motivation: forensic linguistics, educational applications Classes: native languages Features: character n-grams, syntactic features (POS), phonological features Corpus: TOEFL/IELTS essays Natural Language Inference (textual entailment 文本蕴含) Motivation: language understanding Classes: entailment, contradiction, neutral Features: word overlap, length difference, etc.</description>
     </item>
     <item>
       <title>A* and Hill Climbing</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/astar/</link>
+      <link>http://localhost:1313/aquamega/algorithm/astar/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/astar/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/astar/</guid>
       <description>A*算法（带有重复检测和重新打开） 设 open 为新的优先级队列，按照 g(state(σ)) + h(state(σ)) 升序排列 open.insert(make-root-node(init())) 设 closed 为空集 设 best-g 为空集 /* 将状态映射到数字 */ 当 open 不为空时： σ := open.pop-min() 如果 state(σ) 不在 closed 中或 g(σ) &amp;lt; best-g(state(σ))： /* 如果 g 更好则重新打开；注意所有具有相同状态但 g 较差的 σ′ 都在 open 中位于 σ 后面，并且在轮到它们时将被跳过 */ closed := closed ∪{state(σ)} best-g(state(σ)) := g(σ) 如果 is-goal(state(σ))：返回 extract-solution(σ) 对于每个 (a,s′) ∈succ(state(σ))： σ′ := make-node(σ,a,s′) 如果 h(state(σ′)) &amp;lt; ∞：open.insert(σ′) 返回 unsolvable def aStarSearch(problem, heuristic=nullHeuristic): &amp;#34;&amp;#34;&amp;#34;Search the node that has the lowest combined cost and heuristic first.</description>
     </item>
     <item>
       <title>BFS and DFS</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/bfs/</link>
+      <link>http://localhost:1313/aquamega/algorithm/bfs/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/bfs/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/bfs/</guid>
       <description>广度优先搜索（BFS） 队列，先进先出，后进后出。
 Optimal when costs are uniform
 def breadthFirstSearch(problem): candidate_queue = util.Queue() init_state = problem.getStartState() init_path = [] candidate_queue.push((init_state,init_path)) viewed = [] while not candidate_queue.isEmpty(): state,path = candidate_queue.pop() if problem.isGoalState(state): return path if state not in viewed: viewed.append(state) for child_state, child_action, _ in problem.getSuccessors(state): # ignore cost as we are blind child_path = path + [child_action] candidate_queue.push((child_state,child_path)) return None 深度优先搜索（DFS） 栈，先进后出，后进先出。
@@ -120,16 +120,16 @@ def depthFirstSearch(problem): candidate_stack = util.Stack() init_state = probl
     </item>
     <item>
       <title>Dynamic Array</title>
-      <link>http://localhost:1313/aquamega/posts/datatype/array/</link>
+      <link>http://localhost:1313/aquamega/datatype/array/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/datatype/array/</guid>
+      <guid>http://localhost:1313/aquamega/datatype/array/</guid>
       <description>Insertion: O(1) expected, O(n) worst case Search: O(n) expected, O(n) worst case Deletion: O(n) expected, O(n) worst case class DynamicArray: def __init__(self): self.n = 0 # Number of elements self.capacity = 1 # Initial capacity self.A = self._make_array(self.capacity) def __len__(self): return self.n def __getitem__(self, k): if not 0 &amp;lt;= k &amp;lt; self.n: raise IndexError(&amp;#39;invalid index&amp;#39;) return self.A[k] def insert(self, element): &amp;#34;&amp;#34;&amp;#34; element = (id,key) &amp;#34;&amp;#34;&amp;#34; if self.n == self.capacity: self.</description>
     </item>
     <item>
       <title>MDPs</title>
-      <link>http://localhost:1313/aquamega/posts/algorithm/mdps/</link>
+      <link>http://localhost:1313/aquamega/algorithm/mdps/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/algorithm/mdps/</guid>
+      <guid>http://localhost:1313/aquamega/algorithm/mdps/</guid>
       <description>Markov Decision Processes（MDPs）马尔可夫决策过程 MDP是完全可观察的，概率状态模型：
 状态空间 $S$ 初始状态 $s_0 \in S$ 一组目标状态 $G \subseteq S$ 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&#39;|s)$ 动作成本 $c(a,s) &gt; 0$
 其中：
@@ -140,9 +140,9 @@ Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程 PO
     </item>
     <item>
       <title>Treap</title>
-      <link>http://localhost:1313/aquamega/posts/datatype/treap/</link>
+      <link>http://localhost:1313/aquamega/datatype/treap/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
-      <guid>http://localhost:1313/aquamega/posts/datatype/treap/</guid>
+      <guid>http://localhost:1313/aquamega/datatype/treap/</guid>
       <description>Tree + Heap = Treap Insertion: O(log n) expected, O(n) worst case Search: O(log n) expected, O(n) worst case Deletion: O(log n) expected, O(n) worst case import random class Node: def __init__(self, id, key, priority): self.id = id self.key = key self.priority = priority self.left = None self.right = None class Treap: def __init__(self): self.root = None def _left_rotate(self, node): right_child = node.right node.right = right_child.left right_child.left = node return right_child def _right_rotate(self, node): left_child = node.</description>
     </item>
     <item>
