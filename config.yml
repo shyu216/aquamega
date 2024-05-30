@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Dale的水硕记录
-    subtitle: "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生"
+    subtitle: "今人不见古时月，今月曾经照古人"
     imageUrl: "https://github.com/shyu216.png"
     imageWidth: 120
     imageHeight: 120
@@ -70,6 +70,9 @@ params:
         url: algorithm
       - name: DataType
         url: datatype
+      - name: NLP
+        url: nlp
+        
 
   # home-info mode
   homeInfoParams:
