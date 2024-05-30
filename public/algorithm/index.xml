@@ -11,14 +11,35 @@
     </image>
     <generator>Hugo -- 0.125.4</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 May 2024 11:13:45 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 11:13:45 +1000</lastBuildDate>
     <atom:link href="http://localhost:1313/aquamega/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>UCB and Greedy BFS</title>
+      <title>Game Theory</title>
+      <link>http://localhost:1313/aquamega/algorithm/game/</link>
+      <pubDate>Thu, 30 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/game/</guid>
+      <description>pure Strategy: single action
+mixed Strategy: probability distribution over actions
+weakly dominate: $\leq$
+strongly dominate: $&lt;$
+a weakly(strictly) dominant strategy: always better than any other strategy
+nash equilibrium: 每个agent都选了最优策略，其他agent不会改变策略
+indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样
+Utility Function U_i(a): what can agent i get from action a</description>
+    </item>
+    <item>
+      <title>Greedy Relaxed Planning</title>
       <link>http://localhost:1313/aquamega/algorithm/relax/</link>
       <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/algorithm/relax/</guid>
-      <description></description>
+      <description>h*: the optimal heuristic
+h pre&amp;amp;del: the heuristic ignoring preconditions and delete effects, adimissible and consistent, &amp;ldquo;subset sum&amp;rdquo; problem, NP-hard
+h goal_count: the number of goals not yet achieved, neither admissible nor consistent
+h+/h del: admitssible and consistent, 相当于MST, 每个state只访问一遍，也NP-hard
+h add: easily not admissible
+h max: easily too small
+h ff: use h add and h max
+Removing preconditions and delete effects is efficiently constructive but not computable。</description>
     </item>
     <item>
       <title>UCB and Greedy BFS</title>
@@ -33,7 +54,7 @@ If h=0，BFS是什么根据它的Priority Queue的实现。
 def bestFirstSearch(problem, heuristic=nullHeuristic): candidate_pq = util.PriorityQueue() init_state = problem.</description>
     </item>
     <item>
-      <title>A*</title>
+      <title>A* and Hill Climbing</title>
       <link>http://localhost:1313/aquamega/algorithm/astar/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/algorithm/astar/</guid>

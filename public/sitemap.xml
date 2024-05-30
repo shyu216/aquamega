@@ -3,15 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/aquamega/algorithm/</loc>
-    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/</loc>
-    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/comp90054/</loc>
-    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/algorithm/game/</loc>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/</loc>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/algorithm/relax/</loc>
     <lastmod>2024-05-29T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/algorithm/uniform/</loc>

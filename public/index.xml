@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.125.4</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 May 2024 11:13:45 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 11:13:45 +1000</lastBuildDate>
     <atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game Theory</title>
+      <link>http://localhost:1313/aquamega/algorithm/game/</link>
+      <pubDate>Thu, 30 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/game/</guid>
+      <description>pure Strategy: single action
+mixed Strategy: probability distribution over actions
+weakly dominate: $\leq$
+strongly dominate: $&lt;$
+a weakly(strictly) dominant strategy: always better than any other strategy
+nash equilibrium: 每个agent都选了最优策略，其他agent不会改变策略
+indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样
+Utility Function U_i(a): what can agent i get from action a</description>
+    </item>
+    <item>
+      <title>Greedy Relaxed Planning</title>
+      <link>http://localhost:1313/aquamega/algorithm/relax/</link>
+      <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/algorithm/relax/</guid>
+      <description>h*: the optimal heuristic
+h pre&amp;amp;del: the heuristic ignoring preconditions and delete effects, adimissible and consistent, &amp;ldquo;subset sum&amp;rdquo; problem, NP-hard
+h goal_count: the number of goals not yet achieved, neither admissible nor consistent
+h+/h del: admitssible and consistent, 相当于MST, 每个state只访问一遍，也NP-hard
+h add: easily not admissible
+h max: easily too small
+h ff: use h add and h max
+Removing preconditions and delete effects is efficiently constructive but not computable。</description>
+    </item>
     <item>
       <title>UCB and Greedy BFS</title>
       <link>http://localhost:1313/aquamega/algorithm/uniform/</link>
@@ -73,7 +101,7 @@ $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$</description>
       <description>Topic classification Sentiment analysis Native language identification Natual language inference Automatic fact-checking Paraphrase Topic Classification Motivation: library science, information retrieval, etc. Classes: topic categories Features: bag-of-words, n-grams, etc. Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags Sentiment Analysis Motivation: opinion mining, business analytics Classes: positive, negative, neutral Features: n-grams, polarity lexicons, etc. Corpus: movie reviews, SEMEVAL twitter polarity dataset Native Language Identification Motivation: forensic linguistics, educational applications Classes: native languages Features: character n-grams, syntactic features (POS), phonological features Corpus: TOEFL/IELTS essays Natural Language Inference (textual entailment 文本蕴含) Motivation: language understanding Classes: entailment, contradiction, neutral Features: word overlap, length difference, etc.</description>
     </item>
     <item>
-      <title>A*</title>
+      <title>A* and Hill Climbing</title>
       <link>http://localhost:1313/aquamega/algorithm/astar/</link>
       <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/algorithm/astar/</guid>
@@ -163,13 +191,22 @@ systematics 系统的 / local 局部
 heuristic 启发式
 monotonic 单调
 priority queue = min heap
-Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解
-non-deterministic: countless outcomes mixed strategy equilibria: 混合策略均衡
-nash equilibrium: 纳什均衡，每个玩家都在最佳响应下(pure strategy)，没有人会改变策略
-安全/目标感知/可接受/一致性 $h$ remaining cost to reach the goal, $*$ optimal
-假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, G)$，并且$h$是$\Pi$的一个启发式。如果启发式满足以下条件，那么它被称为：
-安全（Safe）：如果对于所有$h(s) = \infty$的状态$s \in S$，都有$h^*(s) = \infty$，则启发式被称为安全。
-目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。</description>
+conformant 符合的
+policy 策略，map from state to action, denoted by $\pi$
+negation 否定
+precondition 前提条件
+propositional 命题
+predicate 谓词，return true/false
+schema 模式，define somthing
+misplace 放错
+dominate 支配
+corollary 推论
+point-wise 逐点
+pessimistic 悲观
+benchmark 基准
+novelty 新颖性
+prune 修剪
+velocity 速度</description>
     </item>
     <item>
       <title>Welcome</title>

@@ -8,11 +8,19 @@ params:
 ---
 
 
-## Facts
+
+- h*: the optimal heuristic
+- h pre&del: the heuristic ignoring preconditions and delete effects, adimissible and consistent, "subset sum" problem, NP-hard
+- h goal_count: the number of goals not yet achieved, neither admissible nor consistent
+- h+/h del: admitssible and consistent, 相当于MST, 每个state只访问一遍，也NP-hard
+- h add: easily not admissible
+- h max: easily too small
+- h ff: use h add and h max
+
 
 - Removing preconditions and delete effects is efficiently constructive but not computable。
 
-
+- h max和h add的table是不一样的，一个是最大值，一个是累加值。
 
 
 
@@ -59,7 +67,7 @@ Optimal的都NP-hard。
 
 - 把$h_{add}$和$h_{max}$结合起来，选择最好的支持者。
 
-
+- argmin: 在一系列动作里，选最小的h。
 
 # Bellman-Ford for hmax and hadd
 
@@ -94,3 +102,5 @@ def bellmanFordHadd(problem):
 Novelty：只考虑$w(s)$个状态变量atoms的变化情况。
 
 搜索直到目标状态的状态变量的数量。
+
+一个state的novelty：第一次出现的atom组合中的atom数量。the size of the smallest subset of atoms in s，that is true for the first time in search。

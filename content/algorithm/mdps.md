@@ -68,21 +68,21 @@ def value_iteration(states, actions, P, r, gamma, theta):
 
 ## Bellman Optimality Equation
 
-$$
+$
 V^*(s) = \max_{a \in A(s)} \sum_{s'} P_a(s'|s) \left[ R_a(s'|s) + \gamma V^*(s') \right]
-$$
+$
 
 
 - 所有可能的下一个状态的概率
 - 动作的奖励
-- 下一个状态的价值 x 折扣
+- 下一个状态的价值 x 折扣，前一个iteration存储的价值
 
 ## Q-Value
 
-对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：
-$$
+对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：\
+$
 Q(s,a) = \sum_{s'} P_a(s'|s) \left[ R_a(s'|s) + \gamma V^*(s') \right]
-$$
+$
 
 其中 $\gamma$ 是折扣，越接近1，越重视长期奖励，越接近0，越重视短期奖励。
 
@@ -93,6 +93,9 @@ $$
 0.7, 0.49, 0.343, 0.2401...
 ```
 
+## Policy
+
+$\pi(s) = arg max Q(s,a)$
 
 # Multi-Armed Bandit
 
@@ -155,6 +158,9 @@ $\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
 **until** $Q$ converges
 
 
+- Q-Learning是off-policy，因为on当前策略下的Q值，对当前策略更乐观
+- SARSA是on-policy，所以off了当前策略下的Q值，更保守
+
 # n-step reinforcement learning
 
 记账，在n-step后再一起更新Q值。
@@ -165,6 +171,12 @@ $\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
 - Expansion：扩展一个未扩展的节点
 - Simulation：模拟一个随机游戏，直到结束
 - Backpropagation：更新所有访问的节点的值
+
+- offline：完成所有模拟后再选择最佳动作
+- online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果
+
+
+- 用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值
 
 # Policy Iteration
 
