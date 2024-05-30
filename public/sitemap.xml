@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/aquamega/algorithm/</loc>
+    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/aquamega/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/tags/comp90054/</loc>
+    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/tags/</loc>
+    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/algorithm/uniform/</loc>
+    <lastmod>2024-05-29T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/categories/</loc>
     <lastmod>2024-05-28T14:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/comp90042/</loc>
+    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/nlp/nn/</loc>
     <lastmod>2024-05-28T14:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/nlp/</loc>
@@ -23,9 +38,6 @@
     <loc>http://localhost:1313/aquamega/nlp/pos/</loc>
     <lastmod>2024-05-28T14:56:05+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/tags/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/aquamega/nlp/n-gram/</loc>
     <lastmod>2024-05-27T14:56:05+10:00</lastmod>
   </url><url>
@@ -38,13 +50,7 @@
     <loc>http://localhost:1313/aquamega/algorithm/astar/</loc>
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/algorithm/</loc>
-    <lastmod>2024-05-02T11:13:45+10:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/aquamega/algorithm/bfs/</loc>
-    <lastmod>2024-05-02T11:13:45+10:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/tags/comp90054/</loc>
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/comp90077/</loc>
@@ -53,13 +59,7 @@
     <loc>http://localhost:1313/aquamega/datatype/</loc>
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/algorithm/dfs/</loc>
-    <lastmod>2024-05-02T11:13:45+10:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/aquamega/datatype/array/</loc>
-    <lastmod>2024-05-02T11:13:45+10:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/algorithm/hill_climbing/</loc>
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/algorithm/mdps/</loc>

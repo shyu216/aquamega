@@ -68,10 +68,14 @@ def value_iteration(states, actions, P, r, gamma, theta):
 
 ## Bellman Optimality Equation
 
-利用了Bellman最优方程：
 $$
 V^*(s) = \max_{a \in A(s)} \sum_{s'} P_a(s'|s) \left[ R_a(s'|s) + \gamma V^*(s') \right]
 $$
+
+
+- 所有可能的下一个状态的概率
+- 动作的奖励
+- 下一个状态的价值 x 折扣
 
 ## Q-Value
 
@@ -90,6 +94,32 @@ $$
 ```
 
 
+# Multi-Armed Bandit
+
+平行地尝试多个动作，平衡exploitation和exploration。
+
+- minimising regret，没有选择最佳动作的损失
+
+    **输入**: 多臂老虎机问题 $M = \{X_{i,k}, A, T\}$ \
+    **输出**: Q函数 $Q$ \
+    初始化 $Q$ 为任意值; 例如，对所有的臂 $a$，$Q(a) \leftarrow 0$ \
+    初始化 $N$ 为任意值; 例如，对所有的臂 $a$，$N(a) \leftarrow 0$ \
+    $k \leftarrow 1$ \
+    **while** $k \leq T$ **do**\
+    $\quad$ $a \leftarrow$ 在第 $k$ 轮选择一个臂\
+    $\quad$ 在第 $k$ 轮执行臂 $a$ 并观察奖励 $X_{a,k}$\
+    $\quad$ $N(a) \leftarrow N(a) + 1$\
+    $\quad$ $Q(a) \leftarrow Q(a) + \frac{1}{N(a)} [X_{a,k} - Q(a)]$\
+    $\quad$ $k \leftarrow k + 1$\
+    **end while**
+
+- $\epsilon$-greedy，以 $1-\epsilon$ 的概率选择最佳动作，以 $\epsilon$ 的概率选择随机动作
+
+- $\epsilon$-greedy with decay，随着时间的推移，减少 $\epsilon$ 的值
+
+- UCB 
+
+    $\text{argmax}_{a}\left(Q(a)   +   \sqrt{\frac{2 \ln t}{N(a)}}\right)$
 
 # Q-Learning
 
@@ -123,3 +153,19 @@ $\quad\quad$ $Q(s, a) \leftarrow Q(s, a) + \alpha \cdot \delta$\
 $\quad\quad$ $s \leftarrow s'$, $a \leftarrow a'$\
 $\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
 **until** $Q$ converges
+
+
+# n-step reinforcement learning
+
+记账，在n-step后再一起更新Q值。
+
+# MCTS
+
+- Selection：选择一个节点，直到找到一个未扩展的节点
+- Expansion：扩展一个未扩展的节点
+- Simulation：模拟一个随机游戏，直到结束
+- Backpropagation：更新所有访问的节点的值
+
+# Policy Iteration
+
+魔改bellman方程，将所有动作可能性替换成当前策略下的动作。

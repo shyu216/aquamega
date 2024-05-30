@@ -27,7 +27,7 @@ Vocabs scope creep: 任务蔓延 schema: 数据库的结构 query: 查询 ACID: 
       <link>http://localhost:1313/aquamega/course/comp90042/</link>
       <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
-      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT </description>
+      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT Vocab vanish: 消失 distill: 提炼 lexical: 词汇的 semetic: 语义的 sentiment: 情感 polysemy: 一词多义 gloss: 词义, from dictionary synonymy: 同义词 antonymy: 反义词 hypernymy: 上义词, is-a meronymy: 下义词, is-part-of spectrum: 范围 conferencing: 会议 </description>
     </item>
     <item>
       <title>Comp90077</title>
@@ -54,15 +54,18 @@ residual graph: 残余图, a graph that represents the remaining capacity of eac
       <link>http://localhost:1313/aquamega/course/comp90054/</link>
       <pubDate>Fri, 26 Apr 2024 14:55:43 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/course/comp90054/</guid>
-      <description>AI Planning for Autonomy classical planning (blind/heuristic): https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf PDDL relaxation reinforcement learning: https://gibberblot.github.io/rl-notes/index.html Vocabs Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解
-non-deterministic: countless outcomes 安全/目标感知/可接受/一致性
+      <description>AI Planning for Autonomy classical planning (blind/heuristic): https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf PDDL relaxation reinforcement learning: https://gibberblot.github.io/rl-notes/index.html Vocabs acyclic 无环
+systematics 系统的 / local 局部
+heuristic 启发式
+monotonic 单调
+priority queue = min heap
+Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解
+non-deterministic: countless outcomes mixed strategy equilibria: 混合策略均衡
+nash equilibrium: 纳什均衡，每个玩家都在最佳响应下(pure strategy)，没有人会改变策略
+安全/目标感知/可接受/一致性 $h$ remaining cost to reach the goal, $*$ optimal
 假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, G)$，并且$h$是$\Pi$的一个启发式。如果启发式满足以下条件，那么它被称为：
 安全（Safe）：如果对于所有$h(s) = \infty$的状态$s \in S$，都有$h^*(s) = \infty$，则启发式被称为安全。
-目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。
-可接受（Admissible）：如果对于所有状态$s \in S$，都有$h(s) \leq h^*(s)$，则启发式被称为可接受。
-一致（Consistent）：如果对于所有$s \xrightarrow{a} s&#39;$的转移，都有$h(s) \leq h(s&#39;) + c(a)$，则启发式被称为一致。
-命题：假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, S_G)$，并且$h$是$\Pi$的一个启发式。
-如果$h$是一致的和目标感知的，则$h$是可接受的。 如果$h$是可接受的，则$h$是目标感知的。 如果$h$是可接受的，则$h$是安全的。 没有其他这种形式的蕴含关系成立。 STRIPS: 问题是一个四元组$P = \langle F,O,I,G \rangle$：</description>
+目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。</description>
     </item>
   </channel>
 </rss>

@@ -14,6 +14,18 @@
     <lastBuildDate>Tue, 28 May 2024 14:56:05 +1000</lastBuildDate>
     <atom:link href="http://localhost:1313/aquamega/tags/comp90042/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Neual Networks</title>
+      <link>http://localhost:1313/aquamega/nlp/nn/</link>
+      <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
+      <guid>http://localhost:1313/aquamega/nlp/nn/</guid>
+      <description>非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。 常见的非线性激活函数包括：
+ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。
+Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。
+Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。
+Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。
+Regularization 正则化 L1 Norm L2 Norm Dropout </description>
+    </item>
+    <item>
       <title>Part-of-Speech Tagging</title>
       <link>http://localhost:1313/aquamega/nlp/pos/</link>
       <pubDate>Tue, 28 May 2024 14:56:05 +1000</pubDate>
@@ -53,7 +65,7 @@ $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$</description>
       <link>http://localhost:1313/aquamega/course/comp90042/</link>
       <pubDate>Fri, 26 Apr 2024 14:56:05 +1000</pubDate>
       <guid>http://localhost:1313/aquamega/course/comp90042/</guid>
-      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT </description>
+      <description>Natural Language Processing preprocessing byte pair encoding classification n-gram part-of-speech tagging hidden markov model recurrent neural network LSTM transformer BERT Vocab vanish: 消失 distill: 提炼 lexical: 词汇的 semetic: 语义的 sentiment: 情感 polysemy: 一词多义 gloss: 词义, from dictionary synonymy: 同义词 antonymy: 反义词 hypernymy: 上义词, is-a meronymy: 下义词, is-part-of spectrum: 范围 conferencing: 会议 </description>
     </item>
   </channel>
 </rss>
