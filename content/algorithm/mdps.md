@@ -2,7 +2,7 @@
 date: "2024-05-02T11:13:45+10:00"
 draft: false
 title: "MDPs"
-tags: ["comp90054"]
+tags: ["comp90054", "algo"]
 params:
   math: true
 ---
@@ -141,6 +141,9 @@ $\quad\quad$ $s \leftarrow s'$\
 $\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
 **until** $Q$ converges
 
+
+- $max_{a'} Q(s', a')$ 也可以写成 $V(s')$，即下一个状态的价值
+
 # SARSA
 **Input**: MDP $M = \langle S, s_0, A, P_a(s' | s), r(s, a, s') \rangle$ \
 **Output**: Q-function $Q$ \
@@ -172,11 +175,44 @@ $\quad$ **until** $s$ is the last state of episode $e$ (a terminal state)\
 - Simulation：模拟一个随机游戏，直到结束
 - Backpropagation：更新所有访问的节点的值
 
-- offline：完成所有模拟后再选择最佳动作
-- online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果
+offline：完成所有模拟后再选择最佳动作
+
+online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果，MCTS是online的。
 
 
-- 用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值
+用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值
+
+# UCT
+
+用UCB来select。
+
+$\text{argmax}_{a \in A(s)} Q(s,a) + 2 C_p \sqrt{\frac{2 \ln N(s)}{N(s,a)}}$ \
+where $C_p$ 自己选，看是更偏向exploration还是exploitation
+
+
+# Linear Q-functionn Approximation
+
+\# features = \# states * \# actions
+
+$Q(s,a) = f^T w = \sum_{i=1}^{n} f_i(s,a) w_i$
+
+## Update 
+$w \leftarrow w + \alpha \delta f(s,a)$ \
+where \
+$\delta = r + \gamma \max_{a'} Q(s',a') - Q(s,a)$ if Q-learning \
+$\delta = r + \gamma Q(s',a') - Q(s,a)$ if SARSA
+
+
+# Shaped Reward
+
+$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s')}_{\text{additional reward}} + \gamma \max_{a'} Q(s',a') - Q(s,a)]$
+
+## Potential-based Reward Shaping
+
+$F(s,s') = \gamma \Phi(s') - \Phi(s)$
+
+For example, in Gridworld, \
+$\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$
 
 # Policy Iteration
 

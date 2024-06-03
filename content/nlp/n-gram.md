@@ -1,9 +1,8 @@
 ---
-date: "2024-05-27T14:56:05+10:00"
+date: "2024-05-27T01:56:05+10:00"
 draft: false
 title: "N-gram Language Model"
 tags: ["comp90042", "nlp"]
-categories: ["nlp"]
 params:
   math: true
 ---
@@ -38,12 +37,20 @@ Handle unseen words.
 
     $P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$
 
-- Lidstone smoothing (Generalized Add-k)
+- Lidstone smoothing 
+  - Generalized Add-k, 所有非负实数
 
-- Absolute discounting (Borrow a bit of probability mass from seen words to unseen words)
+- Absolute discounting 
+  - Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词
 
-- Backoff (Use lower-order n-gram)
+- Katz Backoff 
+  - Use lower-order n-gram
+  - Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在
 
-- Knser-Ney (Versatility of lower-order n-gram), co-occur with many words
+- Knser-Ney 
+  - Versatility of lower-order n-gram, co-occur with many words
+  - 让更通用的低阶n-gram有更高的概率
 
-- Interpolation (Combine lower-order n-gram)
+- Interpolation 
+  - Combine lower-order n-gram
+  - 给不同阶的n-gram加权，相加

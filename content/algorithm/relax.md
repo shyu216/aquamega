@@ -2,7 +2,7 @@
 date: "2024-05-29T11:13:45+10:00"
 draft: false
 title: "Greedy Relaxed Planning"
-tags: ["comp90054"]
+tags: ["comp90054", "algo"]
 params:
   math: true
 ---
@@ -59,11 +59,29 @@ Optimal的都NP-hard。
 # Additive and Max Heuristics
 
 - Additive: 相加子目标的启发式，明显不是admissible。
+
+$h^{add}(s, g) = 
+\begin{cases} 
+0 & \text{if } g \subseteq s \\
+\min_{a \in A, g \in add_a} (c(a) + h^{add}(s, pre_a)) & \text{if } |g| = 1 \\
+\sum_{g' \in g} h^{add}(s, \{g'\}) & \text{if } |g| > 1 
+\end{cases}$
+
 - Max: 选择子目标中最大的启发式。最难解决的子节点。
+
+$h^{max}(s, g) =
+\begin{cases}
+0 & \text{if } g \subseteq s \\
+\max_{a \in A, g \in add_a} (c(a) + h^{max}(s, pre_a)) & \text{if } |g| = 1 \\
+\max_{g' \in g} h^{max}(s, \{g'\}) & \text{if } |g| > 1
+\end{cases}$
 
 都goal-aware，因为h+ ∞时，h也是∞。
 
 # Best Supporter Heuristic
+
+$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$\
+$bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$
 
 - 把$h_{add}$和$h_{max}$结合起来，选择最好的支持者。
 

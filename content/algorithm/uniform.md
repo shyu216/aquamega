@@ -2,7 +2,7 @@
 date: "2024-05-29T11:13:45+10:00"
 draft: false
 title: "UCB and Greedy BFS"
-tags: ["comp90054"]
+tags: ["comp90054", "algo"]
 params:
   math: true
 ---

@@ -1,9 +1,8 @@
 ---
-date: "2024-05-27T14:56:05+10:00"
+date: "2024-05-27T02:56:05+10:00"
 draft: false
 title: "Text Classification"
 tags: ["comp90042", "nlp"]
-categories: ["nlp"]
 params:
   math: true
 ---
@@ -64,7 +63,7 @@ $$P(c|d) = \frac{P(d|c)P(c)}{P(d)}$$
 Pros:
 - Fast, simple
 - Robust, low-variance
-- Optimal if idenpendence holds
+- Optimal if independence holds
 
 Cons:
 - Rarely holds

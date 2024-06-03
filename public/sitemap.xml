@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/aquamega/tags/algo/</loc>
+    <lastmod>2024-05-30T11:13:45+10:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/aquamega/algorithm/</loc>
     <lastmod>2024-05-30T11:13:45+10:00</lastmod>
   </url><url>
@@ -23,35 +26,35 @@
     <loc>http://localhost:1313/aquamega/algorithm/uniform/</loc>
     <lastmod>2024-05-29T11:13:45+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/categories/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/aquamega/tags/comp90042/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/nlp/nn/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-28T03:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/nlp/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/categories/nlp/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-28T03:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/nlp/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-28T03:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/nlp/pos/</loc>
-    <lastmod>2024-05-28T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-28T03:56:05+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/nlp/n-gram/</loc>
-    <lastmod>2024-05-27T14:56:05+10:00</lastmod>
+    <loc>http://localhost:1313/aquamega/nlp/semantics/</loc>
+    <lastmod>2024-05-28T00:56:05+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/nlp/preprocessing/</loc>
-    <lastmod>2024-05-27T14:56:05+10:00</lastmod>
+    <loc>http://localhost:1313/aquamega/nlp/nn/</loc>
+    <lastmod>2024-05-28T00:56:05+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/nlp/hmm/</loc>
+    <lastmod>2024-05-27T03:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/nlp/classification/</loc>
-    <lastmod>2024-05-27T14:56:05+10:00</lastmod>
+    <lastmod>2024-05-27T02:56:05+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/nlp/n-gram/</loc>
+    <lastmod>2024-05-27T01:56:05+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/nlp/preprocessing/</loc>
+    <lastmod>2024-05-27T00:56:05+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/algorithm/astar/</loc>
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
@@ -75,6 +78,9 @@
     <lastmod>2024-05-02T11:13:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/24s1/</loc>
+    <lastmod>2024-04-26T14:56:11+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/categories/</loc>
     <lastmod>2024-04-26T14:56:11+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/categories/course/</loc>
@@ -112,5 +118,9 @@
   </url><url>
     <loc>http://localhost:1313/aquamega/posts/welcome/</loc>
     <lastmod>2024-04-26T14:22:49+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/archives/</loc>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/search/</loc>
   </url>
 </urlset>

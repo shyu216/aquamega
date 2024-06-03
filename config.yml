@@ -58,26 +58,26 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Dale的水硕记录
-    subtitle: "今人不见古时月，今月曾经照古人"
+    subtitle: "年纪大了，容易健忘"
     imageUrl: "https://github.com/shyu216.png"
     imageWidth: 120
     imageHeight: 120
     imageTitle: shyu216
     buttons:
-      - name: Course
-        url: course
-      - name: Algorithm
-        url: algorithm
-      - name: DataType
-        url: datatype
-      - name: NLP
-        url: nlp
+      # - name: Course
+      #   url: course
+      # - name: Algorithm
+      #   url: algorithm
+      # - name: DataType
+      #   url: datatype
+      # - name: NLP
+      #   url: nlp
         
 
-  # home-info mode
-  homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+  # # home-info mode
+  # homeInfoParams:
+  #   Title: "Hi there \U0001F44B"
+  #   Content: Welcome to my blog
 
   socialIcons:
     - name: bilibili
@@ -159,3 +159,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search

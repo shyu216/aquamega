@@ -2,7 +2,7 @@
 date: "2024-05-02T11:13:45+10:00"
 draft: false
 title: "BFS and DFS"
-tags: ["comp90054"]
+tags: ["comp90054", "algo"]
 params:
   math: true
 ---

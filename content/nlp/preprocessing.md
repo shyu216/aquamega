@@ -1,9 +1,8 @@
 ---
-date: "2024-05-27T14:56:05+10:00"
+date: "2024-05-27T00:56:05+10:00"
 draft: false
 title: "Preprocessing"
 tags: ["comp90042", "nlp"]
-categories: ["nlp"]
 params:
   math: true
 ---

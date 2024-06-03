@@ -25,7 +25,11 @@ strongly dominate: $&lt;$
 a weakly(strictly) dominant strategy: always better than any other strategy
 nash equilibrium: 每个agent都选了最优策略，其他agent不会改变策略
 indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样
-Utility Function U_i(a): what can agent i get from action a</description>
+Utility Function U_i(a): what can agent i get from action a
+Normal Form Game 一轮，不知道对手的策略，只知道对手的utility function
+Extensive Form Game 广义形式博弈 轮流决策，所以知道对手的策略
+Subgame Perfect Equilibrium 子博弈完美均衡 当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。
+Backward Induction 反向归纳 输入：广义形式博弈 G = (N, Agt, S, s_0, A, T, r) 输出：每个状态 s ∈ S 的子博弈均衡 函数 BackwardInduction(s ∈ S): 如果 A(s) = ∅，则返回 r(s) best_child ← (-∞, .</description>
     </item>
     <item>
       <title>Greedy Relaxed Planning</title>
