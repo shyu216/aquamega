@@ -50,7 +50,7 @@ Handle unseen words.
 - Knser-Ney 
   - Versatility of lower-order n-gram, co-occur with many words
   - 让更通用的低阶n-gram有更高的概率
-
+  - contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) > 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$
 - Interpolation 
   - Combine lower-order n-gram
   - 给不同阶的n-gram加权，相加
