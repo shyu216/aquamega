@@ -1,87 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Tags on Aqua Mega</title>
-    <link>http://localhost:1313/aquamega/tags/</link>
-    <description>Recent content in Tags on Aqua Mega</description>
-    <image>
-      <title>Aqua Mega</title>
-      <url>https://github.com/shyu216.png</url>
-      <link>https://github.com/shyu216.png</link>
-    </image>
-    <generator>Hugo -- 0.125.4</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 30 May 2024 11:13:45 +1000</lastBuildDate>
-    <atom:link href="http://localhost:1313/aquamega/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Algo</title>
-      <link>http://localhost:1313/aquamega/tags/algo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/algo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Comp90054</title>
-      <link>http://localhost:1313/aquamega/tags/comp90054/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/comp90054/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Comp90042</title>
-      <link>http://localhost:1313/aquamega/tags/comp90042/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/comp90042/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nlp</title>
-      <link>http://localhost:1313/aquamega/tags/nlp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/nlp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Comp90077</title>
-      <link>http://localhost:1313/aquamega/tags/comp90077/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/comp90077/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>24s1</title>
-      <link>http://localhost:1313/aquamega/tags/24s1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/24s1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Geom90008</title>
-      <link>http://localhost:1313/aquamega/tags/geom90008/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/geom90008/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Spatial-Data-Management</title>
-      <link>http://localhost:1313/aquamega/tags/spatial-data-management/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/spatial-data-management/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Advanced-Algorithms-and-Data-Structures</title>
-      <link>http://localhost:1313/aquamega/tags/advanced-algorithms-and-data-structures/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/advanced-algorithms-and-data-structures/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hello-World</title>
-      <link>http://localhost:1313/aquamega/tags/hello-world/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aquamega/tags/hello-world/</guid>
-      <description></description>
-    </item>
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Dale的水硕日记</title>
+        <link>http://localhost:1313/aquamega/tags/</link>
+        <description>Recent content in Tags on Dale的水硕日记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 09 Jun 2024 00:00:00 +1000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>24s1</title>
+        <link>http://localhost:1313/aquamega/tags/24s1/</link>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/24s1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>http://localhost:1313/aquamega/tags/ai/</link>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Algo</title>
+        <link>http://localhost:1313/aquamega/tags/algo/</link>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/algo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>DM</title>
+        <link>http://localhost:1313/aquamega/tags/dm/</link>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/dm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>DS</title>
+        <link>http://localhost:1313/aquamega/tags/ds/</link>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/ds/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>NLP</title>
+        <link>http://localhost:1313/aquamega/tags/nlp/</link>
+        <pubDate>Tue, 28 May 2024 03:56:05 +1000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/nlp/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>
