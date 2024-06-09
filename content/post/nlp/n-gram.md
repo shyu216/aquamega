@@ -9,7 +9,7 @@ params:
   math: true
 ---
 
-# Language Model
+## Language Model
 
 To explain language, based on probability, for generation.
 
@@ -17,7 +17,7 @@ To explain language, based on probability, for generation.
 - Optical character recognition(OCR)
 - Translation
 
-## N-gram
+### N-gram
 
 $$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$
 
@@ -27,7 +27,7 @@ $$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$
 
 Use special tags to denote the beginning and end of a sentence, i.e. `<s>`, `</s>`.
 
-## Smoothing
+### Smoothing
 
 Handle unseen words.
 

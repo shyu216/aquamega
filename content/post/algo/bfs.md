@@ -9,7 +9,7 @@ params:
   math: true
 ---
 
-# 广度优先搜索（BFS）
+## 广度优先搜索（BFS）
 
 队列，先进先出，后进后出。
 
@@ -35,7 +35,7 @@ def breadthFirstSearch(problem):
 ```
 
 
-# 深度优先搜索（DFS）
+## 深度优先搜索（DFS）
 
 栈，先进后出，后进先出。
 

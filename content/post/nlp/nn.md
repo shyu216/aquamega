@@ -26,7 +26,7 @@ Neural networks are typically trained using the Backpropagation algorithm and th
 
 Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.
 
-# 前馈神经网络
+## 前馈神经网络
 前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。
 
 1. 任务：
@@ -37,7 +37,7 @@ Neural networks can handle non-linear problems and are suitable for various comp
 2. 词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。
 3. 卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。
 
-# 循环神经网络
+## 循环神经网络
 循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。
 1. RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。
 2. LSTM：
@@ -47,7 +47,7 @@ Neural networks can handle non-linear problems and are suitable for various comp
    1. 文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。
    2. 词性标注：使用RNN来识别文本中每个词的词性。
 
-# 非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
+## 非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
 
 常见的非线性激活函数包括：
 
@@ -60,13 +60,13 @@ Neural networks can handle non-linear problems and are suitable for various comp
 - Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。
 
 
-# Regularization 正则化
+## Regularization 正则化
 
 - L1 Norm
 - L2 Norm
 - Dropout
 
-# LSTM
+## LSTM
 
 - Memory cell：记忆单元，用来存储信息
 - Hidden state：隐藏状态，用来传递信息

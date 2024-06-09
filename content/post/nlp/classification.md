@@ -18,35 +18,35 @@ params:
 - Paraphrase
 
 
-# Topic Classification
+## Topic Classification
 
 - Motivation: library science, information retrieval, etc.
 - Classes: topic categories
 - Features: bag-of-words, n-grams, etc.
 - Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags
 
-# Sentiment Analysis
+## Sentiment Analysis
 
 - Motivation: opinion mining, business analytics
 - Classes: positive, negative, neutral
 - Features: n-grams, polarity lexicons, etc.
 - Corpus: movie reviews, SEMEVAL twitter polarity dataset
 
-# Native Language Identification
+## Native Language Identification
 
 - Motivation: forensic linguistics, educational applications
 - Classes: native languages
 - Features: character n-grams, syntactic features (POS), phonological features
 - Corpus: TOEFL/IELTS essays
 
-# Natural Language Inference (textual entailment 文本蕴含)
+## Natural Language Inference (textual entailment 文本蕴含)
 
 - Motivation: language understanding
 - Classes: entailment, contradiction, neutral
 - Features: word overlap, length difference, etc.
 - Corpus: SNLI, MultiNLI
 
-# Build a Text Classifier
+## Build a Text Classifier
 
 1. Identify the task
 2. Collect and preprocess data
@@ -56,7 +56,7 @@ params:
 6. Train and tune the model
 7. Evaluate the model
 
-# Naive Bayes Classifier
+## Naive Bayes Classifier
 
 assume independence between features
 
@@ -72,7 +72,7 @@ Cons:
 - Low accuracy
 - Smoothing needed for unseen
 
-# Logistic Regression
+## Logistic Regression
 
 $$P(c|d) = \frac{1}{1 + e^{-\sum_{i=1}^n w_i x_i}}$$
 
@@ -84,7 +84,7 @@ Cons:
 - Scaling needed
 - Regularization needed for overfitting
 
-# Support Vector Machine
+## Support Vector Machine
 
 To find the hyperplane that maximizes the margin
 
@@ -99,7 +99,7 @@ Cons:
 - Imbalanced data
 - Interpretability
 
-# K-Nearest Neighbors
+## K-Nearest Neighbors
 
 Euclidean distance, cosine similarity
 
@@ -114,7 +114,7 @@ Cons:
 - Imbalanced classes
 - Slow
 
-# Decision Tree
+## Decision Tree
 
 Greedy maxmize information gain
 
@@ -129,7 +129,7 @@ Cons:
 - Redundant features
 - Not competitive for big data
 
-# Random Forest
+## Random Forest
 
 Pros:
 - Better than decision tree
@@ -138,7 +138,7 @@ Pros:
 Cons:
 - Same as decision tree
 
-# Neural Network
+## Neural Network
 
 Pros:
 - Powerful
@@ -148,7 +148,7 @@ Cons:
 - Training time
 - Overfitting
 
-# Evaluation
+## Evaluation
 
 - Accuracy
 

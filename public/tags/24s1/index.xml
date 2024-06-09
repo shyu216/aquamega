@@ -12,8 +12,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90042/</guid>
-        <description>&lt;h1 id=&#34;natural-language-processing&#34;&gt;Natural Language Processing
-&lt;/h1&gt;&lt;ol&gt;
+        <description>&lt;ol&gt;
 &lt;li&gt;Preprocessing
 &lt;ol&gt;
 &lt;li&gt;Sentence segmentation&lt;/li&gt;
@@ -353,8 +352,8 @@
 &lt;li&gt;maginalisation 边缘化&lt;/li&gt;
 &lt;li&gt;nuance 细微差别&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;information-bottleneck&#34;&gt;Information Bottleneck
-&lt;/h1&gt;&lt;p&gt;信息瓶颈问题是指在机器学习模型中，模型在尝试压缩输入数据的同时，还要尽可能保留与目标输出相关的信息。这是一个权衡问题，因为模型需要找到一个平衡点，既能有效地压缩数据，又能保留足够的信息来进行准确的预测。&lt;/p&gt;
+&lt;h2 id=&#34;information-bottleneck&#34;&gt;Information Bottleneck
+&lt;/h2&gt;&lt;p&gt;信息瓶颈问题是指在机器学习模型中，模型在尝试压缩输入数据的同时，还要尽可能保留与目标输出相关的信息。这是一个权衡问题，因为模型需要找到一个平衡点，既能有效地压缩数据，又能保留足够的信息来进行准确的预测。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -363,8 +362,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90054/</guid>
-        <description>&lt;h1 id=&#34;ai-planning-for-autonomy&#34;&gt;AI Planning for Autonomy
-&lt;/h1&gt;&lt;ul&gt;
+        <description>&lt;ul&gt;
 &lt;li&gt;classical planning (blind/heuristic): &lt;a class=&#34;link&#34; href=&#34;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PDDL&lt;/li&gt;
@@ -580,8 +578,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90077/</guid>
-        <description>&lt;h1 id=&#34;advanced-algorithms-and-data-structures&#34;&gt;Advanced Algorithms and Data Structures
-&lt;/h1&gt;&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
+        <description>&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Treap&lt;/p&gt;
@@ -655,8 +652,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/geom90008/</guid>
-        <description>&lt;h1 id=&#34;spatial-data-management&#34;&gt;Spatial Data Management
-&lt;/h1&gt;&lt;p&gt;Course notebook: &lt;a class=&#34;link&#34; href=&#34;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;p&gt;Course notebook: &lt;a class=&#34;link&#34; href=&#34;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;postgreSQL&lt;/li&gt;
@@ -689,10 +685,8 @@
 &lt;li&gt;sphere: 球体&lt;/li&gt;
 &lt;li&gt;spheroid: 椭球体&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ideas&#34;&gt;Ideas
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;因为板块漂移, 会导致地理坐标系的变化, 所以经纬度总是在更新&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;coordinate-system&#34;&gt;Coordinate system
+&lt;/h2&gt;&lt;p&gt;因为板块漂移, 会导致地理坐标系的变化, 所以经纬度总是在更新&lt;/p&gt;
 </description>
         </item>
         

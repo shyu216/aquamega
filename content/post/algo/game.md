@@ -20,24 +20,24 @@ params:
 - indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样
 
 
-# Utility Function
+## Utility Function
 
 U_i(a): what can agent i get from action a
 
 
-# Normal Form Game
+## Normal Form Game
 
 一轮，不知道对手的策略，只知道对手的utility function
 
-# Extensive Form Game 广义形式博弈
+## Extensive Form Game 广义形式博弈
 
 轮流决策，所以知道对手的策略
 
-# Subgame Perfect Equilibrium 子博弈完美均衡
+## Subgame Perfect Equilibrium 子博弈完美均衡
 
 当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。
 
-# Backward Induction 反向归纳
+## Backward Induction 反向归纳
 ```
 输入：广义形式博弈 G = (N, Agt, S, s_0, A, T, r)
 输出：每个状态 s ∈ S 的子博弈均衡
@@ -54,7 +54,7 @@ U_i(a): what can agent i get from action a
 返回 BackwardInduction(s_0)
 ```
 
-# Multi-agent Q-learning
+## Multi-agent Q-learning
 
 ```
 输入：随机博弈 G = (S, s_0, A^1, ..., A^n, r^1, ..., r^n, Agt, P, γ)

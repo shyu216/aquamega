@@ -9,7 +9,7 @@ params:
   math: true
 ---
 
-# Uniform Cost Search
+## Uniform Cost Search
 
 Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。
 
@@ -38,7 +38,7 @@ def uniformCostSearch(problem):
     return None
 ```
 
-# Greedy Best First Search
+## Greedy Best First Search
 
 BFS只看到了启发式，没有考虑路径成本。
 

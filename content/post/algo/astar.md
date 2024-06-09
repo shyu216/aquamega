@@ -10,7 +10,7 @@ params:
 ---
 
 
-# A*算法（带有重复检测和重新打开）
+## A*算法（带有重复检测和重新打开）
 
 ```
 设 open 为新的优先级队列，按照 g(state(σ)) + h(state(σ)) 升序排列
@@ -58,7 +58,7 @@ If h=0, A* is equivalent to Uniform Cost Search.
 
 If h admissible, A* is optimal. 因为我们的h比最优h小，在达到最优h之前，我们已经尝试过这个状态。
 
-# Weighted A*算法
+## Weighted A*算法
 
 给heuristic函数加权，以调整搜索的速度。
 
@@ -94,7 +94,7 @@ def weightedAStarSearch(problem, heuristic=nullHeuristic, weight=1):
 
 
 
-# 爬山算法
+## 爬山算法
 
 local最优。
 

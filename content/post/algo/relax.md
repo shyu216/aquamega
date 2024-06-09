@@ -27,7 +27,7 @@ params:
 
 
 
-# Delete Relaxation
+## Delete Relaxation
 
 忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。
 
@@ -58,7 +58,7 @@ Neither admissible nor consistent. 因为不保证optimal，只保证能找到�
 Optimal的都NP-hard。
 
 
-# Additive and Max Heuristics
+## Additive and Max Heuristics
 
 - Additive: 相加子目标的启发式，明显不是admissible。
 
@@ -80,7 +80,7 @@ $h^{max}(s, g) =
 
 都goal-aware，因为h+ ∞时，h也是∞。
 
-# Best Supporter Heuristic
+## Best Supporter Heuristic
 
 $bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$\
 $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$
@@ -89,7 +89,7 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$
 
 - argmin: 在一系列动作里，选最小的h。
 
-# Bellman-Ford for hmax and hadd
+## Bellman-Ford for hmax and hadd
 
 Bellman-Ford variant computing hadd for state s
 
@@ -117,7 +117,7 @@ def bellmanFordHadd(problem):
 
 
 
-# Iterated Width
+## Iterated Width
 
 Novelty：只考虑$w(s)$个状态变量atoms的变化情况。
 

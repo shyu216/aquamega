@@ -12,8 +12,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90054/</guid>
-        <description>&lt;h1 id=&#34;ai-planning-for-autonomy&#34;&gt;AI Planning for Autonomy
-&lt;/h1&gt;&lt;ul&gt;
+        <description>&lt;ul&gt;
 &lt;li&gt;classical planning (blind/heuristic): &lt;a class=&#34;link&#34; href=&#34;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PDDL&lt;/li&gt;
@@ -229,8 +228,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90077/</guid>
-        <description>&lt;h1 id=&#34;advanced-algorithms-and-data-structures&#34;&gt;Advanced Algorithms and Data Structures
-&lt;/h1&gt;&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
+        <description>&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Treap&lt;/p&gt;
@@ -327,16 +325,16 @@
 &lt;p&gt;indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;utility-function&#34;&gt;Utility Function
-&lt;/h1&gt;&lt;p&gt;U_i(a): what can agent i get from action a&lt;/p&gt;
-&lt;h1 id=&#34;normal-form-game&#34;&gt;Normal Form Game
-&lt;/h1&gt;&lt;p&gt;一轮，不知道对手的策略，只知道对手的utility function&lt;/p&gt;
-&lt;h1 id=&#34;extensive-form-game-广义形式博弈&#34;&gt;Extensive Form Game 广义形式博弈
-&lt;/h1&gt;&lt;p&gt;轮流决策，所以知道对手的策略&lt;/p&gt;
-&lt;h1 id=&#34;subgame-perfect-equilibrium-子博弈完美均衡&#34;&gt;Subgame Perfect Equilibrium 子博弈完美均衡
-&lt;/h1&gt;&lt;p&gt;当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。&lt;/p&gt;
-&lt;h1 id=&#34;backward-induction-反向归纳&#34;&gt;Backward Induction 反向归纳
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;utility-function&#34;&gt;Utility Function
+&lt;/h2&gt;&lt;p&gt;U_i(a): what can agent i get from action a&lt;/p&gt;
+&lt;h2 id=&#34;normal-form-game&#34;&gt;Normal Form Game
+&lt;/h2&gt;&lt;p&gt;一轮，不知道对手的策略，只知道对手的utility function&lt;/p&gt;
+&lt;h2 id=&#34;extensive-form-game-广义形式博弈&#34;&gt;Extensive Form Game 广义形式博弈
+&lt;/h2&gt;&lt;p&gt;轮流决策，所以知道对手的策略&lt;/p&gt;
+&lt;h2 id=&#34;subgame-perfect-equilibrium-子博弈完美均衡&#34;&gt;Subgame Perfect Equilibrium 子博弈完美均衡
+&lt;/h2&gt;&lt;p&gt;当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。&lt;/p&gt;
+&lt;h2 id=&#34;backward-induction-反向归纳&#34;&gt;Backward Induction 反向归纳
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -368,8 +366,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;返回 BackwardInduction(s_0)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;multi-agent-q-learning&#34;&gt;Multi-agent Q-learning
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h2 id=&#34;multi-agent-q-learning&#34;&gt;Multi-agent Q-learning
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -444,8 +442,8 @@
 &lt;p&gt;h max和h add的table是不一样的，一个是最大值，一个是累加值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;delete-relaxation&#34;&gt;Delete Relaxation
-&lt;/h1&gt;&lt;p&gt;忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。&lt;/p&gt;
+&lt;h2 id=&#34;delete-relaxation&#34;&gt;Delete Relaxation
+&lt;/h2&gt;&lt;p&gt;忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;State Dominance: 如果一个状态支配另一个状态，那么我们可以忽略支配状态。被包含了。&lt;/li&gt;
 &lt;/ul&gt;
@@ -489,8 +487,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Neither admissible nor consistent. 因为不保证optimal，只保证能找到解决方案。&lt;/p&gt;
 &lt;p&gt;Optimal的都NP-hard。&lt;/p&gt;
-&lt;h1 id=&#34;additive-and-max-heuristics&#34;&gt;Additive and Max Heuristics
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;additive-and-max-heuristics&#34;&gt;Additive and Max Heuristics
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Additive: 相加子目标的启发式，明显不是admissible。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;$h^{add}(s, g) =
@@ -509,8 +507,8 @@
 \max_{g&amp;rsquo; \in g} h^{max}(s, {g&amp;rsquo;}) &amp;amp; \text{if } |g| &amp;gt; 1
 \end{cases}$&lt;/p&gt;
 &lt;p&gt;都goal-aware，因为h+ ∞时，h也是∞。&lt;/p&gt;
-&lt;h1 id=&#34;best-supporter-heuristic&#34;&gt;Best Supporter Heuristic
-&lt;/h1&gt;&lt;p&gt;$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$&lt;br&gt;
+&lt;h2 id=&#34;best-supporter-heuristic&#34;&gt;Best Supporter Heuristic
+&lt;/h2&gt;&lt;p&gt;$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$&lt;br&gt;
 $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -520,8 +518,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;argmin: 在一系列动作里，选最小的h。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;bellman-ford-for-hmax-and-hadd&#34;&gt;Bellman-Ford for hmax and hadd
-&lt;/h1&gt;&lt;p&gt;Bellman-Ford variant computing hadd for state s&lt;/p&gt;
+&lt;h2 id=&#34;bellman-ford-for-hmax-and-hadd&#34;&gt;Bellman-Ford for hmax and hadd
+&lt;/h2&gt;&lt;p&gt;Bellman-Ford variant computing hadd for state s&lt;/p&gt;
 &lt;p&gt;反复更新表Tadd，直到表中的值不再改变。在每次迭代中，对于每个目标状态g，都会计算一个新的值fi(g)，这个值是当前状态s到状态g的最短路径的估计值。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -563,8 +561,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Tadd&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;iterated-width&#34;&gt;Iterated Width
-&lt;/h1&gt;&lt;p&gt;Novelty：只考虑$w(s)$个状态变量atoms的变化情况。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;iterated-width&#34;&gt;Iterated Width
+&lt;/h2&gt;&lt;p&gt;Novelty：只考虑$w(s)$个状态变量atoms的变化情况。&lt;/p&gt;
 &lt;p&gt;搜索直到目标状态的状态变量的数量。&lt;/p&gt;
 &lt;p&gt;一个state的novelty：第一次出现的atom组合中的atom数量。the size of the smallest subset of atoms in s，that is true for the first time in search。&lt;/p&gt;
 </description>
@@ -575,8 +573,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/ucb-and-greedy-bfs/</guid>
-        <description>&lt;h1 id=&#34;uniform-cost-search&#34;&gt;Uniform Cost Search
-&lt;/h1&gt;&lt;p&gt;Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;uniform-cost-search&#34;&gt;Uniform Cost Search
+&lt;/h2&gt;&lt;p&gt;Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。&lt;/p&gt;
 &lt;p&gt;Breath First Search属于Uniform Cost Search的特例，即每个节点的路径成本都是1。&lt;/p&gt;
 &lt;p&gt;UCS只看到了路径成本，没有考虑启发式。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -617,8 +615,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;greedy-best-first-search&#34;&gt;Greedy Best First Search
-&lt;/h1&gt;&lt;p&gt;BFS只看到了启发式，没有考虑路径成本。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;greedy-best-first-search&#34;&gt;Greedy Best First Search
+&lt;/h2&gt;&lt;p&gt;BFS只看到了启发式，没有考虑路径成本。&lt;/p&gt;
 &lt;p&gt;If h=0，BFS是什么根据它的Priority Queue的实现。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -666,8 +664,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/a-and-hill-climbing/</guid>
-        <description>&lt;h1 id=&#34;a算法带有重复检测和重新打开&#34;&gt;A*算法（带有重复检测和重新打开）
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;h2 id=&#34;a算法带有重复检测和重新打开&#34;&gt;A*算法（带有重复检测和重新打开）
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -753,8 +751,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;If h=0, A* is equivalent to Uniform Cost Search.&lt;/p&gt;
 &lt;p&gt;If h admissible, A* is optimal. 因为我们的h比最优h小，在达到最优h之前，我们已经尝试过这个状态。&lt;/p&gt;
-&lt;h1 id=&#34;weighted-a算法&#34;&gt;Weighted A*算法
-&lt;/h1&gt;&lt;p&gt;给heuristic函数加权，以调整搜索的速度。&lt;/p&gt;
+&lt;h2 id=&#34;weighted-a算法&#34;&gt;Weighted A*算法
+&lt;/h2&gt;&lt;p&gt;给heuristic函数加权，以调整搜索的速度。&lt;/p&gt;
 &lt;p&gt;w越大，搜索越快，但可能会错过最优解，w越小，搜索越慢，但更有可能找到最优解。&lt;/p&gt;
 &lt;p&gt;w=0时，等价于Uniform Cost Search。&lt;/p&gt;
 &lt;p&gt;w to ∞时，等价于Greedy Best First Search。&lt;/p&gt;
@@ -806,8 +804,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Goal not found&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;爬山算法&#34;&gt;爬山算法
-&lt;/h1&gt;&lt;p&gt;local最优。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;爬山算法&#34;&gt;爬山算法
+&lt;/h2&gt;&lt;p&gt;local最优。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -834,8 +832,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/bfs-and-dfs/</guid>
-        <description>&lt;h1 id=&#34;广度优先搜索bfs&#34;&gt;广度优先搜索（BFS）
-&lt;/h1&gt;&lt;p&gt;队列，先进先出，后进后出。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;广度优先搜索bfs&#34;&gt;广度优先搜索（BFS）
+&lt;/h2&gt;&lt;p&gt;队列，先进先出，后进后出。&lt;/p&gt;
 &lt;p&gt;Optimal when costs are uniform&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -875,8 +873,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;深度优先搜索dfs&#34;&gt;深度优先搜索（DFS）
-&lt;/h1&gt;&lt;p&gt;栈，先进后出，后进先出。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;深度优先搜索dfs&#34;&gt;深度优先搜索（DFS）
+&lt;/h2&gt;&lt;p&gt;栈，先进后出，后进先出。&lt;/p&gt;
 &lt;p&gt;搜索空间可能无限大（无限深）。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -924,8 +922,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/mdps/</guid>
-        <description>&lt;h1 id=&#34;markov-decision-processesmdps马尔可夫决策过程&#34;&gt;Markov Decision Processes（MDPs）马尔可夫决策过程
-&lt;/h1&gt;&lt;p&gt;MDP是完全可观察的，概率状态模型：&lt;/p&gt;
+        <description>&lt;h2 id=&#34;markov-decision-processesmdps马尔可夫决策过程&#34;&gt;Markov Decision Processes（MDPs）马尔可夫决策过程
+&lt;/h2&gt;&lt;p&gt;MDP是完全可观察的，概率状态模型：&lt;/p&gt;
 &lt;p&gt;状态空间 $S$ &lt;br&gt;
 初始状态 $s_0 \in S$ &lt;br&gt;
 一组目标状态 $G \subseteq S$ &lt;br&gt;
@@ -935,8 +933,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;其中：&lt;br&gt;
 解决方案是将状态映射到动作的函数（策略）&lt;br&gt;
 最优解最小化预期的前往目标的成本&lt;/p&gt;
-&lt;h1 id=&#34;partially-observable-mdps-pomdps-部分可观察的马尔可夫决策过程&#34;&gt;Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
-&lt;/h1&gt;&lt;p&gt;POMDP是部分可观察的，概率状态模型：&lt;/p&gt;
+&lt;h2 id=&#34;partially-observable-mdps-pomdps-部分可观察的马尔可夫决策过程&#34;&gt;Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
+&lt;/h2&gt;&lt;p&gt;POMDP是部分可观察的，概率状态模型：&lt;/p&gt;
 &lt;p&gt;状态 $s \in S$ &lt;br&gt;
 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ &lt;br&gt;
 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;rsquo;|s)$ &lt;br&gt;
@@ -949,8 +947,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 最优策略最小化从 $b_0$ 到 $G$ 的预期成本&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;see also&lt;/em&gt;: &lt;a class=&#34;link&#34; href=&#34;https://gibberblot.github.io/rl-notes/single-agent/MDPs.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://gibberblot.github.io/rl-notes/single-agent/MDPs.html&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;value-iteration&#34;&gt;Value Iteration
-&lt;/h1&gt;&lt;p&gt;一种动态规划算法，用于计算MDP的最优策略。&lt;/p&gt;
+&lt;h2 id=&#34;value-iteration&#34;&gt;Value Iteration
+&lt;/h2&gt;&lt;p&gt;一种动态规划算法，用于计算MDP的最优策略。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -981,8 +979,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;V&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;bellman-optimality-equation&#34;&gt;Bellman Optimality Equation
-&lt;/h2&gt;&lt;p&gt;$
+&lt;/div&gt;&lt;h3 id=&#34;bellman-optimality-equation&#34;&gt;Bellman Optimality Equation
+&lt;/h3&gt;&lt;p&gt;$
 V^*(s) = \max_{a \in A(s)} \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^{*}{(s&amp;rsquo;)} \right]
 $&lt;/p&gt;
 &lt;ul&gt;
@@ -990,8 +988,8 @@ $&lt;/p&gt;
 &lt;li&gt;动作的奖励&lt;/li&gt;
 &lt;li&gt;下一个状态的价值 x 折扣，前一个iteration存储的价值&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;q-value&#34;&gt;Q-Value
-&lt;/h2&gt;&lt;p&gt;对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：&lt;br&gt;
+&lt;h3 id=&#34;q-value&#34;&gt;Q-Value
+&lt;/h3&gt;&lt;p&gt;对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：&lt;br&gt;
 $
 Q(s,a) = \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^*(s&amp;rsquo;) \right]
 $&lt;/p&gt;
@@ -1010,10 +1008,10 @@ $&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0.7, 0.49, 0.343, 0.2401...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;policy&#34;&gt;Policy
-&lt;/h2&gt;&lt;p&gt;$\pi(s) = arg max Q(s,a)$&lt;/p&gt;
-&lt;h1 id=&#34;multi-armed-bandit&#34;&gt;Multi-Armed Bandit
-&lt;/h1&gt;&lt;p&gt;平行地尝试多个动作，平衡exploitation和exploration。&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;policy&#34;&gt;Policy
+&lt;/h3&gt;&lt;p&gt;$\pi(s) = arg max Q(s,a)$&lt;/p&gt;
+&lt;h2 id=&#34;multi-armed-bandit&#34;&gt;Multi-Armed Bandit
+&lt;/h2&gt;&lt;p&gt;平行地尝试多个动作，平衡exploitation和exploration。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;minimising regret，没有选择最佳动作的损失&lt;/p&gt;
@@ -1041,8 +1039,8 @@ $\quad$ $k \leftarrow k + 1$&lt;br&gt;
 &lt;p&gt;$\text{argmax}_{a}\left(Q(a)   +   \sqrt{\frac{2 \ln t}{N(a)}}\right)$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;q-learning&#34;&gt;Q-Learning
-&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
+&lt;h2 id=&#34;q-learning&#34;&gt;Q-Learning
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
 &lt;strong&gt;Output&lt;/strong&gt;: Q-function $Q$ &lt;br&gt;
 Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br&gt;
 &lt;strong&gt;repeat&lt;/strong&gt;&lt;br&gt;
@@ -1059,8 +1057,8 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;ul&gt;
 &lt;li&gt;$max_{a&amp;rsquo;} Q(s&amp;rsquo;, a&amp;rsquo;)$ 也可以写成 $V(s&amp;rsquo;)$，即下一个状态的价值&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;sarsa&#34;&gt;SARSA
-&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
+&lt;h2 id=&#34;sarsa&#34;&gt;SARSA
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
 &lt;strong&gt;Output&lt;/strong&gt;: Q-function $Q$ &lt;br&gt;
 Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br&gt;
 &lt;strong&gt;repeat&lt;/strong&gt;&lt;br&gt;
@@ -1078,10 +1076,10 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;li&gt;Q-Learning是off-policy，因为on当前策略下的Q值，对当前策略更乐观&lt;/li&gt;
 &lt;li&gt;SARSA是on-policy，所以off了当前策略下的Q值，更保守&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;n-step-reinforcement-learning&#34;&gt;n-step reinforcement learning
-&lt;/h1&gt;&lt;p&gt;记账，在n-step后再一起更新Q值。&lt;/p&gt;
-&lt;h1 id=&#34;mcts&#34;&gt;MCTS
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;n-step-reinforcement-learning&#34;&gt;n-step reinforcement learning
+&lt;/h2&gt;&lt;p&gt;记账，在n-step后再一起更新Q值。&lt;/p&gt;
+&lt;h2 id=&#34;mcts&#34;&gt;MCTS
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Selection：选择一个节点，直到找到一个未扩展的节点&lt;/li&gt;
 &lt;li&gt;Expansion：扩展一个未扩展的节点&lt;/li&gt;
 &lt;li&gt;Simulation：模拟一个随机游戏，直到结束&lt;/li&gt;
@@ -1090,26 +1088,26 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;p&gt;offline：完成所有模拟后再选择最佳动作&lt;/p&gt;
 &lt;p&gt;online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果，MCTS是online的。&lt;/p&gt;
 &lt;p&gt;用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值&lt;/p&gt;
-&lt;h1 id=&#34;uct&#34;&gt;UCT
-&lt;/h1&gt;&lt;p&gt;用UCB来select。&lt;/p&gt;
+&lt;h2 id=&#34;uct&#34;&gt;UCT
+&lt;/h2&gt;&lt;p&gt;用UCB来select。&lt;/p&gt;
 &lt;p&gt;$\text{argmax}_{a \in A(s)} Q(s,a) + 2 C_p \sqrt{\frac{2 \ln N(s)}{N(s,a)}}$ &lt;br&gt;
 where $C_p$ 自己选，看是更偏向exploration还是exploitation&lt;/p&gt;
-&lt;h1 id=&#34;linear-q-functionn-approximation&#34;&gt;Linear Q-functionn Approximation
-&lt;/h1&gt;&lt;p&gt;# features = # states * # actions&lt;/p&gt;
+&lt;h2 id=&#34;linear-q-functionn-approximation&#34;&gt;Linear Q-functionn Approximation
+&lt;/h2&gt;&lt;p&gt;## features = ## states * ## actions&lt;/p&gt;
 &lt;p&gt;$Q(s,a) = f^T w = \sum_{i=1}^{n} f_i(s,a) w_i$&lt;/p&gt;
-&lt;h2 id=&#34;update&#34;&gt;Update
-&lt;/h2&gt;&lt;p&gt;$w \leftarrow w + \alpha \delta f(s,a)$ &lt;br&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update
+&lt;/h3&gt;&lt;p&gt;$w \leftarrow w + \alpha \delta f(s,a)$ &lt;br&gt;
 where &lt;br&gt;
 $\delta = r + \gamma \max_{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if Q-learning &lt;br&gt;
 $\delta = r + \gamma Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if SARSA&lt;/p&gt;
-&lt;h1 id=&#34;shaped-reward&#34;&gt;Shaped Reward
-&lt;/h1&gt;&lt;p&gt;$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s&amp;rsquo;)}&lt;em&gt;{\text{additional reward}} + \gamma \max&lt;/em&gt;{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)]$&lt;/p&gt;
-&lt;h2 id=&#34;potential-based-reward-shaping&#34;&gt;Potential-based Reward Shaping
-&lt;/h2&gt;&lt;p&gt;$F(s,s&amp;rsquo;) = \gamma \Phi(s&amp;rsquo;) - \Phi(s)$&lt;/p&gt;
+&lt;h2 id=&#34;shaped-reward&#34;&gt;Shaped Reward
+&lt;/h2&gt;&lt;p&gt;$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s&amp;rsquo;)}&lt;em&gt;{\text{additional reward}} + \gamma \max&lt;/em&gt;{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)]$&lt;/p&gt;
+&lt;h3 id=&#34;potential-based-reward-shaping&#34;&gt;Potential-based Reward Shaping
+&lt;/h3&gt;&lt;p&gt;$F(s,s&amp;rsquo;) = \gamma \Phi(s&amp;rsquo;) - \Phi(s)$&lt;/p&gt;
 &lt;p&gt;For example, in Gridworld, &lt;br&gt;
 $\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$&lt;/p&gt;
-&lt;h1 id=&#34;policy-iteration&#34;&gt;Policy Iteration
-&lt;/h1&gt;&lt;p&gt;魔改bellman方程，将所有动作可能性替换成当前策略下的动作。&lt;/p&gt;
+&lt;h2 id=&#34;policy-iteration&#34;&gt;Policy Iteration
+&lt;/h2&gt;&lt;p&gt;魔改bellman方程，将所有动作可能性替换成当前策略下的动作。&lt;/p&gt;
 </description>
         </item>
         

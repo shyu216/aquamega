@@ -12,8 +12,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90042/</guid>
-        <description>&lt;h1 id=&#34;natural-language-processing&#34;&gt;Natural Language Processing
-&lt;/h1&gt;&lt;ol&gt;
+        <description>&lt;ol&gt;
 &lt;li&gt;Preprocessing
 &lt;ol&gt;
 &lt;li&gt;Sentence segmentation&lt;/li&gt;
@@ -353,8 +352,8 @@
 &lt;li&gt;maginalisation 边缘化&lt;/li&gt;
 &lt;li&gt;nuance 细微差别&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;information-bottleneck&#34;&gt;Information Bottleneck
-&lt;/h1&gt;&lt;p&gt;信息瓶颈问题是指在机器学习模型中，模型在尝试压缩输入数据的同时，还要尽可能保留与目标输出相关的信息。这是一个权衡问题，因为模型需要找到一个平衡点，既能有效地压缩数据，又能保留足够的信息来进行准确的预测。&lt;/p&gt;
+&lt;h2 id=&#34;information-bottleneck&#34;&gt;Information Bottleneck
+&lt;/h2&gt;&lt;p&gt;信息瓶颈问题是指在机器学习模型中，模型在尝试压缩输入数据的同时，还要尽可能保留与目标输出相关的信息。这是一个权衡问题，因为模型需要找到一个平衡点，既能有效地压缩数据，又能保留足够的信息来进行准确的预测。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -363,8 +362,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90054/</guid>
-        <description>&lt;h1 id=&#34;ai-planning-for-autonomy&#34;&gt;AI Planning for Autonomy
-&lt;/h1&gt;&lt;ul&gt;
+        <description>&lt;ul&gt;
 &lt;li&gt;classical planning (blind/heuristic): &lt;a class=&#34;link&#34; href=&#34;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PDDL&lt;/li&gt;
@@ -580,8 +578,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90077/</guid>
-        <description>&lt;h1 id=&#34;advanced-algorithms-and-data-structures&#34;&gt;Advanced Algorithms and Data Structures
-&lt;/h1&gt;&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
+        <description>&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Treap&lt;/p&gt;
@@ -655,8 +652,7 @@
         <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/geom90008/</guid>
-        <description>&lt;h1 id=&#34;spatial-data-management&#34;&gt;Spatial Data Management
-&lt;/h1&gt;&lt;p&gt;Course notebook: &lt;a class=&#34;link&#34; href=&#34;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;p&gt;Course notebook: &lt;a class=&#34;link&#34; href=&#34;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;postgreSQL&lt;/li&gt;
@@ -689,10 +685,8 @@
 &lt;li&gt;sphere: 球体&lt;/li&gt;
 &lt;li&gt;spheroid: 椭球体&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ideas&#34;&gt;Ideas
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;因为板块漂移, 会导致地理坐标系的变化, 所以经纬度总是在更新&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;coordinate-system&#34;&gt;Coordinate system
+&lt;/h2&gt;&lt;p&gt;因为板块漂移, 会导致地理坐标系的变化, 所以经纬度总是在更新&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -724,16 +718,16 @@
 &lt;p&gt;indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;utility-function&#34;&gt;Utility Function
-&lt;/h1&gt;&lt;p&gt;U_i(a): what can agent i get from action a&lt;/p&gt;
-&lt;h1 id=&#34;normal-form-game&#34;&gt;Normal Form Game
-&lt;/h1&gt;&lt;p&gt;一轮，不知道对手的策略，只知道对手的utility function&lt;/p&gt;
-&lt;h1 id=&#34;extensive-form-game-广义形式博弈&#34;&gt;Extensive Form Game 广义形式博弈
-&lt;/h1&gt;&lt;p&gt;轮流决策，所以知道对手的策略&lt;/p&gt;
-&lt;h1 id=&#34;subgame-perfect-equilibrium-子博弈完美均衡&#34;&gt;Subgame Perfect Equilibrium 子博弈完美均衡
-&lt;/h1&gt;&lt;p&gt;当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。&lt;/p&gt;
-&lt;h1 id=&#34;backward-induction-反向归纳&#34;&gt;Backward Induction 反向归纳
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;utility-function&#34;&gt;Utility Function
+&lt;/h2&gt;&lt;p&gt;U_i(a): what can agent i get from action a&lt;/p&gt;
+&lt;h2 id=&#34;normal-form-game&#34;&gt;Normal Form Game
+&lt;/h2&gt;&lt;p&gt;一轮，不知道对手的策略，只知道对手的utility function&lt;/p&gt;
+&lt;h2 id=&#34;extensive-form-game-广义形式博弈&#34;&gt;Extensive Form Game 广义形式博弈
+&lt;/h2&gt;&lt;p&gt;轮流决策，所以知道对手的策略&lt;/p&gt;
+&lt;h2 id=&#34;subgame-perfect-equilibrium-子博弈完美均衡&#34;&gt;Subgame Perfect Equilibrium 子博弈完美均衡
+&lt;/h2&gt;&lt;p&gt;当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。&lt;/p&gt;
+&lt;h2 id=&#34;backward-induction-反向归纳&#34;&gt;Backward Induction 反向归纳
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -765,8 +759,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;返回 BackwardInduction(s_0)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;multi-agent-q-learning&#34;&gt;Multi-agent Q-learning
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h2 id=&#34;multi-agent-q-learning&#34;&gt;Multi-agent Q-learning
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -841,8 +835,8 @@
 &lt;p&gt;h max和h add的table是不一样的，一个是最大值，一个是累加值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;delete-relaxation&#34;&gt;Delete Relaxation
-&lt;/h1&gt;&lt;p&gt;忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。&lt;/p&gt;
+&lt;h2 id=&#34;delete-relaxation&#34;&gt;Delete Relaxation
+&lt;/h2&gt;&lt;p&gt;忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;State Dominance: 如果一个状态支配另一个状态，那么我们可以忽略支配状态。被包含了。&lt;/li&gt;
 &lt;/ul&gt;
@@ -886,8 +880,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Neither admissible nor consistent. 因为不保证optimal，只保证能找到解决方案。&lt;/p&gt;
 &lt;p&gt;Optimal的都NP-hard。&lt;/p&gt;
-&lt;h1 id=&#34;additive-and-max-heuristics&#34;&gt;Additive and Max Heuristics
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;additive-and-max-heuristics&#34;&gt;Additive and Max Heuristics
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Additive: 相加子目标的启发式，明显不是admissible。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;$h^{add}(s, g) =
@@ -906,8 +900,8 @@
 \max_{g&amp;rsquo; \in g} h^{max}(s, {g&amp;rsquo;}) &amp;amp; \text{if } |g| &amp;gt; 1
 \end{cases}$&lt;/p&gt;
 &lt;p&gt;都goal-aware，因为h+ ∞时，h也是∞。&lt;/p&gt;
-&lt;h1 id=&#34;best-supporter-heuristic&#34;&gt;Best Supporter Heuristic
-&lt;/h1&gt;&lt;p&gt;$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$&lt;br&gt;
+&lt;h2 id=&#34;best-supporter-heuristic&#34;&gt;Best Supporter Heuristic
+&lt;/h2&gt;&lt;p&gt;$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$&lt;br&gt;
 $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -917,8 +911,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;argmin: 在一系列动作里，选最小的h。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;bellman-ford-for-hmax-and-hadd&#34;&gt;Bellman-Ford for hmax and hadd
-&lt;/h1&gt;&lt;p&gt;Bellman-Ford variant computing hadd for state s&lt;/p&gt;
+&lt;h2 id=&#34;bellman-ford-for-hmax-and-hadd&#34;&gt;Bellman-Ford for hmax and hadd
+&lt;/h2&gt;&lt;p&gt;Bellman-Ford variant computing hadd for state s&lt;/p&gt;
 &lt;p&gt;反复更新表Tadd，直到表中的值不再改变。在每次迭代中，对于每个目标状态g，都会计算一个新的值fi(g)，这个值是当前状态s到状态g的最短路径的估计值。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -960,8 +954,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Tadd&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;iterated-width&#34;&gt;Iterated Width
-&lt;/h1&gt;&lt;p&gt;Novelty：只考虑$w(s)$个状态变量atoms的变化情况。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;iterated-width&#34;&gt;Iterated Width
+&lt;/h2&gt;&lt;p&gt;Novelty：只考虑$w(s)$个状态变量atoms的变化情况。&lt;/p&gt;
 &lt;p&gt;搜索直到目标状态的状态变量的数量。&lt;/p&gt;
 &lt;p&gt;一个state的novelty：第一次出现的atom组合中的atom数量。the size of the smallest subset of atoms in s，that is true for the first time in search。&lt;/p&gt;
 </description>
@@ -972,8 +966,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/ucb-and-greedy-bfs/</guid>
-        <description>&lt;h1 id=&#34;uniform-cost-search&#34;&gt;Uniform Cost Search
-&lt;/h1&gt;&lt;p&gt;Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;uniform-cost-search&#34;&gt;Uniform Cost Search
+&lt;/h2&gt;&lt;p&gt;Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。&lt;/p&gt;
 &lt;p&gt;Breath First Search属于Uniform Cost Search的特例，即每个节点的路径成本都是1。&lt;/p&gt;
 &lt;p&gt;UCS只看到了路径成本，没有考虑启发式。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1014,8 +1008,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;greedy-best-first-search&#34;&gt;Greedy Best First Search
-&lt;/h1&gt;&lt;p&gt;BFS只看到了启发式，没有考虑路径成本。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;greedy-best-first-search&#34;&gt;Greedy Best First Search
+&lt;/h2&gt;&lt;p&gt;BFS只看到了启发式，没有考虑路径成本。&lt;/p&gt;
 &lt;p&gt;If h=0，BFS是什么根据它的Priority Queue的实现。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1063,8 +1057,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Tue, 28 May 2024 03:56:05 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/part-of-speech-tagging/</guid>
-        <description>&lt;h1 id=&#34;part-of-speech词类&#34;&gt;Part-of-Speech(词类)
-&lt;/h1&gt;&lt;p&gt;Colourless green ideas sleep furiously.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;part-of-speech词类&#34;&gt;Part-of-Speech(词类)
+&lt;/h2&gt;&lt;p&gt;Colourless green ideas sleep furiously.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open Classes (Content Words)
 &lt;ul&gt;
@@ -1107,8 +1101,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;WH（wh-pronoun）疑问代词：who（谁）、what（什么）、which（哪个）&lt;/li&gt;
 &lt;li&gt;TO（to）不定式标记：to（去）、to（为了）、to（到）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;penn-treebank-词性标记集&#34;&gt;Penn Treebank 词性标记集
-&lt;/h1&gt;&lt;p&gt;Penn Treebank 的词性标注集（POS tagset）是一种广泛使用的英文词性标注方法。&lt;/p&gt;
+&lt;h2 id=&#34;penn-treebank-词性标记集&#34;&gt;Penn Treebank 词性标记集
+&lt;/h2&gt;&lt;p&gt;Penn Treebank 的词性标注集（POS tagset）是一种广泛使用的英文词性标注方法。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;CC&lt;/code&gt;：并列连词 (Coordinating conjunction)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;CD&lt;/code&gt;：基数词 (Cardinal number)&lt;/li&gt;
@@ -1155,24 +1149,24 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Tue, 28 May 2024 00:56:05 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</guid>
-        <description>&lt;h1 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
-&lt;/h1&gt;&lt;p&gt;词汇解释&lt;/p&gt;
+        <description>&lt;h2 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
+&lt;/h2&gt;&lt;p&gt;词汇解释&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Synonymy 同义词&lt;/li&gt;
 &lt;li&gt;Antonymy 反义词&lt;/li&gt;
 &lt;li&gt;Hypernymy 上义词&lt;/li&gt;
 &lt;li&gt;Meronymy 下义词&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;wordnet&#34;&gt;WordNet
-&lt;/h1&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
-&lt;h1 id=&#34;word-similarity&#34;&gt;Word Similarity
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;wordnet&#34;&gt;WordNet
+&lt;/h2&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
+&lt;h2 id=&#34;word-similarity&#34;&gt;Word Similarity
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li&gt;
 &lt;li&gt;深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li&gt;
 &lt;li&gt;信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
-&lt;/h1&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
+&lt;h2 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
+&lt;/h2&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1189,8 +1183,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p&gt;
 &lt;p&gt;Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p&gt;
 &lt;p&gt;Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p&gt;
-&lt;h1 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
-&lt;/h1&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
+&lt;h2 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
+&lt;/h2&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;任务：&lt;/p&gt;
@@ -1211,8 +1205,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;循环神经网络&#34;&gt;循环神经网络
-&lt;/h1&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
+&lt;h2 id=&#34;循环神经网络&#34;&gt;循环神经网络
+&lt;/h2&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li&gt;
 &lt;li&gt;LSTM：
@@ -1228,8 +1222,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
-&lt;/h1&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
+&lt;h2 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
+&lt;/h2&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p&gt;
@@ -1244,14 +1238,14 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;L1 Norm&lt;/li&gt;
 &lt;li&gt;L2 Norm&lt;/li&gt;
 &lt;li&gt;Dropout&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;lstm&#34;&gt;LSTM
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;lstm&#34;&gt;LSTM
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Memory cell：记忆单元，用来存储信息&lt;/li&gt;
 &lt;li&gt;Hidden state：隐藏状态，用来传递信息&lt;/li&gt;
 &lt;li&gt;Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li&gt;
@@ -1272,11 +1266,11 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;emission probability: $P(w|t)$ 从tag到word的概率&lt;/li&gt;
 &lt;li&gt;transition probability: $P(t|t&amp;rsquo;)$ 从上一个tag到当前tag的概率&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;viterbi-algorithm&#34;&gt;Viterbi Algorithm
-&lt;/h1&gt;&lt;p&gt;从最开始算起，每个tag的概率是由前一个tag的概率和从前一个tag到当前tag的概率相乘得到的。&lt;/p&gt;
+&lt;h2 id=&#34;viterbi-algorithm&#34;&gt;Viterbi Algorithm
+&lt;/h2&gt;&lt;p&gt;从最开始算起，每个tag的概率是由前一个tag的概率和从前一个tag到当前tag的概率相乘得到的。&lt;/p&gt;
 &lt;p&gt;$\hat{t} = \arg\max_{t} \prod_{i=1}^{n} P(w_i|t)P(t|t&amp;rsquo;)$, $t&amp;rsquo;$是前一个tag, $\hat{t}$是当前的估计值。&lt;/p&gt;
-&lt;h1 id=&#34;generative-vs-discriminative-tagger&#34;&gt;Generative vs Discriminative Tagger
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;generative-vs-discriminative-tagger&#34;&gt;Generative vs Discriminative Tagger
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;HMM是generative model，可以用来生成数据，无监督的学习。&lt;/li&gt;
 &lt;li&gt;discriminative model例如CRF，需要有监督的数据，可以学到更丰富的特征，大多数deep learning的模型都是discriminative model。&lt;/li&gt;
 &lt;/ul&gt;
@@ -1296,36 +1290,36 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Automatic fact-checking&lt;/li&gt;
 &lt;li&gt;Paraphrase&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;topic-classification&#34;&gt;Topic Classification
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;topic-classification&#34;&gt;Topic Classification
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Motivation: library science, information retrieval, etc.&lt;/li&gt;
 &lt;li&gt;Classes: topic categories&lt;/li&gt;
 &lt;li&gt;Features: bag-of-words, n-grams, etc.&lt;/li&gt;
 &lt;li&gt;Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;sentiment-analysis&#34;&gt;Sentiment Analysis
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;sentiment-analysis&#34;&gt;Sentiment Analysis
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Motivation: opinion mining, business analytics&lt;/li&gt;
 &lt;li&gt;Classes: positive, negative, neutral&lt;/li&gt;
 &lt;li&gt;Features: n-grams, polarity lexicons, etc.&lt;/li&gt;
 &lt;li&gt;Corpus: movie reviews, SEMEVAL twitter polarity dataset&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;native-language-identification&#34;&gt;Native Language Identification
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;native-language-identification&#34;&gt;Native Language Identification
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Motivation: forensic linguistics, educational applications&lt;/li&gt;
 &lt;li&gt;Classes: native languages&lt;/li&gt;
 &lt;li&gt;Features: character n-grams, syntactic features (POS), phonological features&lt;/li&gt;
 &lt;li&gt;Corpus: TOEFL/IELTS essays&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;natural-language-inference-textual-entailment-文本蕴含&#34;&gt;Natural Language Inference (textual entailment 文本蕴含)
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;natural-language-inference-textual-entailment-文本蕴含&#34;&gt;Natural Language Inference (textual entailment 文本蕴含)
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Motivation: language understanding&lt;/li&gt;
 &lt;li&gt;Classes: entailment, contradiction, neutral&lt;/li&gt;
 &lt;li&gt;Features: word overlap, length difference, etc.&lt;/li&gt;
 &lt;li&gt;Corpus: SNLI, MultiNLI&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;build-a-text-classifier&#34;&gt;Build a Text Classifier
-&lt;/h1&gt;&lt;ol&gt;
+&lt;h2 id=&#34;build-a-text-classifier&#34;&gt;Build a Text Classifier
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Identify the task&lt;/li&gt;
 &lt;li&gt;Collect and preprocess data&lt;/li&gt;
 &lt;li&gt;Annotation&lt;/li&gt;
@@ -1334,8 +1328,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Train and tune the model&lt;/li&gt;
 &lt;li&gt;Evaluate the model&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;naive-bayes-classifier&#34;&gt;Naive Bayes Classifier
-&lt;/h1&gt;&lt;p&gt;assume independence between features&lt;/p&gt;
+&lt;h2 id=&#34;naive-bayes-classifier&#34;&gt;Naive Bayes Classifier
+&lt;/h2&gt;&lt;p&gt;assume independence between features&lt;/p&gt;
 &lt;p&gt;$$P(c|d) = \frac{P(d|c)P(c)}{P(d)}$$&lt;/p&gt;
 &lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
@@ -1349,8 +1343,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Low accuracy&lt;/li&gt;
 &lt;li&gt;Smoothing needed for unseen&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;logistic-regression&#34;&gt;Logistic Regression
-&lt;/h1&gt;&lt;p&gt;$$P(c|d) = \frac{1}{1 + e^{-\sum_{i=1}^n w_i x_i}}$$&lt;/p&gt;
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic Regression
+&lt;/h2&gt;&lt;p&gt;$$P(c|d) = \frac{1}{1 + e^{-\sum_{i=1}^n w_i x_i}}$$&lt;/p&gt;
 &lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Better performance&lt;/li&gt;
@@ -1361,8 +1355,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Scaling needed&lt;/li&gt;
 &lt;li&gt;Regularization needed for overfitting&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;support-vector-machine&#34;&gt;Support Vector Machine
-&lt;/h1&gt;&lt;p&gt;To find the hyperplane that maximizes the margin&lt;/p&gt;
+&lt;h2 id=&#34;support-vector-machine&#34;&gt;Support Vector Machine
+&lt;/h2&gt;&lt;p&gt;To find the hyperplane that maximizes the margin&lt;/p&gt;
 &lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fast and accurate&lt;/li&gt;
@@ -1376,8 +1370,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Imbalanced data&lt;/li&gt;
 &lt;li&gt;Interpretability&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;k-nearest-neighbors&#34;&gt;K-Nearest Neighbors
-&lt;/h1&gt;&lt;p&gt;Euclidean distance, cosine similarity&lt;/p&gt;
+&lt;h2 id=&#34;k-nearest-neighbors&#34;&gt;K-Nearest Neighbors
+&lt;/h2&gt;&lt;p&gt;Euclidean distance, cosine similarity&lt;/p&gt;
 &lt;p&gt;Probs:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Simple&lt;/li&gt;
@@ -1391,8 +1385,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Imbalanced classes&lt;/li&gt;
 &lt;li&gt;Slow&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;decision-tree&#34;&gt;Decision Tree
-&lt;/h1&gt;&lt;p&gt;Greedy maxmize information gain&lt;/p&gt;
+&lt;h2 id=&#34;decision-tree&#34;&gt;Decision Tree
+&lt;/h2&gt;&lt;p&gt;Greedy maxmize information gain&lt;/p&gt;
 &lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fast&lt;/li&gt;
@@ -1406,8 +1400,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Redundant features&lt;/li&gt;
 &lt;li&gt;Not competitive for big data&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;random-forest&#34;&gt;Random Forest
-&lt;/h1&gt;&lt;p&gt;Pros:&lt;/p&gt;
+&lt;h2 id=&#34;random-forest&#34;&gt;Random Forest
+&lt;/h2&gt;&lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Better than decision tree&lt;/li&gt;
 &lt;li&gt;Parallelizable&lt;/li&gt;
@@ -1416,8 +1410,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Same as decision tree&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;neural-network&#34;&gt;Neural Network
-&lt;/h1&gt;&lt;p&gt;Pros:&lt;/p&gt;
+&lt;h2 id=&#34;neural-network&#34;&gt;Neural Network
+&lt;/h2&gt;&lt;p&gt;Pros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Powerful&lt;/li&gt;
 &lt;/ul&gt;
@@ -1427,8 +1421,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Training time&lt;/li&gt;
 &lt;li&gt;Overfitting&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;evaluation&#34;&gt;Evaluation
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Accuracy&lt;/p&gt;
 &lt;p&gt;$$\frac{TP + TN}{TP + TN + FP + FN}$$&lt;/p&gt;
@@ -1454,22 +1448,22 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Mon, 27 May 2024 01:56:05 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/n-gram-language-model/</guid>
-        <description>&lt;h1 id=&#34;language-model&#34;&gt;Language Model
-&lt;/h1&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;language-model&#34;&gt;Language Model
+&lt;/h2&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Query completion(搜索引擎)&lt;/li&gt;
 &lt;li&gt;Optical character recognition(OCR)&lt;/li&gt;
 &lt;li&gt;Translation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;n-gram&#34;&gt;N-gram
-&lt;/h2&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
+&lt;h3 id=&#34;n-gram&#34;&gt;N-gram
+&lt;/h3&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Maximum Likelihood Estimation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p&gt;
 &lt;p&gt;Use special tags to denote the beginning and end of a sentence, i.e. &lt;code&gt;&amp;lt;s&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;smoothing&#34;&gt;Smoothing
-&lt;/h2&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
+&lt;h3 id=&#34;smoothing&#34;&gt;Smoothing
+&lt;/h3&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Laplacian (add-one) smoothing&lt;/p&gt;
@@ -1522,8 +1516,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Mon, 27 May 2024 00:56:05 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/preprocessing/</guid>
-        <description>&lt;h1 id=&#34;preprocessing&#34;&gt;Preprocessing
-&lt;/h1&gt;&lt;ul&gt;
+        <description>&lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Word&lt;/li&gt;
 &lt;li&gt;Sentence: words&lt;/li&gt;
 &lt;li&gt;Document: sentences&lt;/li&gt;
@@ -1532,18 +1526,18 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Word Type: verb, noun, etc.&lt;/li&gt;
 &lt;li&gt;Lexicon: word types&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;steps&#34;&gt;Steps
-&lt;/h1&gt;&lt;ol&gt;
+&lt;h2 id=&#34;steps&#34;&gt;Steps
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Remove unwnated formatting, i.e. HTML tags&lt;/li&gt;
 &lt;li&gt;Sentecne segmentation, break text into sentences&lt;/li&gt;
 &lt;li&gt;Tokenization, break sentences into words&lt;/li&gt;
 &lt;li&gt;Normalization, transform words into canonical form, i.e. lower case&lt;/li&gt;
 &lt;li&gt;Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
-&lt;/h2&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
-&lt;h2 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
-&lt;/h2&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
+&lt;h3 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
+&lt;/h3&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
+&lt;h3 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
+&lt;/h3&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
 &lt;p&gt;Adv:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Data-informed tokenization&lt;/li&gt;
@@ -1554,8 +1548,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rarer words will be split into subwords, even individual letter&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;word-normalization&#34;&gt;Word Normalization
-&lt;/h2&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
+&lt;h3 id=&#34;word-normalization&#34;&gt;Word Normalization
+&lt;/h3&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
 &lt;p&gt;形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Lowercasing&lt;/li&gt;
@@ -1563,30 +1557,30 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;li&gt;Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
-&lt;/h2&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
+&lt;/h3&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p&gt;
-&lt;h2 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
-&lt;/h2&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
+&lt;h3 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
+&lt;/h3&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
 &lt;p&gt;Lemma(词元): the uninflated form&lt;/p&gt;
-&lt;h2 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
-&lt;/h2&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
+&lt;h3 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
+&lt;/h3&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
-&lt;/h2&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
+&lt;h3 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
+&lt;/h3&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
 &lt;p&gt;Stem(词干): the root form&lt;/p&gt;
-&lt;h2 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
-&lt;/h2&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
+&lt;h3 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
+&lt;/h3&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;C: consonant(辅音)&lt;/li&gt;
 &lt;li&gt;V: vowel(元音)&lt;/li&gt;
 &lt;li&gt;m: measure $&lt;a class=&#34;link&#34; href=&#34;VC&#34; &gt;C&lt;/a&gt;^m[V]$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;stopword-removal&#34;&gt;Stopword Removal
-&lt;/h2&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
+&lt;h3 id=&#34;stopword-removal&#34;&gt;Stopword Removal
+&lt;/h3&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
 &lt;p&gt;All closed-class or function words, any high frequency words&lt;/p&gt;
 </description>
         </item>
@@ -1596,8 +1590,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/a-and-hill-climbing/</guid>
-        <description>&lt;h1 id=&#34;a算法带有重复检测和重新打开&#34;&gt;A*算法（带有重复检测和重新打开）
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;h2 id=&#34;a算法带有重复检测和重新打开&#34;&gt;A*算法（带有重复检测和重新打开）
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -1683,8 +1677,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;If h=0, A* is equivalent to Uniform Cost Search.&lt;/p&gt;
 &lt;p&gt;If h admissible, A* is optimal. 因为我们的h比最优h小，在达到最优h之前，我们已经尝试过这个状态。&lt;/p&gt;
-&lt;h1 id=&#34;weighted-a算法&#34;&gt;Weighted A*算法
-&lt;/h1&gt;&lt;p&gt;给heuristic函数加权，以调整搜索的速度。&lt;/p&gt;
+&lt;h2 id=&#34;weighted-a算法&#34;&gt;Weighted A*算法
+&lt;/h2&gt;&lt;p&gt;给heuristic函数加权，以调整搜索的速度。&lt;/p&gt;
 &lt;p&gt;w越大，搜索越快，但可能会错过最优解，w越小，搜索越慢，但更有可能找到最优解。&lt;/p&gt;
 &lt;p&gt;w=0时，等价于Uniform Cost Search。&lt;/p&gt;
 &lt;p&gt;w to ∞时，等价于Greedy Best First Search。&lt;/p&gt;
@@ -1736,8 +1730,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Goal not found&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;爬山算法&#34;&gt;爬山算法
-&lt;/h1&gt;&lt;p&gt;local最优。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;爬山算法&#34;&gt;爬山算法
+&lt;/h2&gt;&lt;p&gt;local最优。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1764,8 +1758,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/bfs-and-dfs/</guid>
-        <description>&lt;h1 id=&#34;广度优先搜索bfs&#34;&gt;广度优先搜索（BFS）
-&lt;/h1&gt;&lt;p&gt;队列，先进先出，后进后出。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;广度优先搜索bfs&#34;&gt;广度优先搜索（BFS）
+&lt;/h2&gt;&lt;p&gt;队列，先进先出，后进后出。&lt;/p&gt;
 &lt;p&gt;Optimal when costs are uniform&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1805,8 +1799,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;深度优先搜索dfs&#34;&gt;深度优先搜索（DFS）
-&lt;/h1&gt;&lt;p&gt;栈，先进后出，后进先出。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;深度优先搜索dfs&#34;&gt;深度优先搜索（DFS）
+&lt;/h2&gt;&lt;p&gt;栈，先进后出，后进先出。&lt;/p&gt;
 &lt;p&gt;搜索空间可能无限大（无限深）。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1967,8 +1961,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/mdps/</guid>
-        <description>&lt;h1 id=&#34;markov-decision-processesmdps马尔可夫决策过程&#34;&gt;Markov Decision Processes（MDPs）马尔可夫决策过程
-&lt;/h1&gt;&lt;p&gt;MDP是完全可观察的，概率状态模型：&lt;/p&gt;
+        <description>&lt;h2 id=&#34;markov-decision-processesmdps马尔可夫决策过程&#34;&gt;Markov Decision Processes（MDPs）马尔可夫决策过程
+&lt;/h2&gt;&lt;p&gt;MDP是完全可观察的，概率状态模型：&lt;/p&gt;
 &lt;p&gt;状态空间 $S$ &lt;br&gt;
 初始状态 $s_0 \in S$ &lt;br&gt;
 一组目标状态 $G \subseteq S$ &lt;br&gt;
@@ -1978,8 +1972,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;其中：&lt;br&gt;
 解决方案是将状态映射到动作的函数（策略）&lt;br&gt;
 最优解最小化预期的前往目标的成本&lt;/p&gt;
-&lt;h1 id=&#34;partially-observable-mdps-pomdps-部分可观察的马尔可夫决策过程&#34;&gt;Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
-&lt;/h1&gt;&lt;p&gt;POMDP是部分可观察的，概率状态模型：&lt;/p&gt;
+&lt;h2 id=&#34;partially-observable-mdps-pomdps-部分可观察的马尔可夫决策过程&#34;&gt;Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
+&lt;/h2&gt;&lt;p&gt;POMDP是部分可观察的，概率状态模型：&lt;/p&gt;
 &lt;p&gt;状态 $s \in S$ &lt;br&gt;
 在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ &lt;br&gt;
 对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;rsquo;|s)$ &lt;br&gt;
@@ -1992,8 +1986,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 最优策略最小化从 $b_0$ 到 $G$ 的预期成本&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;see also&lt;/em&gt;: &lt;a class=&#34;link&#34; href=&#34;https://gibberblot.github.io/rl-notes/single-agent/MDPs.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://gibberblot.github.io/rl-notes/single-agent/MDPs.html&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;value-iteration&#34;&gt;Value Iteration
-&lt;/h1&gt;&lt;p&gt;一种动态规划算法，用于计算MDP的最优策略。&lt;/p&gt;
+&lt;h2 id=&#34;value-iteration&#34;&gt;Value Iteration
+&lt;/h2&gt;&lt;p&gt;一种动态规划算法，用于计算MDP的最优策略。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -2024,8 +2018,8 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;V&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;bellman-optimality-equation&#34;&gt;Bellman Optimality Equation
-&lt;/h2&gt;&lt;p&gt;$
+&lt;/div&gt;&lt;h3 id=&#34;bellman-optimality-equation&#34;&gt;Bellman Optimality Equation
+&lt;/h3&gt;&lt;p&gt;$
 V^*(s) = \max_{a \in A(s)} \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^{*}{(s&amp;rsquo;)} \right]
 $&lt;/p&gt;
 &lt;ul&gt;
@@ -2033,8 +2027,8 @@ $&lt;/p&gt;
 &lt;li&gt;动作的奖励&lt;/li&gt;
 &lt;li&gt;下一个状态的价值 x 折扣，前一个iteration存储的价值&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;q-value&#34;&gt;Q-Value
-&lt;/h2&gt;&lt;p&gt;对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：&lt;br&gt;
+&lt;h3 id=&#34;q-value&#34;&gt;Q-Value
+&lt;/h3&gt;&lt;p&gt;对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：&lt;br&gt;
 $
 Q(s,a) = \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^*(s&amp;rsquo;) \right]
 $&lt;/p&gt;
@@ -2053,10 +2047,10 @@ $&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0.7, 0.49, 0.343, 0.2401...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;policy&#34;&gt;Policy
-&lt;/h2&gt;&lt;p&gt;$\pi(s) = arg max Q(s,a)$&lt;/p&gt;
-&lt;h1 id=&#34;multi-armed-bandit&#34;&gt;Multi-Armed Bandit
-&lt;/h1&gt;&lt;p&gt;平行地尝试多个动作，平衡exploitation和exploration。&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;policy&#34;&gt;Policy
+&lt;/h3&gt;&lt;p&gt;$\pi(s) = arg max Q(s,a)$&lt;/p&gt;
+&lt;h2 id=&#34;multi-armed-bandit&#34;&gt;Multi-Armed Bandit
+&lt;/h2&gt;&lt;p&gt;平行地尝试多个动作，平衡exploitation和exploration。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;minimising regret，没有选择最佳动作的损失&lt;/p&gt;
@@ -2084,8 +2078,8 @@ $\quad$ $k \leftarrow k + 1$&lt;br&gt;
 &lt;p&gt;$\text{argmax}_{a}\left(Q(a)   +   \sqrt{\frac{2 \ln t}{N(a)}}\right)$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;q-learning&#34;&gt;Q-Learning
-&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
+&lt;h2 id=&#34;q-learning&#34;&gt;Q-Learning
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
 &lt;strong&gt;Output&lt;/strong&gt;: Q-function $Q$ &lt;br&gt;
 Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br&gt;
 &lt;strong&gt;repeat&lt;/strong&gt;&lt;br&gt;
@@ -2102,8 +2096,8 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;ul&gt;
 &lt;li&gt;$max_{a&amp;rsquo;} Q(s&amp;rsquo;, a&amp;rsquo;)$ 也可以写成 $V(s&amp;rsquo;)$，即下一个状态的价值&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;sarsa&#34;&gt;SARSA
-&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
+&lt;h2 id=&#34;sarsa&#34;&gt;SARSA
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br&gt;
 &lt;strong&gt;Output&lt;/strong&gt;: Q-function $Q$ &lt;br&gt;
 Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br&gt;
 &lt;strong&gt;repeat&lt;/strong&gt;&lt;br&gt;
@@ -2121,10 +2115,10 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;li&gt;Q-Learning是off-policy，因为on当前策略下的Q值，对当前策略更乐观&lt;/li&gt;
 &lt;li&gt;SARSA是on-policy，所以off了当前策略下的Q值，更保守&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;n-step-reinforcement-learning&#34;&gt;n-step reinforcement learning
-&lt;/h1&gt;&lt;p&gt;记账，在n-step后再一起更新Q值。&lt;/p&gt;
-&lt;h1 id=&#34;mcts&#34;&gt;MCTS
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;n-step-reinforcement-learning&#34;&gt;n-step reinforcement learning
+&lt;/h2&gt;&lt;p&gt;记账，在n-step后再一起更新Q值。&lt;/p&gt;
+&lt;h2 id=&#34;mcts&#34;&gt;MCTS
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Selection：选择一个节点，直到找到一个未扩展的节点&lt;/li&gt;
 &lt;li&gt;Expansion：扩展一个未扩展的节点&lt;/li&gt;
 &lt;li&gt;Simulation：模拟一个随机游戏，直到结束&lt;/li&gt;
@@ -2133,26 +2127,26 @@ $\quad$ &lt;strong&gt;until&lt;/strong&gt; $s$ is the last state of episode $e$ 
 &lt;p&gt;offline：完成所有模拟后再选择最佳动作&lt;/p&gt;
 &lt;p&gt;online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果，MCTS是online的。&lt;/p&gt;
 &lt;p&gt;用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值&lt;/p&gt;
-&lt;h1 id=&#34;uct&#34;&gt;UCT
-&lt;/h1&gt;&lt;p&gt;用UCB来select。&lt;/p&gt;
+&lt;h2 id=&#34;uct&#34;&gt;UCT
+&lt;/h2&gt;&lt;p&gt;用UCB来select。&lt;/p&gt;
 &lt;p&gt;$\text{argmax}_{a \in A(s)} Q(s,a) + 2 C_p \sqrt{\frac{2 \ln N(s)}{N(s,a)}}$ &lt;br&gt;
 where $C_p$ 自己选，看是更偏向exploration还是exploitation&lt;/p&gt;
-&lt;h1 id=&#34;linear-q-functionn-approximation&#34;&gt;Linear Q-functionn Approximation
-&lt;/h1&gt;&lt;p&gt;# features = # states * # actions&lt;/p&gt;
+&lt;h2 id=&#34;linear-q-functionn-approximation&#34;&gt;Linear Q-functionn Approximation
+&lt;/h2&gt;&lt;p&gt;## features = ## states * ## actions&lt;/p&gt;
 &lt;p&gt;$Q(s,a) = f^T w = \sum_{i=1}^{n} f_i(s,a) w_i$&lt;/p&gt;
-&lt;h2 id=&#34;update&#34;&gt;Update
-&lt;/h2&gt;&lt;p&gt;$w \leftarrow w + \alpha \delta f(s,a)$ &lt;br&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update
+&lt;/h3&gt;&lt;p&gt;$w \leftarrow w + \alpha \delta f(s,a)$ &lt;br&gt;
 where &lt;br&gt;
 $\delta = r + \gamma \max_{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if Q-learning &lt;br&gt;
 $\delta = r + \gamma Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if SARSA&lt;/p&gt;
-&lt;h1 id=&#34;shaped-reward&#34;&gt;Shaped Reward
-&lt;/h1&gt;&lt;p&gt;$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s&amp;rsquo;)}&lt;em&gt;{\text{additional reward}} + \gamma \max&lt;/em&gt;{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)]$&lt;/p&gt;
-&lt;h2 id=&#34;potential-based-reward-shaping&#34;&gt;Potential-based Reward Shaping
-&lt;/h2&gt;&lt;p&gt;$F(s,s&amp;rsquo;) = \gamma \Phi(s&amp;rsquo;) - \Phi(s)$&lt;/p&gt;
+&lt;h2 id=&#34;shaped-reward&#34;&gt;Shaped Reward
+&lt;/h2&gt;&lt;p&gt;$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s&amp;rsquo;)}&lt;em&gt;{\text{additional reward}} + \gamma \max&lt;/em&gt;{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)]$&lt;/p&gt;
+&lt;h3 id=&#34;potential-based-reward-shaping&#34;&gt;Potential-based Reward Shaping
+&lt;/h3&gt;&lt;p&gt;$F(s,s&amp;rsquo;) = \gamma \Phi(s&amp;rsquo;) - \Phi(s)$&lt;/p&gt;
 &lt;p&gt;For example, in Gridworld, &lt;br&gt;
 $\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$&lt;/p&gt;
-&lt;h1 id=&#34;policy-iteration&#34;&gt;Policy Iteration
-&lt;/h1&gt;&lt;p&gt;魔改bellman方程，将所有动作可能性替换成当前策略下的动作。&lt;/p&gt;
+&lt;h2 id=&#34;policy-iteration&#34;&gt;Policy Iteration
+&lt;/h2&gt;&lt;p&gt;魔改bellman方程，将所有动作可能性替换成当前策略下的动作。&lt;/p&gt;
 </description>
         </item>
         <item>

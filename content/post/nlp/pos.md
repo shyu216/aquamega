@@ -9,7 +9,7 @@ params:
   math: true
 ---
 
-# Part-of-Speech(词类)
+## Part-of-Speech(词类)
 
 
 Colourless green ideas sleep furiously.
@@ -57,7 +57,7 @@ Ambiguity: A word can have multiple meanings. A sentence can have multiple inter
 - TO（to）不定式标记：to（去）、to（为了）、to（到）
 
 
-# Penn Treebank 词性标记集
+## Penn Treebank 词性标记集
 
 Penn Treebank 的词性标注集（POS tagset）是一种广泛使用的英文词性标注方法。
 
