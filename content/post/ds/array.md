@@ -4,7 +4,7 @@ draft: false
 title: "Dynamic Array"
 categories:
     - COMP90077
-tags: ["DS"]
+tags: ["Data Structure"]
 params:
   math: true
 ---

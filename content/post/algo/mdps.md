@@ -4,7 +4,7 @@ draft: false
 title: "MDPs"
 categories:
     - COMP90054
-tags: ["algo", "AI"]
+tags: ["algorithm", "AI"]
 params:
   math: true
 ---

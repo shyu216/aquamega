@@ -23,12 +23,12 @@ src = "https://github.com/shyu216.png"
 
 [article]
 headingAnchor = false
-math = false
+math = true
 readingTime = true
 
 [article.license]
 enabled = false
-default = "Licensed under CC BY-NC-SA 4.0"
+default = ""
 
 ## Widgets
 [[widgets.homepage]]
@@ -50,7 +50,7 @@ limit = 10
 type = "tag-cloud"
 
 [widgets.homepage.params]
-limit = 10
+limit = 100
 
 [[widgets.page]]
 type = "toc"

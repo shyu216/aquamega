@@ -4,7 +4,7 @@ draft: false
 title: "BFS and DFS"
 categories:
     - COMP90054
-tags: ["algo"]
+tags: ["algorithm"]
 params:
   math: true
 ---

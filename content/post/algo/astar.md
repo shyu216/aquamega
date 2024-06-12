@@ -4,7 +4,7 @@ draft: false
 title: "A* and Hill Climbing"
 categories:
     - COMP90054
-tags: ["algo"]
+tags: ["algorithm"]
 params:
   math: true
 ---

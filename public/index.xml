@@ -7,6 +7,240 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mathematical Induction</title>
+        <link>http://localhost:1313/aquamega/p/mathematical-induction/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/mathematical-induction/</guid>
+        <description>&lt;p&gt;数学归纳法（Mathematical Induction）是一种常用的数学证明技巧（Mathematical Proof Technique），主要用于证明一系列数字或对象具有某种性质。它的基本步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基础步骤（Base Step）：证明性质对于第一个元素（通常是1或0）成立。&lt;/li&gt;
+&lt;li&gt;归纳步骤（Inductive Step）：假设性质对于某个元素 n 成立，然后证明这个性质对于元素 n+1 也成立。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;举个例子，我们可以用数学归纳法证明所有的自然数之和的公式：&lt;/p&gt;
+&lt;p&gt;1 + 2 + 3 + &amp;hellip; + n = n*(n+1)/2&lt;/p&gt;
+&lt;p&gt;证明如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基础步骤：对于 n=1，左边是1，右边也是1，所以公式成立。&lt;/li&gt;
+&lt;li&gt;归纳步骤：假设公式对于 n=k 成立，即 1 + 2 + 3 + &amp;hellip; + k = k*(k+1)/2，我们需要证明公式对于 n=k+1 也成立。即证明 1 + 2 + 3 + &amp;hellip; + k + (k+1) = (k+1)&lt;em&gt;((k+1)+1)/2。将假设代入左边，我们得到 k&lt;/em&gt;(k+1)/2 + (k+1) = (k+1)*((k+1)+1)/2，简化后可以看到这个等式是成立的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以，我们用数学归纳法证明了所有的自然数之和的公式。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Max-Flow Min-Cut Theorem</title>
+        <link>http://localhost:1313/aquamega/p/max-flow-min-cut-theorem/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/max-flow-min-cut-theorem/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;请注意&lt;/strong&gt;！本文是由公元2024年的GPT生成的，可能包含一些不准确的信息。&lt;/p&gt;
+&lt;p&gt;最大流（Max-Flow）问题和最小割（Min-Cut）问题在网络流中是两个互相关联的问题，它们的关系通常被称为最大流-最小割定理（Max-Flow Min-Cut Theorem）。&lt;/p&gt;
+&lt;p&gt;最大流-最小割定理是网络流中的一个基本定理，它指出了一个网络的最大流量和该网络的最小割的容量之间的关系。具体来说，对于任何网络，其最大流量等于其最小割的容量。&lt;/p&gt;
+&lt;p&gt;在一个网络流图中，流量从源节点（source）流向汇节点（sink）。最大流问题就是要找到一种流的分配方式，使得从源节点到汇节点的总流量最大。&lt;/p&gt;
+&lt;p&gt;割（cut）是将网络图分割成两部分的一种方式，其中一部分包含源节点，另一部分包含汇节点。割的容量（capacity）是从源节点部分到汇节点部分的所有边的容量之和。最小割问题就是要找到一种割的方式，使得割的容量最小。&lt;/p&gt;
+&lt;h2 id=&#34;kargers-algorithm-for-min-cut&#34;&gt;Karger&amp;rsquo;s Algorithm for Min Cut
+&lt;/h2&gt;&lt;p&gt;David Karger 的最小割算法是一种随机化算法，用于在无向图中找到最小割。这个算法基于一种称为“边收缩”（edge contraction）的操作。&lt;/p&gt;
+&lt;p&gt;这个算法的期望运行时间是多项式的，但是它可能需要多次运行才能找到真正的最小割。为了提高找到最小割的概率，我们可以多次运行这个算法，并返回所有运行中找到的最小割。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Adjacency list&lt;/p&gt;
+&lt;p&gt;邻接列表是一种表示图的方法，它为图中的每个顶点维护一个列表，列出了从该顶点出发可以到达的所有顶点。在 Python 中，我们通常使用字典来实现邻接列表，其中键是顶点，值是一个列表，包含了所有连接到该顶点的顶点。邻接列表是一种空间效率高的数据结构，特别适合于稀疏图，即边的数量远小于顶点的数量的平方的图。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Union-Find&lt;/p&gt;
+&lt;p&gt;并查集是一种用于处理不相交集合的数据结构。它支持两种操作：查找和合并。查找操作 Find(x) 用于找到包含元素 x 的集合的代表元素。合并操作 Merge(x, y) 用于将包含元素 x 和 y 的两个集合合并为一个集合。并查集的一个重要特性是，这两种操作的时间复杂度都接近于常数，这使得它在处理大规模数据时非常高效。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;greedy-algorithm-for-max-flow&#34;&gt;Greedy Algorithm for Max Flow
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;初始化所有边的流量为0。&lt;/li&gt;
+&lt;li&gt;寻找一条从源点s到目标点t的路径，这条路径上的每一条边的流量都小于其容量。&lt;/li&gt;
+&lt;li&gt;沿着找到的这条路径尽可能多地增加流量，找到路径上剩余容量最小的边，然后增加这个量的流量。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我们重复以上步骤，直到无法找到满足条件的路径为止。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法保证最优。贪心算法可能会选择一条在当前看来可以增加最多流量的路径。然而，这可能会导致在后续的步骤中，无法找到新的路径来进一步增加流量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ford-fulkerson-algorithm-for-max-flow&#34;&gt;Ford-Fulkerson Algorithm for Max Flow
+&lt;/h2&gt;&lt;p&gt;Ford-Fulkerson 算法是一种解决最大流问题的经典方法。这个算法的基本步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;初始流设为零。&lt;/li&gt;
+&lt;li&gt;只要在残余网络中存在一条从源节点 s 到汇点 t 的路径，就执行以下操作：
+&lt;ul&gt;
+&lt;li&gt;寻找一条可以增加流量的路径。&lt;/li&gt;
+&lt;li&gt;更新流量和残余网络。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;返回最后计算出的流量。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;proofs&#34;&gt;Proofs
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在每一次迭代中，流量都是整数：这可以通过数学归纳法来证明。初始的流量是零，是一个整数。在每次迭代中，我们都在一条路径上增加整数的流量，所以流量始终是整数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在每次迭代中，流量增加了 KP：这可以通过观察源节点 s 和路径来证明。在每次迭代中，我们都在一条从 s 到 t 的路径上增加流量，所以总流量会增加。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;算法会在有限的步骤后停止（最多在 𝐶 = ∑(对所有边的容量𝑐求和) 迭代后）：这可以从前面的证明推断出来。因为每次迭代都会增加流量，而总流量受到网络容量的限制，所以算法一定会在有限的步骤后停止。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;running-time&#34;&gt;Running time
+&lt;/h3&gt;&lt;p&gt;每次循环的时间复杂度是 O(m)，其中 m 是边的数量。这是因为在每次循环中，我们需要在残余图中找到一条从源点到汇点的路径，这可以通过深度优先搜索或广度优先搜索在 O(m) 时间内完成。&lt;/p&gt;
+&lt;p&gt;循环的次数最多是 C，其中 C 是图中所有边的容量之和。这是因为在每次循环中，我们至少增加一单位的流量，因此最多需要 C 次循环。&lt;/p&gt;
+&lt;p&gt;因此，总的运行时间是 O(Cm)。而实际情况一般是线性时间。&lt;/p&gt;
+&lt;h4 id=&#34;flow-vs-cut&#34;&gt;Flow vs Cut
+&lt;/h4&gt;&lt;p&gt;在最大流最小割定理中，流等于割是因为在流网络中，流的大小受限于割的容量。这个定理告诉我们，任何流网络的最大流都等于其某个割的最小容量。&lt;/p&gt;
+&lt;p&gt;这是因为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;流的大小不能超过任何割的容量。这是因为割定义了从源点到汇点的所有可能的路径，流必须通过这些路径，因此不能超过割的容量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在最大流的情况下，存在一个割，其容量等于流的大小。这是因为当我们找到最大流时，我们已经找到了一种方式，使得所有从源点到汇点的路径都被充分利用，这就形成了一个割。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;flow-value-lemma&#34;&gt;Flow-Value Lemma
+&lt;/h4&gt;&lt;p&gt;流量值引理（Flow-Value Lemma）是网络流问题中的一个重要概念，它描述了流入和流出一个节点的总流量之间的关系。&lt;/p&gt;
+&lt;p&gt;流量值引理的内容如下：&lt;/p&gt;
+&lt;p&gt;对于任何流网络中的节点 v（除了源点 s 和汇点 t），流入节点 v 的总流量等于流出节点 v 的总流量。这个性质也被称为流的守恒性质，因为它意味着除了源点和汇点之外，没有流量在任何节点处被创建或消失。&lt;/p&gt;
+&lt;p&gt;数学上，这可以表示为：&lt;/p&gt;
+&lt;p&gt;对于所有节点 v（v ≠ s, v ≠ t），∑&lt;em&gt;{u ∈ V} f(u, v) = ∑&lt;/em&gt;{u ∈ V} f(v, u)&lt;/p&gt;
+&lt;p&gt;其中 V 是节点的集合，f(u, v) 是从节点 u 到节点 v 的流量。&lt;/p&gt;
+&lt;p&gt;这个引理是网络流问题中的基本性质，它是许多网络流算法，包括 Ford-Fulkerson 算法和 Edmonds-Karp 算法的基础。&lt;/p&gt;
+&lt;h4 id=&#34;weak-duality&#34;&gt;Weak Duality
+&lt;/h4&gt;&lt;p&gt;弱对偶性（Weak Duality）在流量值特征（flow value characterization）中的应用是网络流问题的一个重要概念。它提供了流量值的一个上界。&lt;/p&gt;
+&lt;p&gt;弱对偶性定理的内容如下：&lt;/p&gt;
+&lt;p&gt;对于任何流网络和任何割（s-t cut），流量值总是小于或等于割的容量。换句话说，最大流的值总是小于或等于最小割的值。&lt;/p&gt;
+&lt;p&gt;在流量值特征中，这个定理意味着我们可以通过寻找最小割来得到流量值的一个上界。这个上界对于理解和解决网络流问题非常有用，因为它提供了一个我们无法超过的流量值。&lt;/p&gt;
+&lt;p&gt;此外，这个定理还证明了最大流最小割定理（Max-Flow Min-Cut Theorem）的一部分。最大流最小割定理是网络流问题中的一个重要定理，它表明在任何流网络中，最大流的值等于最小割的值。弱对偶性定理证明了这个定理的“小于等于”部分，而“等于”部分需要通过 Ford-Fulkerson 算法或其变种来证明。&lt;/p&gt;
+&lt;h3 id=&#34;optimality&#34;&gt;Optimality
+&lt;/h3&gt;&lt;p&gt;所有穿过割的边要么是从 A 到 B 并且满流，要么是从 B 到 A 并且空流。&lt;/p&gt;
+&lt;h2 id=&#34;perfect-matchings&#34;&gt;Perfect Matchings
+&lt;/h2&gt;&lt;p&gt;完美匹配（Perfect Matchings）是图论中的一个概念，它在一个图中，每个顶点都被恰好一个边所连接，那么这个边的集合就被称为完美匹配。&lt;/p&gt;
+&lt;p&gt;在一个完美匹配中，图中的每个顶点都被精确地匹配到一个边，没有任何一个顶点是孤立的或者被多个边所连接。换句话说，如果一个图有 n 个顶点，那么它的一个完美匹配就会有 n/2 条边。&lt;/p&gt;
+&lt;p&gt;完美匹配在许多问题中都有应用，例如在网络设计、任务分配、市场匹配等问题中。在这些问题中，我们通常希望找到一个完美匹配，使得某种成本或效益最优化。&lt;/p&gt;
+&lt;h2 id=&#34;bipartite-matching&#34;&gt;Bipartite Matching
+&lt;/h2&gt;&lt;p&gt;二分匹配（Bipartite Matching）是图论中的一个重要概念，它是在二分图（Bipartite Graph）中进行的匹配。&lt;/p&gt;
+&lt;p&gt;二分图是一种特殊的图，它的所有顶点可以被分成两个互不相交的集合，使得每一条边的两个端点分别属于这两个不同的集合。在二分图中进行匹配，就是找到边的集合，使得在这个集合中的任意两条边都不共享端点。&lt;/p&gt;
+&lt;p&gt;二分匹配有许多实际应用，例如在任务分配、稳定婚姻问题、市场均衡等问题中都有应用。在这些问题中，我们通常希望找到一个最大的匹配，也就是包含最多边的匹配。&lt;/p&gt;
+&lt;p&gt;加s和t就能当max-flow问题解了。&lt;/p&gt;
+&lt;h3 id=&#34;integrality-theorem&#34;&gt;Integrality Theorem
+&lt;/h3&gt;&lt;p&gt;整数定理（Integrality Theorem）是网络流问题中的一个重要定理，它表明如果所有边的容量都是整数，那么存在一个最大流，使得每条边的流量也都是整数。&lt;/p&gt;
+&lt;p&gt;如果 k 是整数，并且我们只考虑容量为 1 的边，那么每条边的流量 f(e) 必须是 0 或 1。原因是流量必须满足容量约束，也就是说，流量不能超过容量。因此，如果容量为 1，那么流量只能是 0 或 1。&lt;/p&gt;
+&lt;p&gt;这个性质在解决一些特殊的网络流问题时非常有用，例如在匹配问题和路由问题中。在这些问题中，我们通常只关心是否存在一条边，而不关心边的具体容量，所以我们可以将所有边的容量设为 1，然后应用整数定理。&lt;/p&gt;
+&lt;h3 id=&#34;match-to-flow&#34;&gt;Match to Flow
+&lt;/h3&gt;&lt;p&gt;这个定理表明，在图 G 中的最大匹配数等于在 G&amp;rsquo; 中的最大流量。这个定理的证明分为两部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;≤：将最大匹配转化为流量。匹配约束确保我们满足流量约束。匹配约束和匹配大小确保流量值等于匹配大小。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;≥：将最大流量转化为匹配。流量整数性确保我们不会选择边的分数部分。流网络的约束（容量，保守性）确保我们满足匹配约束（每个顶点最多只能与一个匹配边相邻）。流量值引理表明匹配的大小等于流量的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个定理说明了匹配问题和网络流问题之间的深刻联系。通过将匹配问题转化为网络流问题，我们可以使用网络流算法，如 Ford-Fulkerson 算法和 Edmonds-Karp 算法，来解决匹配问题。这种转化方法在解决一些复杂的组合优化问题时非常有用。&lt;/p&gt;
+&lt;h2 id=&#34;disjoint-paths&#34;&gt;Disjoint Paths
+&lt;/h2&gt;&lt;p&gt;在图论中，&amp;ldquo;不相交路径&amp;rdquo;（Disjoint Paths）是指一组路径，其中任意两条路径都没有共享的顶点或边。换句话说，这些路径是完全独立的，它们不会在任何地方交叉或重叠。&lt;/p&gt;
+&lt;p&gt;不相交路径的概念在许多问题中都有应用，例如在网络设计、路由问题、交通规划等问题中。在这些问题中，我们通常希望找到一组不相交的路径，以便最大化网络的吞吐量，或者避免交通拥堵。&lt;/p&gt;
+&lt;h2 id=&#34;scaling-max-flow&#34;&gt;Scaling Max Flow
+&lt;/h2&gt;&lt;p&gt;在解决最大流问题时，一种常用的策略是使用缩放（Scaling）技术。这种技术的基本思想是先解决一个简化的问题，然后逐步增加问题的规模，直到解决原始问题。&lt;/p&gt;
+&lt;p&gt;在最大流问题中，缩放技术通常是这样实现的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先，我们找到网络中最大的容量 C。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后，我们设置一个阈值，初始值为 C。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们只考虑容量大于或等于阈值的边，忽略其他边，然后使用 Ford-Fulkerson 算法或 Edmonds-Karp 算法找到这个简化网络的最大流。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后，我们将阈值减半，再次运行最大流算法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们重复这个过程，直到阈值为 1。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种方法的优点是，每次迭代时，我们只需要考虑一部分边，这可以大大减少计算量。此外，由于我们是从大到小逐步减小阈值，所以我们可以利用前一次迭代的结果，这可以进一步提高效率。&lt;/p&gt;
+&lt;p&gt;这种方法在处理大规模网络流问题时非常有效，特别是当网络中的容量差异很大时。&lt;/p&gt;
+&lt;h2 id=&#34;halls-theorem&#34;&gt;Hall’s Theorem
+&lt;/h2&gt;&lt;p&gt;哈尔定理（Hall&amp;rsquo;s Theorem）是图论中的一个重要定理，主要用于解决二部图的完美匹配问题。它的内容如下：&lt;/p&gt;
+&lt;p&gt;在一个二部图中，如果对于左侧的每个顶点集合，其邻接的右侧顶点集合的大小至少与其一样大，那么这个二部图存在一个完美匹配。&lt;/p&gt;
+&lt;p&gt;更形式化地说，设 G=(V,E) 是一个二部图，V 可以分为两个部分 V1 和 V2。如果对于 V1 中的任意子集 S，都有 |N(S)| &amp;gt;= |S|，其中 N(S) 是 S 中所有顶点的邻接顶点集合，那么 G 中存在一个完美匹配。&lt;/p&gt;
+&lt;p&gt;这个定理在组合优化、网络流和匹配理论等领域有广泛的应用。例如，它可以用来解决任务分配问题、婚配问题等。&lt;/p&gt;
+&lt;h2 id=&#34;linear-program&#34;&gt;Linear Program
+&lt;/h2&gt;&lt;p&gt;最大流问题可以被表述为一个线性规划问题。线性规划是一种优化问题，目标是在一组线性约束条件下最大化或最小化一个线性目标函数。&lt;/p&gt;
+&lt;p&gt;对于最大流问题，我们可以定义以下的线性规划模型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;变量：对于每条边 e，我们定义一个变量 f(e)，表示边 e 的流量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;目标函数：我们的目标是最大化从源点 s 到汇点 t 的总流量，即最大化 ∑f(e)，其中求和是对所有从 s 出发的边 e 进行的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;约束条件：我们有两种类型的约束条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;容量约束：对于每条边 e，我们有 f(e) ≤ c(e)，其中 c(e) 是边 e 的容量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量守恒约束：对于图中的每个非源非汇节点 v，我们有 ∑f(e_in) = ∑f(e_out)，其中 e_in 是进入节点 v 的边，e_out 是离开节点 v 的边。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下是对应的线性规划模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;maximize ∑f(e) for all e from s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;subject to
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≤ c(e) for all e
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;∑f(e_in) = ∑f(e_out) for all v ≠ s, t
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≥ 0 for all e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个模型可以使用各种线性规划算法来解决，例如单纯形法（Simplex Method）或内点法（Interior Point Method）。&lt;/p&gt;
+&lt;h2 id=&#34;vertex-cover&#34;&gt;Vertex Cover
+&lt;/h2&gt;&lt;p&gt;顶点覆盖（Vertex Cover）是图论中的一个重要概念。&lt;/p&gt;
+&lt;p&gt;在一个图中，顶点覆盖是一个顶点的集合，这个集合的特性是图中的每一条边至少有一个端点在这个集合中。换句话说，如果你从这个集合中选出一个顶点，你可以覆盖到至少一条边。&lt;/p&gt;
+&lt;p&gt;例如，考虑一个简单的图，它有四个顶点（A, B, C, D）和四条边（AB, BC, CD, DA）。在这个图中，{A, B, C, D} 是一个顶点覆盖，因为每一条边都至少有一个端点在这个集合中。同样，{A, C} 或者 {B, D} 也是顶点覆盖。&lt;/p&gt;
+&lt;p&gt;顶点覆盖问题是寻找一个最小的顶点覆盖，也就是包含最少顶点的覆盖。这是一个 NP 完全问题，意味着没有已知的多项式时间算法可以解决所有的顶点覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决顶点覆盖问题，例如贪心算法。&lt;/p&gt;
+&lt;h2 id=&#34;set-cover&#34;&gt;Set Cover
+&lt;/h2&gt;&lt;p&gt;集合覆盖（Set Cover）是计算机科学中的一个经典问题，它是 NP 完全问题的一个例子。&lt;/p&gt;
+&lt;p&gt;给定一个有限集合 U 和 U 的若干子集 S1, S2, &amp;hellip;, Sn，集合覆盖问题是要找到最小的子集合的集合，使得这些子集合的并集等于 U。&lt;/p&gt;
+&lt;p&gt;例如，如果 U = {1, 2, 3, 4, 5}，S1 = {1, 2, 3}，S2 = {2, 4}，S3 = {3, 4, 5}，那么 {S1, S3} 就是一个集合覆盖，因为 S1 和 S3 的并集等于 U。&lt;/p&gt;
+&lt;p&gt;集合覆盖问题在许多实际问题中都有应用，例如在无线网络设计、数据库系统、信息检索等领域。在这些问题中，我们通常希望找到一个最小的集合覆盖，以最小化成本或资源使用。&lt;/p&gt;
+&lt;p&gt;集合覆盖问题是 NP 完全问题，这意味着没有已知的多项式时间算法可以解决所有的集合覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决集合覆盖问题，例如贪心算法。&lt;/p&gt;
+&lt;h2 id=&#34;duality&#34;&gt;Duality
+&lt;/h2&gt;&lt;p&gt;线性规划的对偶性是一个非常重要的概念。对于每一个线性规划问题（称为原问题），都存在一个相关的线性规划问题（称为对偶问题）。原问题和对偶问题之间有一些非常有趣的关系。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;对偶问题的目标函数是原问题的约束条件的线性组合，反之亦然。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对偶问题的解（对偶值）提供了原问题解（原值）的一个下界（如果是最大化问题）或上界（如果是最小化问题）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果原问题和对偶问题都有解（即它们是可行的），那么它们的最优解是相等的。这就是所谓的弱对偶性。如果原问题是无界的，那么对偶问题是不可行的，反之亦然。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在某些条件下（例如，如果原问题和对偶问题都满足某些正则性条件），我们可以保证强对偶性，即原问题的任何可行解和对偶问题的任何可行解都有相同的目标函数值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些对偶性质在解决线性规划问题时非常有用。例如，它们可以用来检验解的最优性，提供解的上下界，以及通过解对偶问题来更有效地解原问题。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Object Oriented</title>
         <link>http://localhost:1313/aquamega/p/object-oriented/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
@@ -48,6 +282,56 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在这个例子中，&lt;code&gt;Person&lt;/code&gt; 是一个类，它定义了两个属性（&lt;code&gt;name&lt;/code&gt; 和 &lt;code&gt;age&lt;/code&gt;）和一个方法（&lt;code&gt;say_hello&lt;/code&gt;）。然后，我们创建了一个 &lt;code&gt;Person&lt;/code&gt; 类的实例 &lt;code&gt;alice&lt;/code&gt;，并调用了它的 &lt;code&gt;say_hello&lt;/code&gt; 方法。&lt;/p&gt;
 &lt;p&gt;面向对象编程的主要优点是它可以提高代码的可读性和可重用性，同时也使得软件更易于维护和开发。&lt;/p&gt;
+&lt;p&gt;在面向对象编程中，继承和多态是两个非常重要的概念。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;继承&lt;/strong&gt;是一种可以让一个类（子类）获取另一个类（父类）的属性和方法的机制。这样，我们可以创建一个通用的父类，然后创建更具体的子类来继承父类的特性。这可以减少代码重复，并提高代码的可读性和可维护性。&lt;/p&gt;
+&lt;p&gt;在 Python 中，我们可以使用 &lt;code&gt;class SubClass(SuperClass):&lt;/code&gt; 语法来实现继承：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Animal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;make_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Animal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;make_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Woof!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Animal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;make_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Meow!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;多态&lt;/strong&gt;是指允许一个接口（在 Python 中是方法）被多种数据类型实现。这意味着我们可以定义一个接口，然后让多个类实现这个接口，每个类都有自己的实现方式。这使得我们可以在不知道对象具体类型的情况下，通过这个接口来使用对象。&lt;/p&gt;
+&lt;p&gt;在上面的例子中，&lt;code&gt;Animal&lt;/code&gt; 类定义了一个 &lt;code&gt;make_sound&lt;/code&gt; 方法，然后 &lt;code&gt;Dog&lt;/code&gt; 类和 &lt;code&gt;Cat&lt;/code&gt; 类都实现了这个方法，每个类都有自己的实现方式。这就是多态的一个例子。我们可以这样使用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;animal_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;animal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;animal&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;animal_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Dog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：Woof!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;animal_sound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：Meow!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在这个例子中，&lt;code&gt;animal_sound&lt;/code&gt; 函数可以接受任何实现了 &lt;code&gt;make_sound&lt;/code&gt; 方法的对象，无论它是 &lt;code&gt;Dog&lt;/code&gt; 类的实例还是 &lt;code&gt;Cat&lt;/code&gt; 类的实例。这就是多态的强大之处。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -100,6 +384,131 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在这个例子中，&lt;code&gt;&amp;amp;xiaohuang&lt;/code&gt; 是取 &lt;code&gt;xiaohuang&lt;/code&gt; 的地址，&lt;code&gt;*dale&lt;/code&gt; 是取 &lt;code&gt;dale&lt;/code&gt; 指向的值。所以 &lt;code&gt;*dale = 0;&lt;/code&gt; 就是将 &lt;code&gt;dale&lt;/code&gt; 指向的值（也就是 &lt;code&gt;xiaohuang&lt;/code&gt;）改为 0。紧接着，&lt;code&gt;dale = &amp;amp;xiaodi;&lt;/code&gt; 将 &lt;code&gt;dale&lt;/code&gt; 的指向改为 &lt;code&gt;xiaodi&lt;/code&gt; 的地址，然后 &lt;code&gt;*dale = 0;&lt;/code&gt; 将 &lt;code&gt;dale&lt;/code&gt; 指向的值（也就是 &lt;code&gt;xiaodi&lt;/code&gt;）改为 0。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Proof by Contradiction</title>
+        <link>http://localhost:1313/aquamega/p/proof-by-contradiction/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/proof-by-contradiction/</guid>
+        <description>&lt;p&gt;反证法（Proof by contradiction）是一种常用的数学证明方法。它的基本思想是假设我们要证明的命题是错误的，然后通过逻辑推理得出矛盾，从而证明该命题是正确的。&lt;/p&gt;
+&lt;p&gt;例如，我们可以用反证法证明 &amp;ldquo;√2 是无理数&amp;rdquo; 这个命题。证明过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;假设 √2 是有理数，那么它可以表示为两个互质整数的比，即 √2 = a/b，其中 a 和 b 是没有公因数的整数。&lt;/li&gt;
+&lt;li&gt;将等式两边平方，得到 2 = a^2 / b^2，即 a^2 = 2b^2。&lt;/li&gt;
+&lt;li&gt;这意味着 a^2 是偶数（因为它是2的倍数），所以 a 也是偶数（因为只有偶数的平方是偶数）。&lt;/li&gt;
+&lt;li&gt;因此，我们可以将 a 写成 2k（k 是整数），然后将它代入等式 a^2 = 2b^2，得到 (2k)^2 = 2b^2，即 4k^2 = 2b^2，简化后得到 b^2 = 2k^2。&lt;/li&gt;
+&lt;li&gt;这意味着 b^2 也是偶数，所以 b 也是偶数。&lt;/li&gt;
+&lt;li&gt;但是，我们一开始假设 a 和 b 是互质的，也就是说它们没有公因数。现在我们得出 a 和 b 都是偶数，这是一个矛盾。&lt;/li&gt;
+&lt;li&gt;因此，我们的假设（√2 是有理数）是错误的，所以 √2 是无理数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这就是反证法的一个例子。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Side Effect</title>
+        <link>http://localhost:1313/aquamega/p/side-effect/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/side-effect/</guid>
+        <description>&lt;p&gt;在编程中，&amp;ldquo;副作用&amp;rdquo;（Side Effect）是指函数或表达式在计算结果以外，对外部世界产生的影响。这些影响可能包括更改全局变量的值，修改输入参数，执行 I/O 操作，等等。
+在 Python 中，许多操作和函数都可能产生副作用。以下是一些常见的例子：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;修改全局变量&lt;/strong&gt;：在函数内部修改全局变量的值会产生副作用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;change_global&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;global&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;change_global&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;修改可变类型的参数&lt;/strong&gt;：如果函数接收一个可变类型（如列表或字典）的参数，并修改了它，那么这就是一个副作用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;my_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;my_list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;add_element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：[1, 2, 3, 4]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;I/O 操作&lt;/strong&gt;：读写文件、打印到控制台、网络请求等 I/O 操作都会产生副作用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;write_to_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;file.txt&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Hello, World!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;write_to_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 这将在磁盘上创建或修改一个文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;修改类的实例属性&lt;/strong&gt;：在类的方法中修改实例属性也是一种副作用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;obj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MyClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在编程时，我们通常应尽量避免副作用，因为它们会使代码更难理解和测试。无副作用的函数（也称为纯函数）只依赖于输入参数，并且只通过返回值与外部世界交互，这使得它们的行为更加可预测和可重用。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -803,6 +1212,21 @@
 &lt;p&gt;Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;readings&#34;&gt;Readings
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Karger&amp;rsquo;s Randomised Contraction algorithm: Chapter 13.2 of [KT]&lt;/li&gt;
+&lt;li&gt;Flow networks, max flow, min cut and basic Ford-Fulkerson: Chapter 7.1 - 7.2 of [KT] and also Chapter 10.1 - 10.4 of [JE]&lt;/li&gt;
+&lt;li&gt;Flow network applications (Bipartite Matching and Disjoint Paths): Chapter 7.5-7.6 of [KT]&lt;/li&gt;
+&lt;li&gt;Capacity-Scaling: Chapter 7.3 of [KT]Edmonds-Karps algorithms: Chapter 10.6 of [JE]&lt;/li&gt;
+&lt;li&gt;Circulation with demands: Chapter 7.7 of [KT]&lt;/li&gt;
+&lt;li&gt;Linear Programming: &lt;a class=&#34;link&#34; href=&#34;https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Approximation Algorithms: Chapter 1 of &lt;a class=&#34;link&#34; href=&#34;https://www.designofapproxalgs.com/book.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.designofapproxalgs.com/book.pdf&lt;/a&gt; and see also Approximation Algorithms by Vazirani&lt;/li&gt;
+&lt;li&gt;[JE] = &lt;a class=&#34;link&#34; href=&#34;https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[KT] = Algorithm Design by Kleinberg and Tardos&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;vocabs&#34;&gt;Vocabs
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -831,6 +1255,9 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;maximal matching: 最大匹配, a matching that cannot be extended by adding another edge&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cardinality 基数，集合中元素的数量&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -1629,36 +2056,6 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;p&gt;$$\frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Text Classification</title>
-        <link>http://localhost:1313/aquamega/p/text-classification/</link>
-        <pubDate>Mon, 27 May 2024 02:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/text-classification/</guid>
-        <description>&lt;p&gt;��用&amp;quot;（Side Effect）是指函数或表达式在计算结果以外，对外部世界产生的影响。这些影响可能包括更改全局变量的值，修改输入参数，执行 I/O 操作，等等。&lt;/p&gt;
-&lt;p&gt;在 Python 中，许多函数和方法都有副作用。例如，列表的 &lt;code&gt;append&lt;/code&gt; 方法就有副作用，它会改变列表的内容：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add_element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;my_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;my_list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;add_element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 输出：[1, 2, 3, 4]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在这个例子中，&lt;code&gt;add_element&lt;/code&gt; 函数有一个副作用，即修改了输入参数 &lt;code&gt;my_list&lt;/code&gt; 的内容。&lt;/p&gt;
-&lt;p&gt;在编程时，我们通常应尽量避免副作用，因为它们会使代码更难理解和测试。无副作用的函数（也称为纯函数）只依赖于输入参数，并且只通过返回值与外部世界交互，这使得它们的行为更加可预测和可重用。��������������������������&lt;/p&gt;
 </description>
         </item>
         <item>

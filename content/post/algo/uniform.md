@@ -4,7 +4,7 @@ draft: false
 title: "UCB and Greedy BFS"
 categories:
     - COMP90054
-tags: ["algo"]
+tags: ["algorithm"]
 params:
   math: true
 ---

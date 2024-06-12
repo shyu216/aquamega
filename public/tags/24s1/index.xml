@@ -614,6 +614,21 @@
 &lt;p&gt;Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;readings&#34;&gt;Readings
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Karger&amp;rsquo;s Randomised Contraction algorithm: Chapter 13.2 of [KT]&lt;/li&gt;
+&lt;li&gt;Flow networks, max flow, min cut and basic Ford-Fulkerson: Chapter 7.1 - 7.2 of [KT] and also Chapter 10.1 - 10.4 of [JE]&lt;/li&gt;
+&lt;li&gt;Flow network applications (Bipartite Matching and Disjoint Paths): Chapter 7.5-7.6 of [KT]&lt;/li&gt;
+&lt;li&gt;Capacity-Scaling: Chapter 7.3 of [KT]Edmonds-Karps algorithms: Chapter 10.6 of [JE]&lt;/li&gt;
+&lt;li&gt;Circulation with demands: Chapter 7.7 of [KT]&lt;/li&gt;
+&lt;li&gt;Linear Programming: &lt;a class=&#34;link&#34; href=&#34;https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Approximation Algorithms: Chapter 1 of &lt;a class=&#34;link&#34; href=&#34;https://www.designofapproxalgs.com/book.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.designofapproxalgs.com/book.pdf&lt;/a&gt; and see also Approximation Algorithms by Vazirani&lt;/li&gt;
+&lt;li&gt;[JE] = &lt;a class=&#34;link&#34; href=&#34;https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[KT] = Algorithm Design by Kleinberg and Tardos&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;vocabs&#34;&gt;Vocabs
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -642,6 +657,9 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;maximal matching: 最大匹配, a matching that cannot be extended by adding another edge&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cardinality 基数，集合中元素的数量&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>

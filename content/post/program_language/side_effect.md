@@ -3,7 +3,7 @@ date: 2024-06-11
 draft: false
 title: Side Effect
 tags: 
-    - PL
+    - Program Language
 params:
   math: true
 ---
