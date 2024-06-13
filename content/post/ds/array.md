@@ -1,12 +1,11 @@
 ---
-date: "2024-05-02T11:13:45+10:00"
+date: 2024-05-02
 draft: false
 title: "Dynamic Array"
 categories:
     - COMP90077
-tags: ["Data Structure"]
-params:
-  math: true
+tags: 
+    - Data Structure
 ---
 
 - Insertion: O(1) expected, O(n) worst case

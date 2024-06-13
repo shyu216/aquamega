@@ -4,8 +4,6 @@ draft: false
 title: Syntactic Sugar
 tags: 
     - Program Language
-params:
-  math: true
 ---
 
 

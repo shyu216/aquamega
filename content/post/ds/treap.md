@@ -1,12 +1,11 @@
 ---
-date: "2024-05-02T11:13:45+10:00"
+date: 2024-05-02
 draft: false
 title: "Treap"
 categories:
     - COMP90077
-tags: ["Data Structure"]
-params:
-  math: true
+tags: 
+    - Data Structure
 ---
 
 
@@ -15,6 +14,32 @@ params:
 - Search: O(log n) expected, O(n) worst case
 - Deletion: O(log n) expected, O(n) worst case
 
+treap的key是有用的数据；priority是随机生成的值，用于保持treap的平衡。
+
+## Operations
+
+### Insertion
+
+加到叶子节点，然后向上旋转，直到满足treap的性质。
+
+### Deletion
+
+找到要删除的节点，把priority设为无穷大，然后旋转，直到满足treap的性质。此时，要删除的节点就变成了叶子节点，然后删除。
+
+### Search
+
+和BST一样，递归地搜索左子树或右子树。
+
+### Join
+
+搞一个假的节点，priority设为无穷大，然后把两个treap的根节点作为左右子树，然后旋转，直到满足treap的性质。
+
+### Split
+
+把要split的key找到，设成无穷小，然后旋转，直到满足treap的性质。此时，这个key到根节点了。
+
+
+## Implementation
 
 ```python
 import random

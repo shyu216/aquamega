@@ -1,12 +1,12 @@
 ---
-date: "2024-05-28T00:56:05+10:00"
+date: 2024-05-28
 draft: false
 title: "Lexical Semantics and Distributional Semantics"
 categories:
     - COMP90042
-tags: ["NLP", "AI"]
-params:
-  math: true
+tags: 
+    - NLP
+    - AI
 ---
 
 ## Lexical Semantics

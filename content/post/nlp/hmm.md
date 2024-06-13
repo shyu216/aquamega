@@ -1,12 +1,12 @@
 ---
-date: "2024-05-27T03:56:05+10:00"
+date: 2024-05-27
 draft: false
 title: "Hidden Markov Model"
 categories:
     - COMP90042
-tags: ["NLP", "AI"]
-params:
-  math: true
+tags: 
+    - NLP
+    - AI
 ---
 
 - w：word

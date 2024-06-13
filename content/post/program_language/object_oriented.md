@@ -4,8 +4,6 @@ draft: false
 title: Object Oriented
 tags: 
     - Program Language
-params:
-  math: true
 ---
 
 

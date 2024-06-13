@@ -6,7 +6,155 @@
         <description>Recent content on Dale的水硕日记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Quake Heap</title>
+        <link>http://localhost:1313/aquamega/p/quake-heap/</link>
+        <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/quake-heap/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;数据在leaf，整个堆用priority维护，跟实际数据无关&lt;/li&gt;
+&lt;li&gt;Insertion: O(1) expected, O(log n) worst case&lt;/li&gt;
+&lt;li&gt;Search: N/A (or O(n) if heap is traversed)&lt;/li&gt;
+&lt;li&gt;Decrease Key: O(1) expected, O(n) worst case&lt;/li&gt;
+&lt;li&gt;Deletion (Delete Min): O(log n) expected, O(n) worst case&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quake Heaps 是一种优先队列数据结构，它在处理动态集合中的元素和执行相关操作（如插入、删除、查找最小元素等）时，提供了良好的时间复杂性。Quake Heaps 的一个关键特性是它们的删除操作的摊还时间复杂度为 $O(\log n)$，这使得它们在需要频繁删除操作的应用中非常有用。&lt;/p&gt;
+&lt;p&gt;以下是一些可能使用 Quake Heaps 的应用：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;图算法&lt;/strong&gt;：许多图算法，如 Dijkstra 的最短路径算法和 Prim 的最小生成树算法，需要使用优先队列来高效地找到下一个要处理的节点。在这些算法中，Quake Heaps 可以用来提高性能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;事件驱动的模拟&lt;/strong&gt;：在事件驱动的模拟中，事件是按照它们发生的时间顺序处理的。Quake Heaps 可以用来存储和检索这些事件，以确保它们按照正确的顺序被处理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;任务调度&lt;/strong&gt;：在任务调度问题中，我们需要根据任务的优先级来决定执行顺序。Quake Heaps 可以用来存储和检索任务，以确保优先级最高的任务首先被执行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;请注意，虽然 Quake Heaps 在理论上有很好的性能，但在实践中，由于它们的实现复杂性，可能会选择其他更简单但性能稍差的数据结构，如 Fibonacci heaps 或 binary heaps。&lt;/p&gt;
+&lt;h2 id=&#34;tournament-trees&#34;&gt;Tournament Trees
+&lt;/h2&gt;&lt;p&gt;Quake Heaps 是基于 Tournament Trees 的一种改进。Tournament Trees 是一种完全二叉树，其中每个节点都包含一个元素，并且树的叶子节点是输入元素。在 Tournament Trees 中，每个节点都存储了其子树中的最小元素。这使得 Tournament Trees 可以用来高效地找到最小元素。&lt;/p&gt;
+&lt;h2 id=&#34;pointers&#34;&gt;Pointers
+&lt;/h2&gt;&lt;p&gt;P即T的最后一层，每个节点都是一个元素。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;元素指针&lt;/strong&gt;：在优先队列 P 中，每个元素都保持一个指向 Tournament Tree T 中概念上存储其优先级的最高节点（即，高度最大的节点）的指针。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;节点指针&lt;/strong&gt;：在 Tournament Tree T 中，每个节点 u 都有一个指向优先队列 P 中的元素的指针，u 概念上存储了该元素的优先级。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;node-number-at-height-invariant&#34;&gt;Node-Number-at-Height Invariant
+&lt;/h2&gt;&lt;p&gt;在 Quake Heaps 中，有一个重要的不变性，即“高度 h 处的节点数目”不变性。&lt;/p&gt;
+&lt;p&gt;有一个constant $c$，上一层的节点数目是下一层的节点数目的 $c$ 倍。这个不变性保证了 Quake Heaps 的高效性。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;c = 0.6
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n5 = 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n4 = 3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n3 = 5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n2 = 9
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n1 = 15
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;$n_{h+1} = c \cdot n_h$&lt;/p&gt;
+&lt;h2 id=&#34;log-n&#34;&gt;log n
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;最后一层至多n个&lt;/li&gt;
+&lt;li&gt;每层会少c倍&lt;/li&gt;
+&lt;li&gt;层数至多$\log_{1/c} n$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;operations&#34;&gt;Operations
+&lt;/h2&gt;&lt;h3 id=&#34;link&#34;&gt;Link
+&lt;/h3&gt;&lt;p&gt;将两个 Tournament Trees 连接成一个更大的 Tournament Tree。这个操作的时间复杂度是 $O(1)$。&lt;/p&gt;
+&lt;p&gt;条件：两个 Tournament Trees 的高度相同。&lt;/p&gt;
+&lt;h3 id=&#34;cut&#34;&gt;Cut
+&lt;/h3&gt;&lt;p&gt;切根和较大的子节点。这个操作的时间复杂度是 $O(1)$。&lt;/p&gt;
+&lt;h3 id=&#34;insert&#34;&gt;Insert
+&lt;/h3&gt;&lt;p&gt;直接插入，建个新树。这个操作的时间复杂度是 $O(1)$。&lt;/p&gt;
+&lt;h3 id=&#34;decrease-key&#34;&gt;Decrease Key
+&lt;/h3&gt;&lt;p&gt;降低一个元素的优先级。把它的值减小，找到它指的树中的节点，然后cut。这个操作的时间复杂度是 $O(1)$。&lt;/p&gt;
+&lt;h3 id=&#34;delete-min&#34;&gt;Delete Min
+&lt;/h3&gt;&lt;p&gt;找到最小的元素，删掉整个path。通常先经过decrease key，使目标数据有最小priority，操作更方便。要是有same height，link起来。&lt;/p&gt;
+&lt;p&gt;这个操作的时间复杂度是 $O(\log n)$，可以用admortized analysis证明。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跟树的数量，和path的长度有关。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;admortized-analysis&#34;&gt;Admortized Analysis
+&lt;/h2&gt;&lt;p&gt;N个元素，T个树，B个坏节点（只有一个孩子）&lt;/p&gt;
+&lt;p&gt;$\Phi = N + 3T + \frac{3}{2\alpha -1}B$&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Splay Tree</title>
+        <link>http://localhost:1313/aquamega/p/splay-tree/</link>
+        <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/splay-tree/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;越常访问，越靠近root&lt;/li&gt;
+&lt;li&gt;一种balanced BST，但不保证平衡&lt;/li&gt;
+&lt;li&gt;Insertion: O(log n) expected, O(n) worst case&lt;/li&gt;
+&lt;li&gt;Search: O(log n) expected, O(n) worst case&lt;/li&gt;
+&lt;li&gt;Deletion: O(log n) expected, O(n) worst case&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Admortized Analysis</title>
+        <link>http://localhost:1313/aquamega/p/admortized-analysis/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/admortized-analysis/</guid>
+        <description>&lt;p&gt;$\sum_{i=1}^{m} cost(\sigma_i) \leq \sum_{i=1}^{m} a(\sigma_i)$&lt;/p&gt;
+&lt;p&gt;摊还分析是一种分析数据结构操作成本的方法，它将操作的成本在一系列操作中进行平均，而不是单独考虑每个操作。&lt;/p&gt;
+&lt;p&gt;我们的目标是证明对于任何一系列的动态数组操作 $\sigma_1,&amp;hellip;,\sigma_m$，如果每个操作的摊还成本 $a(\sigma_i)$ 是 $O(1)$（即常数时间），那么整体的成本不等式 $\sum_{i=1}^{m} cost(\sigma_i) \leq \sum_{i=1}^{m} a(\sigma_i)$ 就能成立。&lt;/p&gt;
+&lt;p&gt;这个不等式的含义是，所有操作的实际总成本（左边的部分）不会超过所有操作的摊还总成本（右边的部分）。这是摊还分析的一个重要性质，它保证了我们的摊还成本确实反映了实际的成本。&lt;/p&gt;
+&lt;h2 id=&#34;prepaid&#34;&gt;Prepaid
+&lt;/h2&gt;&lt;p&gt;$\sum_{i=1}^{m} a(\sigma_i) = \sum_{i=1}^{m} cost(\sigma_i) + \sum_{i=1}^{m} \Beta$&lt;/p&gt;
+&lt;p&gt;where $\Beta \geq 0$ (总是有余额)&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Prepaid&amp;rdquo;（预付）是摊还分析中的一个概念，它描述的是一种策略，即在执行一些高成本的操作之前，先执行一些低成本的操作来“预付”高成本操作的部分或全部成本。&lt;/p&gt;
+&lt;p&gt;例如，考虑一个动态数组的插入操作。当数组满时，我们需要分配一个新的、更大的数组，并将旧数组中的所有元素复制到新数组中。这个操作的成本是线性的。然而，如果我们将这个成本均摊到之前的每次插入操作上，那么每次插入操作的摊还成本就是常数的。这就是预付策略的一个例子：我们通过每次插入操作“预付”一部分成本，来避免在数组满时一次性支付所有的成本。&lt;/p&gt;
+&lt;p&gt;预付策略的一个关键思想是，我们可以将一些高成本的操作的成本分摊到多个低成本的操作上，从而使得所有操作的摊还成本都保持在一个可接受的范围内。这种策略在设计和分析高效的数据结构和算法时非常有用。&lt;/p&gt;
+&lt;h2 id=&#34;potential-function&#34;&gt;Potential Function
+&lt;/h2&gt;&lt;p&gt;$\sum_{i=1}^{m} a(\sigma_i) = \sum_{i=1}^{m} cost(\sigma_i) + \sum_{i=1}^{m} \Phi(D_i) - \Phi(D_0)$&lt;/p&gt;
+&lt;p&gt;where $\Phi(D_0)$ = 0, $\Phi(D_i) \geq 0$（不能超出势能）&lt;/p&gt;
+&lt;p&gt;在摊还分析中，我们经常使用势能方法来证明摊还成本。下面是一个经典的例子：动态数组的插入操作。&lt;/p&gt;
+&lt;p&gt;动态数组是一种可以动态增长和缩小的数组。当我们向动态数组中插入元素时，如果数组已满，我们需要创建一个新的、更大的数组，然后将旧数组中的所有元素复制到新数组中。这个操作的成本是线性的。然而，如果我们使用摊还分析，我们可以证明每次插入操作的摊还成本是常数的。&lt;/p&gt;
+&lt;p&gt;我们定义势能函数 $\Phi$ 为数组的当前大小减去数组中的元素数量。当我们插入一个元素时，有两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;如果数组没有满，我们只需要在数组的末尾添加一个元素。这个操作的实际成本是 $1$，势能的变化是 $-1$，所以摊还成本是 $1 - (-1) = 2$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果数组已满，我们需要创建一个新的、大小为 $2n$ 的数组，并将 $n$ 个元素复制到新数组中。这个操作的实际成本是 $n+1$，势能的变化是 $n - n = 0$，所以摊还成本是 $n+1 - 0 = n+1$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在第二种情况中，摊还成本看起来是线性的。然而，这种情况只会发生在插入操作的数量是当前数组大小的整数倍时。在大多数情况下，我们处于第一种情况，摊还成本是常数的。因此，我们可以说插入操作的摊还成本是常数的，即 $a(\sigma_i) \in O(1)$。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>log n，n，2^n的关系</title>
+        <link>http://localhost:1313/aquamega/p/log-nn2n%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/log-nn2n%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+        <description>&lt;h2 id=&#34;big-o-notation&#34;&gt;Big-O Notation
+&lt;/h2&gt;&lt;p&gt;$$ f(n) \in O(g(n)) \text{ iff } \exists c_1, c_2, \forall  n &amp;gt; c_2,  f(n) \leq c_1 \cdot g(n)$$&lt;/p&gt;
+&lt;h2 id=&#34;olog-n-subset-onk-subset-o2n&#34;&gt;$O(\log n) \subset O(n^k) \subset O(2^n)$
+&lt;/h2&gt;&lt;p&gt;求证？设新方程，用相除或相减把不等式移到同一边，然后证明单调性，且大于1或大于0，取得$c_1, c_2$的值。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Mathematical Induction</title>
         <link>http://localhost:1313/aquamega/p/mathematical-induction/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
@@ -605,9 +753,52 @@
 </description>
         </item>
         <item>
+        <title>Tree</title>
+        <link>http://localhost:1313/aquamega/p/tree/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/tree/</guid>
+        <description>&lt;h2 id=&#34;tree&#34;&gt;Tree
+&lt;/h2&gt;&lt;p&gt;连着的没有方向的没有圈圈的图&lt;/p&gt;
+&lt;h2 id=&#34;rooted-tree&#34;&gt;Rooted Tree
+&lt;/h2&gt;&lt;p&gt;有一个根节点&lt;/p&gt;
+&lt;h3 id=&#34;parent-child-sibling&#34;&gt;Parent, Child, Sibling
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Parent: 父节点&lt;/li&gt;
+&lt;li&gt;Child: 子节点&lt;/li&gt;
+&lt;li&gt;Sibling: 兄弟节点&lt;/li&gt;
+&lt;li&gt;Leaf: 没有子节点的节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ancestor-descendant&#34;&gt;Ancestor, Descendant
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ancestor: 祖先节点，一个path到根节点，我是我自己的祖先&lt;/li&gt;
+&lt;li&gt;Proper Ancestor: 除了自己的祖先&lt;/li&gt;
+&lt;li&gt;Descendant: 子孙节点&lt;/li&gt;
+&lt;li&gt;Proper Descendant: 除了自己的子孙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;node-depth&#34;&gt;Node depth
+&lt;/h3&gt;&lt;p&gt;depth是对node说的，proper ancestor的数量，根节点的depth是0&lt;/p&gt;
+&lt;h3 id=&#34;height&#34;&gt;Height
+&lt;/h3&gt;&lt;p&gt;height是对整个tree说的，最大的depth+1&lt;/p&gt;
+&lt;h2 id=&#34;binary-tree&#34;&gt;Binary Tree
+&lt;/h2&gt;&lt;p&gt;每个节点最多有两个子节点的rooted tree&lt;/p&gt;
+&lt;h2 id=&#34;binary-search-tree&#34;&gt;Binary Search Tree
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;每个node都有一个key，可以重复&lt;/li&gt;
+&lt;li&gt;对于每个node，左子树的key都小于这个node的key，右子树的key都大于这个node的key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;balanced-binary-tree&#34;&gt;Balanced Binary Tree
+&lt;/h2&gt;&lt;p&gt;一啪啦实现方法，尽量让树的高度小，比如AVL tree，Red-Black tree&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;O(log n)的search, insert, delete&lt;/li&gt;
+&lt;li&gt;O(n)的space&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>COMP90042</title>
         <link>http://localhost:1313/aquamega/p/comp90042/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90042/</guid>
         <description>&lt;ol&gt;
@@ -957,7 +1148,7 @@
         <item>
         <title>COMP90054</title>
         <link>http://localhost:1313/aquamega/p/comp90054/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90054/</guid>
         <description>&lt;ul&gt;
@@ -1173,7 +1364,7 @@
         <item>
         <title>COMP90077</title>
         <link>http://localhost:1313/aquamega/p/comp90077/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/comp90077/</guid>
         <description>&lt;p&gt;Learn some advanced algorithms and data structures.&lt;/p&gt;
@@ -1265,7 +1456,7 @@
         <item>
         <title>GEOM90008</title>
         <link>http://localhost:1313/aquamega/p/geom90008/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/geom90008/</guid>
         <description>&lt;p&gt;Course notebook: &lt;a class=&#34;link&#34; href=&#34;https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1308,7 +1499,7 @@
         <item>
         <title>Game Theory</title>
         <link>http://localhost:1313/aquamega/p/game-theory/</link>
-        <pubDate>Thu, 30 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/game-theory/</guid>
         <description>&lt;ul&gt;
@@ -1419,7 +1610,7 @@
         <item>
         <title>Greedy Relaxed Planning</title>
         <link>http://localhost:1313/aquamega/p/greedy-relaxed-planning/</link>
-        <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Wed, 29 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/greedy-relaxed-planning/</guid>
         <description>&lt;ul&gt;
@@ -1579,7 +1770,7 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <item>
         <title>UCB and Greedy BFS</title>
         <link>http://localhost:1313/aquamega/p/ucb-and-greedy-bfs/</link>
-        <pubDate>Wed, 29 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Wed, 29 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/ucb-and-greedy-bfs/</guid>
         <description>&lt;h2 id=&#34;uniform-cost-search&#34;&gt;Uniform Cost Search
@@ -1668,9 +1859,120 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
+        <title>Lexical Semantics and Distributional Semantics</title>
+        <link>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</link>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</guid>
+        <description>&lt;h2 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
+&lt;/h2&gt;&lt;p&gt;词汇解释&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Synonymy 同义词&lt;/li&gt;
+&lt;li&gt;Antonymy 反义词&lt;/li&gt;
+&lt;li&gt;Hypernymy 上义词&lt;/li&gt;
+&lt;li&gt;Meronymy 下义词&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;wordnet&#34;&gt;WordNet
+&lt;/h2&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
+&lt;h2 id=&#34;word-similarity&#34;&gt;Word Similarity
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li&gt;
+&lt;li&gt;深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li&gt;
+&lt;li&gt;信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
+&lt;/h2&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Neual Networks</title>
+        <link>http://localhost:1313/aquamega/p/neual-networks/</link>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/neual-networks/</guid>
+        <description>&lt;p&gt;神经网络（Neural Network）是一种模拟人脑神经元工作方式的机器学习模型。它由大量的神经元（也称为节点或单元）组成，这些神经元按照一定的层次结构排列，包括输入层、隐藏层和输出层。&lt;/p&gt;
+&lt;p&gt;每个神经元接收来自上一层神经元的输入，然后通过一个激活函数（如 Sigmoid、ReLU 等）处理这些输入，得到一个输出，这个输出再传递给下一层的神经元。&lt;/p&gt;
+&lt;p&gt;神经网络的训练通常使用反向传播（Backpropagation）算法和梯度下降（Gradient Descent）算法。在训练过程中，神经网络通过不断调整神经元之间的连接权重，来最小化预测值和真实值之间的差异。&lt;/p&gt;
+&lt;p&gt;神经网络可以处理非线性问题，适用于各种复杂的机器学习任务，如图像识别、语音识别、自然语言处理等。但是，神经网络的训练需要大量的数据和计算资源，而且模型的解释性较差，这是它的一些挑战。&lt;/p&gt;
+&lt;p&gt;A Neural Network is a machine learning model that simulates the way neurons in the human brain work. It consists of a large number of neurons (also known as nodes or units) arranged in a certain hierarchical structure, including input layers, hidden layers, and output layers.&lt;/p&gt;
+&lt;p&gt;Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p&gt;
+&lt;p&gt;Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p&gt;
+&lt;p&gt;Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p&gt;
+&lt;h2 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
+&lt;/h2&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;任务：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主题分类：使用神经网络对文本或其他数据进行主题分类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;语言模型：使用神经网络来理解和生成语言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词性标注：使用神经网络来识别文本中每个词的词性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;循环神经网络&#34;&gt;循环神经网络
+&lt;/h2&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li&gt;
+&lt;li&gt;LSTM：
+&lt;ol&gt;
+&lt;li&gt;门的功能：LSTM是一种特殊的RNN，它有三个门（输入门、遗忘门和输出门）来控制信息的流动。&lt;/li&gt;
+&lt;li&gt;变体：LSTM有多种变体，如GRU（门控循环单元），它简化了LSTM的结构。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;任务：
+&lt;ol&gt;
+&lt;li&gt;文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。&lt;/li&gt;
+&lt;li&gt;词性标注：使用RNN来识别文本中每个词的词性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
+&lt;/h2&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;L1 Norm&lt;/li&gt;
+&lt;li&gt;L2 Norm&lt;/li&gt;
+&lt;li&gt;Dropout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lstm&#34;&gt;LSTM
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Memory cell：记忆单元，用来存储信息&lt;/li&gt;
+&lt;li&gt;Hidden state：隐藏状态，用来传递信息&lt;/li&gt;
+&lt;li&gt;Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li&gt;
+&lt;li&gt;Input gate：输入门，用来控制新的信息是否被存储到记忆单元中&lt;/li&gt;
+&lt;li&gt;Output gate：输出门，用来控制隐藏状态中的信息是否被传递到下一个时间步&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Part-of-Speech Tagging</title>
         <link>http://localhost:1313/aquamega/p/part-of-speech-tagging/</link>
-        <pubDate>Tue, 28 May 2024 03:56:05 +1000</pubDate>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/part-of-speech-tagging/</guid>
         <description>&lt;h2 id=&#34;part-of-speech词类&#34;&gt;Part-of-Speech(词类)
@@ -1760,120 +2062,9 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Lexical Semantics and Distributional Semantics</title>
-        <link>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</link>
-        <pubDate>Tue, 28 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</guid>
-        <description>&lt;h2 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
-&lt;/h2&gt;&lt;p&gt;词汇解释&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Synonymy 同义词&lt;/li&gt;
-&lt;li&gt;Antonymy 反义词&lt;/li&gt;
-&lt;li&gt;Hypernymy 上义词&lt;/li&gt;
-&lt;li&gt;Meronymy 下义词&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;wordnet&#34;&gt;WordNet
-&lt;/h2&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
-&lt;h2 id=&#34;word-similarity&#34;&gt;Word Similarity
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li&gt;
-&lt;li&gt;深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li&gt;
-&lt;li&gt;信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
-&lt;/h2&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Neual Networks</title>
-        <link>http://localhost:1313/aquamega/p/neual-networks/</link>
-        <pubDate>Tue, 28 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/neual-networks/</guid>
-        <description>&lt;p&gt;神经网络（Neural Network）是一种模拟人脑神经元工作方式的机器学习模型。它由大量的神经元（也称为节点或单元）组成，这些神经元按照一定的层次结构排列，包括输入层、隐藏层和输出层。&lt;/p&gt;
-&lt;p&gt;每个神经元接收来自上一层神经元的输入，然后通过一个激活函数（如 Sigmoid、ReLU 等）处理这些输入，得到一个输出，这个输出再传递给下一层的神经元。&lt;/p&gt;
-&lt;p&gt;神经网络的训练通常使用反向传播（Backpropagation）算法和梯度下降（Gradient Descent）算法。在训练过程中，神经网络通过不断调整神经元之间的连接权重，来最小化预测值和真实值之间的差异。&lt;/p&gt;
-&lt;p&gt;神经网络可以处理非线性问题，适用于各种复杂的机器学习任务，如图像识别、语音识别、自然语言处理等。但是，神经网络的训练需要大量的数据和计算资源，而且模型的解释性较差，这是它的一些挑战。&lt;/p&gt;
-&lt;p&gt;A Neural Network is a machine learning model that simulates the way neurons in the human brain work. It consists of a large number of neurons (also known as nodes or units) arranged in a certain hierarchical structure, including input layers, hidden layers, and output layers.&lt;/p&gt;
-&lt;p&gt;Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p&gt;
-&lt;p&gt;Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p&gt;
-&lt;p&gt;Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p&gt;
-&lt;h2 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
-&lt;/h2&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;任务：&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;主题分类：使用神经网络对文本或其他数据进行主题分类。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;语言模型：使用神经网络来理解和生成语言。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;词性标注：使用神经网络来识别文本中每个词的词性。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;循环神经网络&#34;&gt;循环神经网络
-&lt;/h2&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li&gt;
-&lt;li&gt;LSTM：
-&lt;ol&gt;
-&lt;li&gt;门的功能：LSTM是一种特殊的RNN，它有三个门（输入门、遗忘门和输出门）来控制信息的流动。&lt;/li&gt;
-&lt;li&gt;变体：LSTM有多种变体，如GRU（门控循环单元），它简化了LSTM的结构。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;任务：
-&lt;ol&gt;
-&lt;li&gt;文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。&lt;/li&gt;
-&lt;li&gt;词性标注：使用RNN来识别文本中每个词的词性。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
-&lt;/h2&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;L1 Norm&lt;/li&gt;
-&lt;li&gt;L2 Norm&lt;/li&gt;
-&lt;li&gt;Dropout&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;lstm&#34;&gt;LSTM
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Memory cell：记忆单元，用来存储信息&lt;/li&gt;
-&lt;li&gt;Hidden state：隐藏状态，用来传递信息&lt;/li&gt;
-&lt;li&gt;Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li&gt;
-&lt;li&gt;Input gate：输入门，用来控制新的信息是否被存储到记忆单元中&lt;/li&gt;
-&lt;li&gt;Output gate：输出门，用来控制隐藏状态中的信息是否被传递到下一个时间步&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>Hidden Markov Model</title>
         <link>http://localhost:1313/aquamega/p/hidden-markov-model/</link>
-        <pubDate>Mon, 27 May 2024 03:56:05 +1000</pubDate>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/hidden-markov-model/</guid>
         <description>&lt;ul&gt;
@@ -1893,9 +2084,151 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>N-gram Language Model</title>
+        <link>http://localhost:1313/aquamega/p/n-gram-language-model/</link>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/n-gram-language-model/</guid>
+        <description>&lt;h2 id=&#34;language-model&#34;&gt;Language Model
+&lt;/h2&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Query completion(搜索引擎)&lt;/li&gt;
+&lt;li&gt;Optical character recognition(OCR)&lt;/li&gt;
+&lt;li&gt;Translation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;n-gram&#34;&gt;N-gram
+&lt;/h3&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maximum Likelihood Estimation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p&gt;
+&lt;p&gt;Use special tags to denote the beginning and end of a sentence, i.e. &lt;code&gt;&amp;lt;s&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;smoothing&#34;&gt;Smoothing
+&lt;/h3&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Laplacian (add-one) smoothing&lt;/p&gt;
+&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + 1}{C(w_{i-1}) + V}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add-k smoothing&lt;/p&gt;
+&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lidstone smoothing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generalized Add-k, 所有非负实数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Absolute discounting&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Katz Backoff&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use lower-order n-gram&lt;/li&gt;
+&lt;li&gt;Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Knser-Ney&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Versatility of lower-order n-gram, co-occur with many words&lt;/li&gt;
+&lt;li&gt;让更通用的低阶n-gram有更高的概率&lt;/li&gt;
+&lt;li&gt;contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) &amp;gt; 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Interpolation&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Combine lower-order n-gram&lt;/li&gt;
+&lt;li&gt;给不同阶的n-gram加权，相加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Preprocessing</title>
+        <link>http://localhost:1313/aquamega/p/preprocessing/</link>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/preprocessing/</guid>
+        <description>&lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Word&lt;/li&gt;
+&lt;li&gt;Sentence: words&lt;/li&gt;
+&lt;li&gt;Document: sentences&lt;/li&gt;
+&lt;li&gt;Corpus: documents&lt;/li&gt;
+&lt;li&gt;Word Token: word instance&lt;/li&gt;
+&lt;li&gt;Word Type: verb, noun, etc.&lt;/li&gt;
+&lt;li&gt;Lexicon: word types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;steps&#34;&gt;Steps
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Remove unwnated formatting, i.e. HTML tags&lt;/li&gt;
+&lt;li&gt;Sentecne segmentation, break text into sentences&lt;/li&gt;
+&lt;li&gt;Tokenization, break sentences into words&lt;/li&gt;
+&lt;li&gt;Normalization, transform words into canonical form, i.e. lower case&lt;/li&gt;
+&lt;li&gt;Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
+&lt;/h3&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
+&lt;h3 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
+&lt;/h3&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
+&lt;p&gt;Adv:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data-informed tokenization&lt;/li&gt;
+&lt;li&gt;Works for different languages&lt;/li&gt;
+&lt;li&gt;Deals better with unknown words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Disadv:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rarer words will be split into subwords, even individual letter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;word-normalization&#34;&gt;Word Normalization
+&lt;/h3&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
+&lt;p&gt;形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lowercasing&lt;/li&gt;
+&lt;li&gt;Remove morphology, i.e. &amp;ldquo;running&amp;rdquo; -&amp;gt; &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
+&lt;/h3&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
+&lt;/h3&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
+&lt;p&gt;Lemma(词元): the uninflated form&lt;/p&gt;
+&lt;h3 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
+&lt;/h3&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
+&lt;/h3&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
+&lt;p&gt;Stem(词干): the root form&lt;/p&gt;
+&lt;h3 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
+&lt;/h3&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C: consonant(辅音)&lt;/li&gt;
+&lt;li&gt;V: vowel(元音)&lt;/li&gt;
+&lt;li&gt;m: measure $&lt;a class=&#34;link&#34; href=&#34;VC&#34; &gt;C&lt;/a&gt;^m[V]$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stopword-removal&#34;&gt;Stopword Removal
+&lt;/h3&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
+&lt;p&gt;All closed-class or function words, any high frequency words&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Text Classification</title>
         <link>http://localhost:1313/aquamega/p/text-classification/</link>
-        <pubDate>Mon, 27 May 2024 02:56:05 +1000</pubDate>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/text-classification/</guid>
         <description>&lt;ul&gt;
@@ -2059,151 +2392,9 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>N-gram Language Model</title>
-        <link>http://localhost:1313/aquamega/p/n-gram-language-model/</link>
-        <pubDate>Mon, 27 May 2024 01:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/n-gram-language-model/</guid>
-        <description>&lt;h2 id=&#34;language-model&#34;&gt;Language Model
-&lt;/h2&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Query completion(搜索引擎)&lt;/li&gt;
-&lt;li&gt;Optical character recognition(OCR)&lt;/li&gt;
-&lt;li&gt;Translation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;n-gram&#34;&gt;N-gram
-&lt;/h3&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Maximum Likelihood Estimation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p&gt;
-&lt;p&gt;Use special tags to denote the beginning and end of a sentence, i.e. &lt;code&gt;&amp;lt;s&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;smoothing&#34;&gt;Smoothing
-&lt;/h3&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Laplacian (add-one) smoothing&lt;/p&gt;
-&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + 1}{C(w_{i-1}) + V}$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add-k smoothing&lt;/p&gt;
-&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Lidstone smoothing&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generalized Add-k, 所有非负实数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Absolute discounting&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Katz Backoff&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use lower-order n-gram&lt;/li&gt;
-&lt;li&gt;Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Knser-Ney&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Versatility of lower-order n-gram, co-occur with many words&lt;/li&gt;
-&lt;li&gt;让更通用的低阶n-gram有更高的概率&lt;/li&gt;
-&lt;li&gt;contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) &amp;gt; 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Interpolation&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Combine lower-order n-gram&lt;/li&gt;
-&lt;li&gt;给不同阶的n-gram加权，相加&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Preprocessing</title>
-        <link>http://localhost:1313/aquamega/p/preprocessing/</link>
-        <pubDate>Mon, 27 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/preprocessing/</guid>
-        <description>&lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Word&lt;/li&gt;
-&lt;li&gt;Sentence: words&lt;/li&gt;
-&lt;li&gt;Document: sentences&lt;/li&gt;
-&lt;li&gt;Corpus: documents&lt;/li&gt;
-&lt;li&gt;Word Token: word instance&lt;/li&gt;
-&lt;li&gt;Word Type: verb, noun, etc.&lt;/li&gt;
-&lt;li&gt;Lexicon: word types&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;steps&#34;&gt;Steps
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Remove unwnated formatting, i.e. HTML tags&lt;/li&gt;
-&lt;li&gt;Sentecne segmentation, break text into sentences&lt;/li&gt;
-&lt;li&gt;Tokenization, break sentences into words&lt;/li&gt;
-&lt;li&gt;Normalization, transform words into canonical form, i.e. lower case&lt;/li&gt;
-&lt;li&gt;Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
-&lt;/h3&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
-&lt;h3 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
-&lt;/h3&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
-&lt;p&gt;Adv:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Data-informed tokenization&lt;/li&gt;
-&lt;li&gt;Works for different languages&lt;/li&gt;
-&lt;li&gt;Deals better with unknown words&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Disadv:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Rarer words will be split into subwords, even individual letter&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;word-normalization&#34;&gt;Word Normalization
-&lt;/h3&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
-&lt;p&gt;形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Lowercasing&lt;/li&gt;
-&lt;li&gt;Remove morphology, i.e. &amp;ldquo;running&amp;rdquo; -&amp;gt; &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
-&lt;/h3&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
-&lt;/h3&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
-&lt;p&gt;Lemma(词元): the uninflated form&lt;/p&gt;
-&lt;h3 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
-&lt;/h3&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
-&lt;/h3&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
-&lt;p&gt;Stem(词干): the root form&lt;/p&gt;
-&lt;h3 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
-&lt;/h3&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;C: consonant(辅音)&lt;/li&gt;
-&lt;li&gt;V: vowel(元音)&lt;/li&gt;
-&lt;li&gt;m: measure $&lt;a class=&#34;link&#34; href=&#34;VC&#34; &gt;C&lt;/a&gt;^m[V]$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;stopword-removal&#34;&gt;Stopword Removal
-&lt;/h3&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
-&lt;p&gt;All closed-class or function words, any high frequency words&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>A* and Hill Climbing</title>
         <link>http://localhost:1313/aquamega/p/a-and-hill-climbing/</link>
-        <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/a-and-hill-climbing/</guid>
         <description>&lt;h2 id=&#34;a算法带有重复检测和重新打开&#34;&gt;A*算法（带有重复检测和重新打开）
@@ -2371,7 +2562,7 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <item>
         <title>BFS and DFS</title>
         <link>http://localhost:1313/aquamega/p/bfs-and-dfs/</link>
-        <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/bfs-and-dfs/</guid>
         <description>&lt;h2 id=&#34;广度优先搜索bfs&#34;&gt;广度优先搜索（BFS）
@@ -2461,7 +2652,7 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <item>
         <title>Dynamic Array</title>
         <link>http://localhost:1313/aquamega/p/dynamic-array/</link>
-        <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/dynamic-array/</guid>
         <description>&lt;ul&gt;
@@ -2574,7 +2765,7 @@ $bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p&gt;
         <item>
         <title>MDPs</title>
         <link>http://localhost:1313/aquamega/p/mdps/</link>
-        <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/mdps/</guid>
         <description>&lt;h2 id=&#34;markov-decision-processesmdps马尔可夫决策过程&#34;&gt;Markov Decision Processes（MDPs）马尔可夫决策过程
@@ -2768,7 +2959,7 @@ $\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$&lt;/p&g
         <item>
         <title>Treap</title>
         <link>http://localhost:1313/aquamega/p/treap/</link>
-        <pubDate>Thu, 02 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/treap/</guid>
         <description>&lt;ul&gt;
@@ -2777,7 +2968,20 @@ $\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$&lt;/p&g
 &lt;li&gt;Search: O(log n) expected, O(n) worst case&lt;/li&gt;
 &lt;li&gt;Deletion: O(log n) expected, O(n) worst case&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;p&gt;treap的key是有用的数据；priority是随机生成的值，用于保持treap的平衡。&lt;/p&gt;
+&lt;h2 id=&#34;operations&#34;&gt;Operations
+&lt;/h2&gt;&lt;h3 id=&#34;insertion&#34;&gt;Insertion
+&lt;/h3&gt;&lt;p&gt;加到叶子节点，然后向上旋转，直到满足treap的性质。&lt;/p&gt;
+&lt;h3 id=&#34;deletion&#34;&gt;Deletion
+&lt;/h3&gt;&lt;p&gt;找到要删除的节点，把priority设为无穷大，然后旋转，直到满足treap的性质。此时，要删除的节点就变成了叶子节点，然后删除。&lt;/p&gt;
+&lt;h3 id=&#34;search&#34;&gt;Search
+&lt;/h3&gt;&lt;p&gt;和BST一样，递归地搜索左子树或右子树。&lt;/p&gt;
+&lt;h3 id=&#34;join&#34;&gt;Join
+&lt;/h3&gt;&lt;p&gt;搞一个假的节点，priority设为无穷大，然后把两个treap的根节点作为左右子树，然后旋转，直到满足treap的性质。&lt;/p&gt;
+&lt;h3 id=&#34;split&#34;&gt;Split
+&lt;/h3&gt;&lt;p&gt;把要split的key找到，设成无穷小，然后旋转，直到满足treap的性质。此时，这个key到根节点了。&lt;/p&gt;
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2

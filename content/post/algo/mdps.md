@@ -1,12 +1,12 @@
 ---
-date: "2024-05-02T11:13:45+10:00"
+date: 2024-05-02
 draft: false
 title: "MDPs"
 categories:
     - COMP90054
-tags: ["algorithm", "AI"]
-params:
-  math: true
+tags: 
+    - algorithm
+    - AI
 ---
 
 

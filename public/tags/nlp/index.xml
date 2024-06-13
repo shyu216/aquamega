@@ -6,10 +6,121 @@
         <description>Recent content in NLP on Dale的水硕日记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 May 2024 03:56:05 +1000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/tags/nlp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/tags/nlp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Lexical Semantics and Distributional Semantics</title>
+        <link>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</link>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</guid>
+        <description>&lt;h2 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
+&lt;/h2&gt;&lt;p&gt;词汇解释&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Synonymy 同义词&lt;/li&gt;
+&lt;li&gt;Antonymy 反义词&lt;/li&gt;
+&lt;li&gt;Hypernymy 上义词&lt;/li&gt;
+&lt;li&gt;Meronymy 下义词&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;wordnet&#34;&gt;WordNet
+&lt;/h2&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
+&lt;h2 id=&#34;word-similarity&#34;&gt;Word Similarity
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li&gt;
+&lt;li&gt;深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li&gt;
+&lt;li&gt;信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
+&lt;/h2&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Neual Networks</title>
+        <link>http://localhost:1313/aquamega/p/neual-networks/</link>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/neual-networks/</guid>
+        <description>&lt;p&gt;神经网络（Neural Network）是一种模拟人脑神经元工作方式的机器学习模型。它由大量的神经元（也称为节点或单元）组成，这些神经元按照一定的层次结构排列，包括输入层、隐藏层和输出层。&lt;/p&gt;
+&lt;p&gt;每个神经元接收来自上一层神经元的输入，然后通过一个激活函数（如 Sigmoid、ReLU 等）处理这些输入，得到一个输出，这个输出再传递给下一层的神经元。&lt;/p&gt;
+&lt;p&gt;神经网络的训练通常使用反向传播（Backpropagation）算法和梯度下降（Gradient Descent）算法。在训练过程中，神经网络通过不断调整神经元之间的连接权重，来最小化预测值和真实值之间的差异。&lt;/p&gt;
+&lt;p&gt;神经网络可以处理非线性问题，适用于各种复杂的机器学习任务，如图像识别、语音识别、自然语言处理等。但是，神经网络的训练需要大量的数据和计算资源，而且模型的解释性较差，这是它的一些挑战。&lt;/p&gt;
+&lt;p&gt;A Neural Network is a machine learning model that simulates the way neurons in the human brain work. It consists of a large number of neurons (also known as nodes or units) arranged in a certain hierarchical structure, including input layers, hidden layers, and output layers.&lt;/p&gt;
+&lt;p&gt;Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p&gt;
+&lt;p&gt;Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p&gt;
+&lt;p&gt;Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p&gt;
+&lt;h2 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
+&lt;/h2&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;任务：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主题分类：使用神经网络对文本或其他数据进行主题分类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;语言模型：使用神经网络来理解和生成语言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词性标注：使用神经网络来识别文本中每个词的词性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;循环神经网络&#34;&gt;循环神经网络
+&lt;/h2&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li&gt;
+&lt;li&gt;LSTM：
+&lt;ol&gt;
+&lt;li&gt;门的功能：LSTM是一种特殊的RNN，它有三个门（输入门、遗忘门和输出门）来控制信息的流动。&lt;/li&gt;
+&lt;li&gt;变体：LSTM有多种变体，如GRU（门控循环单元），它简化了LSTM的结构。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;任务：
+&lt;ol&gt;
+&lt;li&gt;文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。&lt;/li&gt;
+&lt;li&gt;词性标注：使用RNN来识别文本中每个词的词性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
+&lt;/h2&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;L1 Norm&lt;/li&gt;
+&lt;li&gt;L2 Norm&lt;/li&gt;
+&lt;li&gt;Dropout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lstm&#34;&gt;LSTM
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Memory cell：记忆单元，用来存储信息&lt;/li&gt;
+&lt;li&gt;Hidden state：隐藏状态，用来传递信息&lt;/li&gt;
+&lt;li&gt;Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li&gt;
+&lt;li&gt;Input gate：输入门，用来控制新的信息是否被存储到记忆单元中&lt;/li&gt;
+&lt;li&gt;Output gate：输出门，用来控制隐藏状态中的信息是否被传递到下一个时间步&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Part-of-Speech Tagging</title>
         <link>http://localhost:1313/aquamega/p/part-of-speech-tagging/</link>
-        <pubDate>Tue, 28 May 2024 03:56:05 +1000</pubDate>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/part-of-speech-tagging/</guid>
         <description>&lt;h2 id=&#34;part-of-speech词类&#34;&gt;Part-of-Speech(词类)
@@ -99,120 +210,9 @@
 </description>
         </item>
         <item>
-        <title>Lexical Semantics and Distributional Semantics</title>
-        <link>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</link>
-        <pubDate>Tue, 28 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/lexical-semantics-and-distributional-semantics/</guid>
-        <description>&lt;h2 id=&#34;lexical-semantics&#34;&gt;Lexical Semantics
-&lt;/h2&gt;&lt;p&gt;词汇解释&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Synonymy 同义词&lt;/li&gt;
-&lt;li&gt;Antonymy 反义词&lt;/li&gt;
-&lt;li&gt;Hypernymy 上义词&lt;/li&gt;
-&lt;li&gt;Meronymy 下义词&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;wordnet&#34;&gt;WordNet
-&lt;/h2&gt;&lt;p&gt;A lexical database of English.&lt;/p&gt;
-&lt;h2 id=&#34;word-similarity&#34;&gt;Word Similarity
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li&gt;
-&lt;li&gt;深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li&gt;
-&lt;li&gt;信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;distributional-semantics&#34;&gt;Distributional Semantics
-&lt;/h2&gt;&lt;p&gt;词汇和其上下文的共现信息&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Neual Networks</title>
-        <link>http://localhost:1313/aquamega/p/neual-networks/</link>
-        <pubDate>Tue, 28 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/neual-networks/</guid>
-        <description>&lt;p&gt;神经网络（Neural Network）是一种模拟人脑神经元工作方式的机器学习模型。它由大量的神经元（也称为节点或单元）组成，这些神经元按照一定的层次结构排列，包括输入层、隐藏层和输出层。&lt;/p&gt;
-&lt;p&gt;每个神经元接收来自上一层神经元的输入，然后通过一个激活函数（如 Sigmoid、ReLU 等）处理这些输入，得到一个输出，这个输出再传递给下一层的神经元。&lt;/p&gt;
-&lt;p&gt;神经网络的训练通常使用反向传播（Backpropagation）算法和梯度下降（Gradient Descent）算法。在训练过程中，神经网络通过不断调整神经元之间的连接权重，来最小化预测值和真实值之间的差异。&lt;/p&gt;
-&lt;p&gt;神经网络可以处理非线性问题，适用于各种复杂的机器学习任务，如图像识别、语音识别、自然语言处理等。但是，神经网络的训练需要大量的数据和计算资源，而且模型的解释性较差，这是它的一些挑战。&lt;/p&gt;
-&lt;p&gt;A Neural Network is a machine learning model that simulates the way neurons in the human brain work. It consists of a large number of neurons (also known as nodes or units) arranged in a certain hierarchical structure, including input layers, hidden layers, and output layers.&lt;/p&gt;
-&lt;p&gt;Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p&gt;
-&lt;p&gt;Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p&gt;
-&lt;p&gt;Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p&gt;
-&lt;h2 id=&#34;前馈神经网络&#34;&gt;前馈神经网络
-&lt;/h2&gt;&lt;p&gt;前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;任务：&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;主题分类：使用神经网络对文本或其他数据进行主题分类。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;语言模型：使用神经网络来理解和生成语言。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;词性标注：使用神经网络来识别文本中每个词的词性。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;循环神经网络&#34;&gt;循环神经网络
-&lt;/h2&gt;&lt;p&gt;循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li&gt;
-&lt;li&gt;LSTM：
-&lt;ol&gt;
-&lt;li&gt;门的功能：LSTM是一种特殊的RNN，它有三个门（输入门、遗忘门和输出门）来控制信息的流动。&lt;/li&gt;
-&lt;li&gt;变体：LSTM有多种变体，如GRU（门控循环单元），它简化了LSTM的结构。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;任务：
-&lt;ol&gt;
-&lt;li&gt;文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。&lt;/li&gt;
-&lt;li&gt;词性标注：使用RNN来识别文本中每个词的词性。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要&#34;&gt;非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
-&lt;/h2&gt;&lt;p&gt;常见的非线性激活函数包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;regularization-正则化&#34;&gt;Regularization 正则化
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;L1 Norm&lt;/li&gt;
-&lt;li&gt;L2 Norm&lt;/li&gt;
-&lt;li&gt;Dropout&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;lstm&#34;&gt;LSTM
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Memory cell：记忆单元，用来存储信息&lt;/li&gt;
-&lt;li&gt;Hidden state：隐藏状态，用来传递信息&lt;/li&gt;
-&lt;li&gt;Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li&gt;
-&lt;li&gt;Input gate：输入门，用来控制新的信息是否被存储到记忆单元中&lt;/li&gt;
-&lt;li&gt;Output gate：输出门，用来控制隐藏状态中的信息是否被传递到下一个时间步&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>Hidden Markov Model</title>
         <link>http://localhost:1313/aquamega/p/hidden-markov-model/</link>
-        <pubDate>Mon, 27 May 2024 03:56:05 +1000</pubDate>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/hidden-markov-model/</guid>
         <description>&lt;ul&gt;
@@ -232,9 +232,151 @@
 </description>
         </item>
         <item>
+        <title>N-gram Language Model</title>
+        <link>http://localhost:1313/aquamega/p/n-gram-language-model/</link>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/n-gram-language-model/</guid>
+        <description>&lt;h2 id=&#34;language-model&#34;&gt;Language Model
+&lt;/h2&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Query completion(搜索引擎)&lt;/li&gt;
+&lt;li&gt;Optical character recognition(OCR)&lt;/li&gt;
+&lt;li&gt;Translation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;n-gram&#34;&gt;N-gram
+&lt;/h3&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maximum Likelihood Estimation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p&gt;
+&lt;p&gt;Use special tags to denote the beginning and end of a sentence, i.e. &lt;code&gt;&amp;lt;s&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;smoothing&#34;&gt;Smoothing
+&lt;/h3&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Laplacian (add-one) smoothing&lt;/p&gt;
+&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + 1}{C(w_{i-1}) + V}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add-k smoothing&lt;/p&gt;
+&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lidstone smoothing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generalized Add-k, 所有非负实数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Absolute discounting&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Katz Backoff&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use lower-order n-gram&lt;/li&gt;
+&lt;li&gt;Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Knser-Ney&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Versatility of lower-order n-gram, co-occur with many words&lt;/li&gt;
+&lt;li&gt;让更通用的低阶n-gram有更高的概率&lt;/li&gt;
+&lt;li&gt;contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) &amp;gt; 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Interpolation&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Combine lower-order n-gram&lt;/li&gt;
+&lt;li&gt;给不同阶的n-gram加权，相加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Preprocessing</title>
+        <link>http://localhost:1313/aquamega/p/preprocessing/</link>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/preprocessing/</guid>
+        <description>&lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Word&lt;/li&gt;
+&lt;li&gt;Sentence: words&lt;/li&gt;
+&lt;li&gt;Document: sentences&lt;/li&gt;
+&lt;li&gt;Corpus: documents&lt;/li&gt;
+&lt;li&gt;Word Token: word instance&lt;/li&gt;
+&lt;li&gt;Word Type: verb, noun, etc.&lt;/li&gt;
+&lt;li&gt;Lexicon: word types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;steps&#34;&gt;Steps
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Remove unwnated formatting, i.e. HTML tags&lt;/li&gt;
+&lt;li&gt;Sentecne segmentation, break text into sentences&lt;/li&gt;
+&lt;li&gt;Tokenization, break sentences into words&lt;/li&gt;
+&lt;li&gt;Normalization, transform words into canonical form, i.e. lower case&lt;/li&gt;
+&lt;li&gt;Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
+&lt;/h3&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
+&lt;h3 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
+&lt;/h3&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
+&lt;p&gt;Adv:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data-informed tokenization&lt;/li&gt;
+&lt;li&gt;Works for different languages&lt;/li&gt;
+&lt;li&gt;Deals better with unknown words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Disadv:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rarer words will be split into subwords, even individual letter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;word-normalization&#34;&gt;Word Normalization
+&lt;/h3&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
+&lt;p&gt;形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lowercasing&lt;/li&gt;
+&lt;li&gt;Remove morphology, i.e. &amp;ldquo;running&amp;rdquo; -&amp;gt; &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
+&lt;/h3&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
+&lt;/h3&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
+&lt;p&gt;Lemma(词元): the uninflated form&lt;/p&gt;
+&lt;h3 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
+&lt;/h3&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
+&lt;/h3&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
+&lt;p&gt;Stem(词干): the root form&lt;/p&gt;
+&lt;h3 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
+&lt;/h3&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C: consonant(辅音)&lt;/li&gt;
+&lt;li&gt;V: vowel(元音)&lt;/li&gt;
+&lt;li&gt;m: measure $&lt;a class=&#34;link&#34; href=&#34;VC&#34; &gt;C&lt;/a&gt;^m[V]$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stopword-removal&#34;&gt;Stopword Removal
+&lt;/h3&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
+&lt;p&gt;All closed-class or function words, any high frequency words&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Text Classification</title>
         <link>http://localhost:1313/aquamega/p/text-classification/</link>
-        <pubDate>Mon, 27 May 2024 02:56:05 +1000</pubDate>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/p/text-classification/</guid>
         <description>&lt;ul&gt;
@@ -395,148 +537,6 @@
 &lt;p&gt;$$\frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>N-gram Language Model</title>
-        <link>http://localhost:1313/aquamega/p/n-gram-language-model/</link>
-        <pubDate>Mon, 27 May 2024 01:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/n-gram-language-model/</guid>
-        <description>&lt;h2 id=&#34;language-model&#34;&gt;Language Model
-&lt;/h2&gt;&lt;p&gt;To explain language, based on probability, for generation.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Query completion(搜索引擎)&lt;/li&gt;
-&lt;li&gt;Optical character recognition(OCR)&lt;/li&gt;
-&lt;li&gt;Translation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;n-gram&#34;&gt;N-gram
-&lt;/h3&gt;&lt;p&gt;$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Maximum Likelihood Estimation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p&gt;
-&lt;p&gt;Use special tags to denote the beginning and end of a sentence, i.e. &lt;code&gt;&amp;lt;s&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;/s&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;smoothing&#34;&gt;Smoothing
-&lt;/h3&gt;&lt;p&gt;Handle unseen words.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Laplacian (add-one) smoothing&lt;/p&gt;
-&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + 1}{C(w_{i-1}) + V}$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add-k smoothing&lt;/p&gt;
-&lt;p&gt;$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Lidstone smoothing&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generalized Add-k, 所有非负实数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Absolute discounting&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Katz Backoff&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use lower-order n-gram&lt;/li&gt;
-&lt;li&gt;Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Knser-Ney&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Versatility of lower-order n-gram, co-occur with many words&lt;/li&gt;
-&lt;li&gt;让更通用的低阶n-gram有更高的概率&lt;/li&gt;
-&lt;li&gt;contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) &amp;gt; 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Interpolation&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Combine lower-order n-gram&lt;/li&gt;
-&lt;li&gt;给不同阶的n-gram加权，相加&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Preprocessing</title>
-        <link>http://localhost:1313/aquamega/p/preprocessing/</link>
-        <pubDate>Mon, 27 May 2024 00:56:05 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/p/preprocessing/</guid>
-        <description>&lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Word&lt;/li&gt;
-&lt;li&gt;Sentence: words&lt;/li&gt;
-&lt;li&gt;Document: sentences&lt;/li&gt;
-&lt;li&gt;Corpus: documents&lt;/li&gt;
-&lt;li&gt;Word Token: word instance&lt;/li&gt;
-&lt;li&gt;Word Type: verb, noun, etc.&lt;/li&gt;
-&lt;li&gt;Lexicon: word types&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;steps&#34;&gt;Steps
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Remove unwnated formatting, i.e. HTML tags&lt;/li&gt;
-&lt;li&gt;Sentecne segmentation, break text into sentences&lt;/li&gt;
-&lt;li&gt;Tokenization, break sentences into words&lt;/li&gt;
-&lt;li&gt;Normalization, transform words into canonical form, i.e. lower case&lt;/li&gt;
-&lt;li&gt;Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;max-match-algorithm&#34;&gt;Max Match Algorithm
-&lt;/h3&gt;&lt;p&gt;Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p&gt;
-&lt;h3 id=&#34;byte-pair-encoding&#34;&gt;Byte Pair Encoding
-&lt;/h3&gt;&lt;p&gt;Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p&gt;
-&lt;p&gt;Adv:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Data-informed tokenization&lt;/li&gt;
-&lt;li&gt;Works for different languages&lt;/li&gt;
-&lt;li&gt;Deals better with unknown words&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Disadv:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Rarer words will be split into subwords, even individual letter&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;word-normalization&#34;&gt;Word Normalization
-&lt;/h3&gt;&lt;p&gt;Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p&gt;
-&lt;p&gt;形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Lowercasing&lt;/li&gt;
-&lt;li&gt;Remove morphology, i.e. &amp;ldquo;running&amp;rdquo; -&amp;gt; &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;inflectional-morphology屈折形态&#34;&gt;Inflectional Morphology(屈折形态)
-&lt;/h3&gt;&lt;p&gt;It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;lemmatization词形还原&#34;&gt;Lemmatization(词形还原)
-&lt;/h3&gt;&lt;p&gt;To remove inflection.&lt;/p&gt;
-&lt;p&gt;Lemma(词元): the uninflated form&lt;/p&gt;
-&lt;h3 id=&#34;derivational-morphology派生形态&#34;&gt;Derivational Morphology(派生形态)
-&lt;/h3&gt;&lt;p&gt;It creates new words.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;stemmization词干提取&#34;&gt;Stemmization(词干提取)
-&lt;/h3&gt;&lt;p&gt;To remove derivation.&lt;/p&gt;
-&lt;p&gt;Stem(词干): the root form&lt;/p&gt;
-&lt;h3 id=&#34;the-porter-stemmer&#34;&gt;The Porter Stemmer
-&lt;/h3&gt;&lt;p&gt;most widely used in English&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;C: consonant(辅音)&lt;/li&gt;
-&lt;li&gt;V: vowel(元音)&lt;/li&gt;
-&lt;li&gt;m: measure $&lt;a class=&#34;link&#34; href=&#34;VC&#34; &gt;C&lt;/a&gt;^m[V]$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;stopword-removal&#34;&gt;Stopword Removal
-&lt;/h3&gt;&lt;p&gt;Typically in bag-of-words model&lt;/p&gt;
-&lt;p&gt;All closed-class or function words, any high frequency words&lt;/p&gt;
 </description>
         </item>
         

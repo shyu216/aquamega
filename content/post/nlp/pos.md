@@ -1,12 +1,12 @@
 ---
-date: "2024-05-28T03:56:05+10:00"
+date: 2024-05-28
 draft: false
 title: "Part-of-Speech Tagging"
 categories:
     - COMP90042
-tags: ["NLP", "AI"]
-params:
-  math: true
+tags: 
+    - NLP
+    - AI
 ---
 
 ## Part-of-Speech(词类)

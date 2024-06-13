@@ -1,12 +1,12 @@
 ---
-date: "2024-05-27T02:56:05+10:00"
+date: 2024-05-27
 draft: false
 title: "Text Classification"
 categories:
     - COMP90042
-tags: ["NLP", "AI"]
-params:
-  math: true
+tags: 
+    - NLP
+    - AI
 ---
 
 

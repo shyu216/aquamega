@@ -1,12 +1,11 @@
 ---
-date: "2024-05-29T11:13:45+10:00"
+date: 2024-05-29
 draft: false
 title: "UCB and Greedy BFS"
 categories:
     - COMP90054
-tags: ["algorithm"]
-params:
-  math: true
+tags: 
+    - algorithm
 ---
 
 ## Uniform Cost Search

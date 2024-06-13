@@ -1,12 +1,11 @@
 ---
-date: "2024-05-02T11:13:45+10:00"
+date: 2024-05-02
 draft: false
 title: "BFS and DFS"
 categories:
     - COMP90054
-tags: ["algorithm"]
-params:
-  math: true
+tags: 
+    - algorithm
 ---
 
 ## 广度优先搜索（BFS）

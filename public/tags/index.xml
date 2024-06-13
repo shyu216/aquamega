@@ -6,12 +6,36 @@
         <description>Recent content in Tags on Dale的水硕日记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Data Structure</title>
+        <link>http://localhost:1313/aquamega/tags/data-structure/</link>
+        <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/data-structure/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Algo</title>
         <link>http://localhost:1313/aquamega/tags/algo/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/algo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Analysis</title>
+        <link>http://localhost:1313/aquamega/tags/analysis/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/analysis/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Facts</title>
+        <link>http://localhost:1313/aquamega/tags/facts/</link>
+        <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/tags/facts/</guid>
         <description></description>
         </item>
         <item>
@@ -33,7 +57,7 @@
         <item>
         <title>24s1</title>
         <link>http://localhost:1313/aquamega/tags/24s1/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/24s1/</guid>
         <description></description>
@@ -41,7 +65,7 @@
         <item>
         <title>AI</title>
         <link>http://localhost:1313/aquamega/tags/ai/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/ai/</guid>
         <description></description>
@@ -49,23 +73,15 @@
         <item>
         <title>Data Management</title>
         <link>http://localhost:1313/aquamega/tags/data-management/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/data-management/</guid>
         <description></description>
         </item>
         <item>
-        <title>Data Structure</title>
-        <link>http://localhost:1313/aquamega/tags/data-structure/</link>
-        <pubDate>Sun, 09 Jun 2024 00:00:00 +1000</pubDate>
-        
-        <guid>http://localhost:1313/aquamega/tags/data-structure/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Algorithm</title>
         <link>http://localhost:1313/aquamega/tags/algorithm/</link>
-        <pubDate>Thu, 30 May 2024 11:13:45 +1000</pubDate>
+        <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/algorithm/</guid>
         <description></description>
@@ -73,7 +89,7 @@
         <item>
         <title>NLP</title>
         <link>http://localhost:1313/aquamega/tags/nlp/</link>
-        <pubDate>Tue, 28 May 2024 03:56:05 +1000</pubDate>
+        <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/aquamega/tags/nlp/</guid>
         <description></description>

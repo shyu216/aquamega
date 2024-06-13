@@ -4,8 +4,6 @@ draft: false
 title: Side Effect
 tags: 
     - Program Language
-params:
-  math: true
 ---
 
 

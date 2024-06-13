@@ -4,8 +4,6 @@ draft: false
 title: Pointer
 tags: 
     - Program Language
-params:
-  math: true
 ---
 
 
