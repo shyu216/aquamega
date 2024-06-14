@@ -5,7 +5,7 @@ title: Max-Flow Min-Cut Theorem
 categories:
     - COMP90077
 tags: 
-    - algo
+    - algorithm
 ---
 
 **请注意**！本文是由公元2024年的GPT生成的，可能包含一些不准确的信息。

@@ -5,6 +5,9 @@
     <loc>http://localhost:1313/aquamega/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/aquamega/p/bucket/</loc>
+    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/aquamega/categories/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,10 +17,19 @@
     <loc>http://localhost:1313/aquamega/tags/data-structure/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/aquamega/p/hash/</loc>
+    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/aquamega/post/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/p/quake-heap/</loc>
+    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/p/range-search/</loc>
+    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/p/splay-tree/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/</loc>
@@ -26,7 +38,7 @@
     <loc>http://localhost:1313/aquamega/p/admortized-analysis/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/tags/algo/</loc>
+    <loc>http://localhost:1313/aquamega/tags/algorithm/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/analysis/</loc>
@@ -97,9 +109,6 @@
   </url><url>
     <loc>http://localhost:1313/aquamega/p/geom90008/</loc>
     <lastmod>2024-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/tags/algorithm/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/p/game-theory/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
