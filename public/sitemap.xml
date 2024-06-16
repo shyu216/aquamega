@@ -3,24 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/aquamega/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/p/bucket/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/aquamega/tags/algorithm/</loc>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/categories/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/categories/comp90077/</loc>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/p/linear-programming/</loc>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/post/</loc>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/tags/</loc>
+    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aquamega/p/bucket/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/data-structure/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/p/hash/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/post/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/p/quake-heap/</loc>
@@ -32,13 +41,7 @@
     <loc>http://localhost:1313/aquamega/p/splay-tree/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aquamega/tags/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/aquamega/p/admortized-analysis/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/aquamega/tags/algorithm/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aquamega/tags/analysis/</loc>

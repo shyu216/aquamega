@@ -6,7 +6,89 @@
         <description>Recent content on Dale的水硕日记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aquamega/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linear Programming</title>
+        <link>http://localhost:1313/aquamega/p/linear-programming/</link>
+        <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/aquamega/p/linear-programming/</guid>
+        <description>&lt;h2 id=&#34;linear-program&#34;&gt;Linear Program
+&lt;/h2&gt;&lt;p&gt;最大流问题可以被表述为一个线性规划问题。线性规划是一种优化问题，目标是在一组线性约束条件下最大化或最小化一个线性目标函数。&lt;/p&gt;
+&lt;p&gt;对于最大流问题，我们可以定义以下的线性规划模型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;变量：对于每条边 e，我们定义一个变量 f(e)，表示边 e 的流量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;目标函数：我们的目标是最大化从源点 s 到汇点 t 的总流量，即最大化 ∑f(e)，其中求和是对所有从 s 出发的边 e 进行的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;约束条件：我们有两种类型的约束条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;容量约束：对于每条边 e，我们有 f(e) ≤ c(e)，其中 c(e) 是边 e 的容量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量守恒约束：对于图中的每个非源非汇节点 v，我们有 ∑f(e_in) = ∑f(e_out)，其中 e_in 是进入节点 v 的边，e_out 是离开节点 v 的边。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下是对应的线性规划模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;maximize ∑f(e) for all e from s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;subject to
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≤ c(e) for all e
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;∑f(e_in) = ∑f(e_out) for all v ≠ s, t
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≥ 0 for all e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个模型可以使用各种线性规划算法来解决，例如单纯形法（Simplex Method）或内点法（Interior Point Method）。&lt;/p&gt;
+&lt;h2 id=&#34;vertex-cover&#34;&gt;Vertex Cover
+&lt;/h2&gt;&lt;p&gt;顶点覆盖（Vertex Cover）是图论中的一个重要概念。&lt;/p&gt;
+&lt;p&gt;在一个图中，顶点覆盖是一个顶点的集合，这个集合的特性是图中的每一条边至少有一个端点在这个集合中。换句话说，如果你从这个集合中选出一个顶点，你可以覆盖到至少一条边。&lt;/p&gt;
+&lt;p&gt;例如，考虑一个简单的图，它有四个顶点（A, B, C, D）和四条边（AB, BC, CD, DA）。在这个图中，{A, B, C, D} 是一个顶点覆盖，因为每一条边都至少有一个端点在这个集合中。同样，{A, C} 或者 {B, D} 也是顶点覆盖。&lt;/p&gt;
+&lt;p&gt;顶点覆盖问题是寻找一个最小的顶点覆盖，也就是包含最少顶点的覆盖。这是一个 NP 完全问题，意味着没有已知的多项式时间算法可以解决所有的顶点覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决顶点覆盖问题，例如贪心算法。&lt;/p&gt;
+&lt;h2 id=&#34;set-cover&#34;&gt;Set Cover
+&lt;/h2&gt;&lt;p&gt;集合覆盖（Set Cover）是计算机科学中的一个经典问题，它是 NP 完全问题的一个例子。&lt;/p&gt;
+&lt;p&gt;给定一个有限集合 U 和 U 的若干子集 S1, S2, &amp;hellip;, Sn，集合覆盖问题是要找到最小的子集合的集合，使得这些子集合的并集等于 U。&lt;/p&gt;
+&lt;p&gt;例如，如果 U = {1, 2, 3, 4, 5}，S1 = {1, 2, 3}，S2 = {2, 4}，S3 = {3, 4, 5}，那么 {S1, S3} 就是一个集合覆盖，因为 S1 和 S3 的并集等于 U。&lt;/p&gt;
+&lt;p&gt;集合覆盖问题在许多实际问题中都有应用，例如在无线网络设计、数据库系统、信息检索等领域。在这些问题中，我们通常希望找到一个最小的集合覆盖，以最小化成本或资源使用。&lt;/p&gt;
+&lt;p&gt;集合覆盖问题是 NP 完全问题，这意味着没有已知的多项式时间算法可以解决所有的集合覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决集合覆盖问题，例如贪心算法。&lt;/p&gt;
+&lt;h2 id=&#34;duality&#34;&gt;Duality
+&lt;/h2&gt;&lt;p&gt;线性规划的对偶性是一个非常重要的概念。对于每一个线性规划问题（称为原问题），都存在一个相关的线性规划问题（称为对偶问题）。原问题和对偶问题之间有一些非常有趣的关系。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;对偶问题的目标函数是原问题的约束条件的线性组合，反之亦然。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对偶问题的解（对偶值）提供了原问题解（原值）的一个下界（如果是最大化问题）或上界（如果是最小化问题）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果原问题和对偶问题都有解（即它们是可行的），那么它们的最优解是相等的。这就是所谓的弱对偶性。如果原问题是无界的，那么对偶问题是不可行的，反之亦然。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在某些条件下（例如，如果原问题和对偶问题都满足某些正则性条件），我们可以保证强对偶性，即原问题的任何可行解和对偶问题的任何可行解都有相同的目标函数值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些对偶性质在解决线性规划问题时非常有用。例如，它们可以用来检验解的最优性，提供解的上下界，以及通过解对偶问题来更有效地解原问题。&lt;/p&gt;
+&lt;h2 id=&#34;近似算法&#34;&gt;近似算法
+&lt;/h2&gt;&lt;p&gt;近似算法是一种在有限时间内找到最优解的近似解的算法。在许多情况下，找到最优解可能需要非常长的时间，或者甚至是不可能的。在这种情况下，近似算法可以提供一个可接受的、接近最优的解。近似算法的一个主要优点是它们通常可以在多项式时间内运行，这使得它们在处理大规模问题时非常有用。&lt;/p&gt;
+&lt;h2 id=&#34;lps-作为有效的松弛&#34;&gt;LPs 作为有效的松弛
+&lt;/h2&gt;&lt;p&gt;在优化问题中，松弛是一种将一个难以解决的问题转化为一个更容易解决的问题的技术。线性规划可以作为一种有效的松弛技术，将一些难以直接解决的问题转化为线性规划问题。通过这种方式，我们可以利用线性规划的强大求解能力来解决更复杂的问题。&lt;/p&gt;
+&lt;h2 id=&#34;舍入对偶拟合原始-对偶方法&#34;&gt;舍入、对偶拟合、原始-对偶方法
+&lt;/h2&gt;&lt;p&gt;这些都是处理线性规划问题的技术。舍入是一种将连续解转化为离散解的方法；对偶拟合是一种通过解对偶问题来找到原问题解的方法；原始-对偶方法是一种同时解原问题和对偶问题的方法。这些技术都是为了在实际应用中更好地解决线性规划问题。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Bucket</title>
         <link>http://localhost:1313/aquamega/p/bucket/</link>
         <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
@@ -207,9 +289,56 @@
 &lt;li&gt;空间消耗：O(n log n)，log n层，每层至多n个&lt;/li&gt;
 &lt;li&gt;查询时间：O(k + log n)，其中 k 是报告的点的数量。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;查询算法&#34;&gt;查询算法
+&lt;/h2&gt;&lt;p&gt;给定一个查询范围 Q = [a1, b1] × [a2, b2]，我们可以通过以下步骤报告所有在 P ∩ Q 中的点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 Tx 中找到 a&amp;rsquo; = succ(a1) 和 b&amp;rsquo; = pred(b1)；&lt;/li&gt;
+&lt;li&gt;让 usplit = LCA(a&amp;rsquo;, b&amp;rsquo;)，La1 是从 usplit 的左孩子到 a&amp;rsquo; 的路径，Lb1 是从 usplit 的右孩子到 b&amp;rsquo; 的路径；&lt;/li&gt;
+&lt;li&gt;如果 usplit ∈ Q，报告 usplit；&lt;/li&gt;
+&lt;li&gt;对于路径 La1 上的每个节点 u：
+&lt;ul&gt;
+&lt;li&gt;如果 u ∈ Q，报告 u；&lt;/li&gt;
+&lt;li&gt;如果 a&amp;rsquo; ≤ u.x，那么报告 u 的右子树中所有 y 坐标在 [a2, b2] 范围内的点；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于路径 Lb1 上的每个节点 u：
+&lt;ul&gt;
+&lt;li&gt;如果 u ∈ Q，报告 u；&lt;/li&gt;
+&lt;li&gt;如果 b&amp;rsquo; ≥ u.x，那么报告 u 的左子树中所有 y 坐标在 [a2, b2] 范围内的点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个算法的基本思想是首先在 x 轴上找到查询范围的边界，然后在这个范围内的每个节点上进行 y 轴的范围搜索。这是一个有效的方法，因为它可以利用二维空间的结构来减少搜索的复杂性。&lt;/p&gt;
+&lt;p&gt;在开始时，我们承诺可以在 $O(k + \log n)$ 时间内完成二维轴平行矩形范围查询。然而，当前的查询成本是 $O(k + \log^2 n)$，这违反了我们的承诺。&lt;/p&gt;
+&lt;p&gt;为了将查询时间从 $O(k + \log^2 n)$ 降低到 $O(k + \log n)$，我们需要应用一种称为分数级联（Fractional Cascading）的技术。&lt;/p&gt;
+&lt;p&gt;分数级联是一种用于优化多层次数据结构查询的技术。通过在每一层都保留一部分信息，我们可以避免在每一层都进行完全的二分查找，从而将查询时间从 $\log^2 n$ 降低到 $\log n$。这种技术在处理二维范围查询、最近邻查询等问题时非常有用。&lt;/p&gt;
 &lt;h2 id=&#34;fractional-cascading&#34;&gt;Fractional Cascading
 &lt;/h2&gt;&lt;p&gt;分数级联是一种技术，用于加速范围查询。它通过在不同层次的数据结构之间共享信息来减少查询时间。&lt;/p&gt;
 &lt;p&gt;succ和pred指针，指向下一层的元素。&lt;/p&gt;
+&lt;p&gt;这段文字是在描述如何通过应用分数级联（Fractional Cascading）技术来优化二维轴平行矩形范围查询的时间复杂度。&lt;/p&gt;
+&lt;p&gt;基于上述观察，我们可以将所有的次级树替换为排序数组，并应用分数级联技术，以将 $O(k + \log^2 n)$ 的查询时间降低到 $O(\log n + k + \log n) = O(k + \log n)$。&lt;/p&gt;
+&lt;p&gt;分数级联的基本思想是在每一层的数据结构中保留一部分信息，以便在查询时可以快速定位到下一层的查询位置，从而避免在每一层都进行完全的二分查找。在这个上下文中，我们将次级树替换为排序数组，然后在每个数组中保留一部分信息，以便在查询时可以快速定位到下一个数组的查询位置。&lt;/p&gt;
+&lt;p&gt;这种方法可以将查询时间从 $O(k + \log^2 n)$ 降低到 $O(k + \log n)$，从而满足我们在开始时的承诺。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现
+&lt;/h2&gt;&lt;p&gt;在范围树中实现分数级联（Fractional Cascading）可以有效地减少查询时间。以下是一个简单的实现步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在构建范围树时，每个节点都存储其子节点的最大和最小值。这样，我们可以快速确定一个查询范围是否与一个子树有交集。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于每个节点，我们在其左右子节点中存储一个指向其父节点的指针。这样，我们可以从一个子节点快速跳转到其父节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当我们进行范围查询时，我们首先在树的根节点开始。我们检查查询范围是否与左右子树有交集。如果有交集，我们就跟踪这个子树，并更新查询范围以排除已经检查过的部分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当我们跟踪一个子树时，我们使用存储在节点中的指针，快速跳转到其父节点。然后，我们重复步骤3，直到我们检查了所有与查询范围有交集的子树。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后，我们返回所有在查询范围内的节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过这种方式，我们可以在 O(log n + k) 的时间内完成查询，其中 n 是树中的节点数量，k 是查询返回的节点数量。这比没有使用分数级联的 O(n log n + k) 快得多。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -365,7 +494,17 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;running-time&#34;&gt;Running time
-&lt;/h3&gt;&lt;p&gt;每次循环的时间复杂度是 O(m)，其中 m 是边的数量。这是因为在每次循环中，我们需要在残余图中找到一条从源点到汇点的路径，这可以通过深度优先搜索或广度优先搜索在 O(m) 时间内完成。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;Ford-Fulkerson（FF）算法的运行时间取决于多个因素，包括图的结构、边的容量以及选择增广路径的策略。在每次迭代中，算法需要在残余图中找到一条源节点s到目标节点t的路径，然后根据这条路径更新流量和残余图。&lt;/p&gt;
+&lt;p&gt;每次迭代的时间复杂度为O(m)，其中m是图中的边的数量，原因如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在残余图中找到一条s-t路径：这可以通过深度优先搜索（DFS）或广度优先搜索（BFS）来完成，时间复杂度为O(m)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新流量和残余图：一旦找到了一条增广路径，我们需要遍历这条路径上的所有边，更新它们的流量和残余容量。这个过程的时间复杂度也为O(m)，因为一条路径上的边的数量最多为m。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，每次迭代的时间复杂度为O(m)。然而，需要注意的是，FF算法的总运行时间并不是多项式时间，因为算法的迭代次数取决于最大流量，而这可能远大于图的大小。&lt;/p&gt;
 &lt;p&gt;循环的次数最多是 C，其中 C 是图中所有边的容量之和。这是因为在每次循环中，我们至少增加一单位的流量，因此最多需要 C 次循环。&lt;/p&gt;
 &lt;p&gt;因此，总的运行时间是 O(Cm)。而实际情况一般是线性时间。&lt;/p&gt;
 &lt;h4 id=&#34;flow-vs-cut&#34;&gt;Flow vs Cut
@@ -377,6 +516,21 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在最大流的情况下，存在一个割，其容量等于流的大小。这是因为当我们找到最大流时，我们已经找到了一种方式，使得所有从源点到汇点的路径都被充分利用，这就形成了一个割。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在最大流最小割定理中，可达性（reachability）的概念是非常重要的。我们可以通过以下步骤使用可达性来证明这个定理：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先，我们找到流网络中的一个最大流。在这个流中，我们可以找到一个割，即一个将网络分割成两部分的边集，使得所有的流都从割的一边（源点所在的一边）流向另一边（汇点所在的一边）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后，我们考虑在残余网络中从源点开始的可达性。在残余网络中，一个节点是可达的，如果存在一条从源点到该节点的路径，路径上的所有边在残余网络中都有正的容量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在最大流的情况下，汇点在残余网络中是不可达的，因为所有的流都已经达到了最大值，没有更多的容量可以从源点流向汇点。这意味着存在一个割，将可达的节点和不可达的节点分开，割的容量等于最大流的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因此，我们证明了最大流等于最小割。这是因为我们找到了一个割，其容量等于最大流的值，而任何其他割的容量必须大于或等于这个值，因为流的大小不能超过割的容量。所以，这个割就是最小割，其容量（即最小割的值）等于最大流的值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;flow-value-lemma&#34;&gt;Flow-Value Lemma
@@ -396,14 +550,17 @@
 &lt;h3 id=&#34;optimality&#34;&gt;Optimality
 &lt;/h3&gt;&lt;p&gt;所有穿过割的边要么是从 A 到 B 并且满流，要么是从 B 到 A 并且空流。&lt;/p&gt;
 &lt;h2 id=&#34;perfect-matchings&#34;&gt;Perfect Matchings
-&lt;/h2&gt;&lt;p&gt;完美匹配（Perfect Matchings）是图论中的一个概念，它在一个图中，每个顶点都被恰好一个边所连接，那么这个边的集合就被称为完美匹配。&lt;/p&gt;
-&lt;p&gt;在一个完美匹配中，图中的每个顶点都被精确地匹配到一个边，没有任何一个顶点是孤立的或者被多个边所连接。换句话说，如果一个图有 n 个顶点，那么它的一个完美匹配就会有 n/2 条边。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;在图论中，&amp;ldquo;匹配&amp;rdquo;（Matching）是指图的一个边的子集，使得子集中的任意两条边都不共享顶点。这是一种将图中的一部分顶点配对的方式，每对配对都通过一条边连接。匹配不一定需要包含图中的所有顶点。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;完美匹配&amp;rdquo;（Perfect Matching）是匹配的一种特殊情况。在完美匹配中，图的每个顶点都恰好与子集中的一条边相连。换句话说，如果一个图有 n 个顶点，那么它的一个完美匹配就会有 n/2 条边。&lt;/p&gt;
 &lt;p&gt;完美匹配在许多问题中都有应用，例如在网络设计、任务分配、市场匹配等问题中。在这些问题中，我们通常希望找到一个完美匹配，使得某种成本或效益最优化。&lt;/p&gt;
+&lt;p&gt;例如，二分图的最大匹配问题就是要找到一个最大的匹配，即一个最大的边集，使得集合中的任意两条边都不共享端点。这个问题可以通过将其转化为最大流问题来解决。&lt;/p&gt;
 &lt;h2 id=&#34;bipartite-matching&#34;&gt;Bipartite Matching
 &lt;/h2&gt;&lt;p&gt;二分匹配（Bipartite Matching）是图论中的一个重要概念，它是在二分图（Bipartite Graph）中进行的匹配。&lt;/p&gt;
 &lt;p&gt;二分图是一种特殊的图，它的所有顶点可以被分成两个互不相交的集合，使得每一条边的两个端点分别属于这两个不同的集合。在二分图中进行匹配，就是找到边的集合，使得在这个集合中的任意两条边都不共享端点。&lt;/p&gt;
 &lt;p&gt;二分匹配有许多实际应用，例如在任务分配、稳定婚姻问题、市场均衡等问题中都有应用。在这些问题中，我们通常希望找到一个最大的匹配，也就是包含最多边的匹配。&lt;/p&gt;
 &lt;p&gt;加s和t就能当max-flow问题解了。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;请说&amp;rsquo;相邻&amp;rsquo;而不是&amp;rsquo;连接&amp;rsquo;&amp;quot;：在图论中，&amp;ldquo;相邻&amp;quot;和&amp;quot;连接&amp;quot;这两个词有着不同的含义。如果两个节点之间有一条边，我们通常说这两个节点是&amp;quot;相邻&amp;quot;的。而&amp;quot;连接&amp;quot;通常指的是在一个图中，存在一条路径可以从一个节点到达另一个节点。&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;避免使用&amp;rsquo;任何&amp;rsquo;这个词&amp;rdquo;：在描述算法时，&amp;ldquo;任何&amp;quot;这个词可能会引起混淆。比如，如果我们说&amp;quot;任何节点都可以到达任何其他节点&amp;rdquo;，这可能会被误解为在图中存在一条从每个节点到每个其他节点的直接边，而实际上我们可能只是想表达在图中存在一条从每个节点到每个其他节点的路径。&lt;/p&gt;
 &lt;h3 id=&#34;integrality-theorem&#34;&gt;Integrality Theorem
 &lt;/h3&gt;&lt;p&gt;整数定理（Integrality Theorem）是网络流问题中的一个重要定理，它表明如果所有边的容量都是整数，那么存在一个最大流，使得每条边的流量也都是整数。&lt;/p&gt;
 &lt;p&gt;如果 k 是整数，并且我们只考虑容量为 1 的边，那么每条边的流量 f(e) 必须是 0 或 1。原因是流量必须满足容量约束，也就是说，流量不能超过容量。因此，如果容量为 1，那么流量只能是 0 或 1。&lt;/p&gt;
@@ -422,6 +579,19 @@
 &lt;h2 id=&#34;disjoint-paths&#34;&gt;Disjoint Paths
 &lt;/h2&gt;&lt;p&gt;在图论中，&amp;ldquo;不相交路径&amp;rdquo;（Disjoint Paths）是指一组路径，其中任意两条路径都没有共享的顶点或边。换句话说，这些路径是完全独立的，它们不会在任何地方交叉或重叠。&lt;/p&gt;
 &lt;p&gt;不相交路径的概念在许多问题中都有应用，例如在网络设计、路由问题、交通规划等问题中。在这些问题中，我们通常希望找到一组不相交的路径，以便最大化网络的吞吐量，或者避免交通拥堵。&lt;/p&gt;
+&lt;p&gt;在有向图中，我们可以通过最大流算法来找出k条边不相交的路径。这个问题可以转化为一个容量为1的最大流问题。&lt;/p&gt;
+&lt;p&gt;以下是证明过程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;只需证明&lt;/strong&gt;：假设我们有k条不相交的路径。我们可以在每条路径上路由一单位的流，不需要其他流。因此，最大流至少为k。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;如果证明&lt;/strong&gt;：假设最大流至少为k。我们需要证明存在至少k条不相交的路径。为了证明这一点，我们可以对携带流的边的数量进行归纳。&lt;/p&gt;
+&lt;p&gt;归纳基础：如果最大流为1，那么存在一条从s到t的路径。&lt;/p&gt;
+&lt;p&gt;归纳步骤：假设对于所有小于k的最大流，都存在相应数量的不相交路径。现在，我们考虑最大流为k的情况。由于流的整数性质，我们知道存在一条边，其流量为1，我们可以移除这条边，并将总流量减少1。根据归纳假设，剩余的图存在k-1条不相交的路径。加上我们刚才移除的那条边，我们就找到了k条不相交的路径。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，我们可以得出结论：在有向图中，存在k条边不相交的路径当且仅当最大流至少为k。&lt;/p&gt;
 &lt;h2 id=&#34;scaling-max-flow&#34;&gt;Scaling Max Flow
 &lt;/h2&gt;&lt;p&gt;在解决最大流问题时，一种常用的策略是使用缩放（Scaling）技术。这种技术的基本思想是先解决一个简化的问题，然后逐步增加问题的规模，直到解决原始问题。&lt;/p&gt;
 &lt;p&gt;在最大流问题中，缩放技术通常是这样实现的：&lt;/p&gt;
@@ -444,79 +614,28 @@
 &lt;/ol&gt;
 &lt;p&gt;这种方法的优点是，每次迭代时，我们只需要考虑一部分边，这可以大大减少计算量。此外，由于我们是从大到小逐步减小阈值，所以我们可以利用前一次迭代的结果，这可以进一步提高效率。&lt;/p&gt;
 &lt;p&gt;这种方法在处理大规模网络流问题时非常有效，特别是当网络中的容量差异很大时。&lt;/p&gt;
+&lt;h2 id=&#34;edmonds-karp-algorithm&#34;&gt;Edmonds-Karp Algorithm
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;找最宽的路径。Dijkstra,$O(m^2lognlogF)$&lt;/li&gt;
+&lt;li&gt;找最短的路径。BFS,$O(m^2n)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;applications&#34;&gt;Applications
+&lt;/h2&gt;&lt;h3 id=&#34;circulation-with-demands&#34;&gt;Circulation with Demands
+&lt;/h3&gt;&lt;p&gt;多个源点和汇点的网络流问题是网络流问题的一个重要变种。在这个问题中，我们有多个源点和多个汇点，每个源点都有一个流出的需求，每个汇点都有一个流入的需求。我们的目标是找到一种流的分配方式，使得每个源点的流出等于需求，每个汇点的流入等于需求。&lt;/p&gt;
 &lt;h2 id=&#34;halls-theorem&#34;&gt;Hall’s Theorem
 &lt;/h2&gt;&lt;p&gt;哈尔定理（Hall&amp;rsquo;s Theorem）是图论中的一个重要定理，主要用于解决二部图的完美匹配问题。它的内容如下：&lt;/p&gt;
 &lt;p&gt;在一个二部图中，如果对于左侧的每个顶点集合，其邻接的右侧顶点集合的大小至少与其一样大，那么这个二部图存在一个完美匹配。&lt;/p&gt;
 &lt;p&gt;更形式化地说，设 G=(V,E) 是一个二部图，V 可以分为两个部分 V1 和 V2。如果对于 V1 中的任意子集 S，都有 |N(S)| &amp;gt;= |S|，其中 N(S) 是 S 中所有顶点的邻接顶点集合，那么 G 中存在一个完美匹配。&lt;/p&gt;
 &lt;p&gt;这个定理在组合优化、网络流和匹配理论等领域有广泛的应用。例如，它可以用来解决任务分配问题、婚配问题等。&lt;/p&gt;
-&lt;h2 id=&#34;linear-program&#34;&gt;Linear Program
-&lt;/h2&gt;&lt;p&gt;最大流问题可以被表述为一个线性规划问题。线性规划是一种优化问题，目标是在一组线性约束条件下最大化或最小化一个线性目标函数。&lt;/p&gt;
-&lt;p&gt;对于最大流问题，我们可以定义以下的线性规划模型：&lt;/p&gt;
+&lt;p&gt;Hall定理是用于解决二部图中的完美匹配问题的，而流网络中的需求循环问题则需要使用不同的方法来解决。&lt;/p&gt;
+&lt;p&gt;在流网络中，每个节点都有一个需求，表示流入该节点的流量和流出该节点的流量之间的差值。一个需求循环是一个满足所有节点需求的流。&lt;/p&gt;
+&lt;p&gt;要解决需求循环问题，我们可以使用以下步骤：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;变量：对于每条边 e，我们定义一个变量 f(e)，表示边 e 的流量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;目标函数：我们的目标是最大化从源点 s 到汇点 t 的总流量，即最大化 ∑f(e)，其中求和是对所有从 s 出发的边 e 进行的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;约束条件：我们有两种类型的约束条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;容量约束：对于每条边 e，我们有 f(e) ≤ c(e)，其中 c(e) 是边 e 的容量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;流量守恒约束：对于图中的每个非源非汇节点 v，我们有 ∑f(e_in) = ∑f(e_out)，其中 e_in 是进入节点 v 的边，e_out 是离开节点 v 的边。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;添加一个新的源节点s和一个新的汇点t。&lt;/li&gt;
+&lt;li&gt;对于每个需求为d的节点v，如果d &amp;gt; 0，那么添加一条从s到v的边，容量为d；如果d &amp;lt; 0，那么添加一条从v到t的边，容量为-d。&lt;/li&gt;
+&lt;li&gt;在新的网络中找到一个最大流。如果这个最大流的值等于所有正需求的总和，那么原网络存在一个需求循环。否则，原网络不存在需求循环。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;以下是对应的线性规划模型：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;maximize ∑f(e) for all e from s
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;subject to
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≤ c(e) for all e
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;∑f(e_in) = ∑f(e_out) for all v ≠ s, t
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;f(e) ≥ 0 for all e
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这个模型可以使用各种线性规划算法来解决，例如单纯形法（Simplex Method）或内点法（Interior Point Method）。&lt;/p&gt;
-&lt;h2 id=&#34;vertex-cover&#34;&gt;Vertex Cover
-&lt;/h2&gt;&lt;p&gt;顶点覆盖（Vertex Cover）是图论中的一个重要概念。&lt;/p&gt;
-&lt;p&gt;在一个图中，顶点覆盖是一个顶点的集合，这个集合的特性是图中的每一条边至少有一个端点在这个集合中。换句话说，如果你从这个集合中选出一个顶点，你可以覆盖到至少一条边。&lt;/p&gt;
-&lt;p&gt;例如，考虑一个简单的图，它有四个顶点（A, B, C, D）和四条边（AB, BC, CD, DA）。在这个图中，{A, B, C, D} 是一个顶点覆盖，因为每一条边都至少有一个端点在这个集合中。同样，{A, C} 或者 {B, D} 也是顶点覆盖。&lt;/p&gt;
-&lt;p&gt;顶点覆盖问题是寻找一个最小的顶点覆盖，也就是包含最少顶点的覆盖。这是一个 NP 完全问题，意味着没有已知的多项式时间算法可以解决所有的顶点覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决顶点覆盖问题，例如贪心算法。&lt;/p&gt;
-&lt;h2 id=&#34;set-cover&#34;&gt;Set Cover
-&lt;/h2&gt;&lt;p&gt;集合覆盖（Set Cover）是计算机科学中的一个经典问题，它是 NP 完全问题的一个例子。&lt;/p&gt;
-&lt;p&gt;给定一个有限集合 U 和 U 的若干子集 S1, S2, &amp;hellip;, Sn，集合覆盖问题是要找到最小的子集合的集合，使得这些子集合的并集等于 U。&lt;/p&gt;
-&lt;p&gt;例如，如果 U = {1, 2, 3, 4, 5}，S1 = {1, 2, 3}，S2 = {2, 4}，S3 = {3, 4, 5}，那么 {S1, S3} 就是一个集合覆盖，因为 S1 和 S3 的并集等于 U。&lt;/p&gt;
-&lt;p&gt;集合覆盖问题在许多实际问题中都有应用，例如在无线网络设计、数据库系统、信息检索等领域。在这些问题中，我们通常希望找到一个最小的集合覆盖，以最小化成本或资源使用。&lt;/p&gt;
-&lt;p&gt;集合覆盖问题是 NP 完全问题，这意味着没有已知的多项式时间算法可以解决所有的集合覆盖问题。然而，有一些启发式算法和近似算法可以在实际中有效地解决集合覆盖问题，例如贪心算法。&lt;/p&gt;
-&lt;h2 id=&#34;duality&#34;&gt;Duality
-&lt;/h2&gt;&lt;p&gt;线性规划的对偶性是一个非常重要的概念。对于每一个线性规划问题（称为原问题），都存在一个相关的线性规划问题（称为对偶问题）。原问题和对偶问题之间有一些非常有趣的关系。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;对偶问题的目标函数是原问题的约束条件的线性组合，反之亦然。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;对偶问题的解（对偶值）提供了原问题解（原值）的一个下界（如果是最大化问题）或上界（如果是最小化问题）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果原问题和对偶问题都有解（即它们是可行的），那么它们的最优解是相等的。这就是所谓的弱对偶性。如果原问题是无界的，那么对偶问题是不可行的，反之亦然。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在某些条件下（例如，如果原问题和对偶问题都满足某些正则性条件），我们可以保证强对偶性，即原问题的任何可行解和对偶问题的任何可行解都有相同的目标函数值。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这些对偶性质在解决线性规划问题时非常有用。例如，它们可以用来检验解的最优性，提供解的上下界，以及通过解对偶问题来更有效地解原问题。&lt;/p&gt;
+&lt;p&gt;这个方法的正确性基于最大流最小割定理：在一个流网络中，最大流的值等于最小割的容量。在这个问题中，最小割就是将所有正需求的节点和所有负需求的节点分开的割，其容量就是所有正需求的总和。所以，如果最大流的值等于所有正需求的总和，那么就存在一个需求循环。反之，如果存在一个需求循环，那么最大流的值必然等于所有正需求的总和。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1551,6 +1670,64 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;vocabs&#34;&gt;Vocabs
 &lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;asymptotic notation: 渐进符号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;subtle: 微妙的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;conjecture: 猜想&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;concave: 凹的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;invalidate: 使无效&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;conceptual: 概念上的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dominate: 支配&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;trial: 尝试&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;prime: 素数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;evict: 驱逐&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;disjoint: 不相交的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;fraction: 分数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cascadinng: 级联&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;auxilinary: 辅助的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sink: 汇点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;discrepency: 差异&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;incoporate: 合并&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;converse: 相反的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sought: 寻找&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;conservation node: 保守节点, a node that has the same flow in and out&lt;/p&gt;
 &lt;/li&gt;
