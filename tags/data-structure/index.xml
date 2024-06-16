@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Structure on Dale的水硕日记</title><link>https://shyu216.github.io/aquamega/tags/data-structure/</link><description>Recent content in Data Structure on Dale的水硕日记</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shyu216.github.io/aquamega/tags/data-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>Bucket</title><link>https://shyu216.github.io/aquamega/p/bucket/</link><pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/bucket/</guid><description>&lt;ul>
+&lt;li>桶排序是一种排序算法，适用于当数据范围已知的情况。&lt;/li>
+&lt;li>排序/构建的时间复杂度：O(n)。这表示我们需要遍历每个元素，并将其放入相应的桶中。在最好和平均的情况下，如果元素均匀分布，那么桶排序的时间复杂度可以达到 O(n)。&lt;/li>
+&lt;li>查找的时间复杂度：O(1)。这表示我们可以直接通过元素的值来确定它在哪个桶中，然后在该桶中进行查找。如果每个桶的大小都很小（例如，大小为1），那么查找操作的时间复杂度可以视为常数时间 O(1)。&lt;/li>
+&lt;/ul></description></item><item><title>Hash</title><link>https://shyu216.github.io/aquamega/p/hash/</link><pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/hash/</guid><description>&lt;ul>
+&lt;li>喜欢很少更新数据的情况，static dictionary search&lt;/li>
+&lt;/ul>
+&lt;h2 id="univeral-hashing">Univeral Hashing
+&lt;/h2>&lt;p>通用哈希函数族具有以下性质：&lt;/p>
+&lt;p>如果我们从哈希函数族 H 中均匀随机地选择一个哈希函数 h，那么对于 U 中的每一对不同的元素 x 和 y，x 和 y 在 h 下发生冲突的概率满足：&lt;/p>
+&lt;p>$Pr_{h \in H}[h(x) = h(y)] \leq \frac{1}{m}$&lt;/p>
+&lt;p>这里，$Pr_{h \in H}[h(x) = h(y)]$ 表示在哈希函数族 H 中选择的哈希函数 h 使得 x 和 y 发生冲突的概率，m 是哈希表的大小。&lt;/p>
+&lt;p>给定一个包含 n 个元素的集合 S，我们从一个通用的函数族 H 中均匀随机地选择一个哈希函数 h，我们可以达到以下效果：&lt;/p>
+&lt;ul>
+&lt;li>预处理时间：最坏情况下为 O(n + m)；&lt;/li>
+&lt;li>空间消耗：最坏情况下为 O(n + m)；&lt;/li>
+&lt;li>查询时间：期望为 O(1 + n/m)。找到哈希值的时间为 O(1)，解决冲突的时间为 O(n/m)，比如遍历桶中元素，平均有n/m个。&lt;/li>
+&lt;/ul>
+&lt;p>如上所述，m 控制了空间消耗和期望查询时间之间的权衡。&lt;/p>
+&lt;p>当 m = Θ(n) 时，空间消耗为 O(n)，期望查询时间为 O(1)。&lt;/p>
+&lt;h3 id="when-m--n">when $m = n$
+&lt;/h3>&lt;ul>
+&lt;li>查询时间：O(1)，expected&lt;/li>
+&lt;/ul>
+&lt;h3 id="when-m--n2">when $m = n^2$
+&lt;/h3>&lt;p>理论上此时碰撞期望小于1。&lt;/p>
+&lt;ul>
+&lt;li>预处理时间：O(n^2)&lt;/li>
+&lt;li>空间消耗：O(n^2)&lt;/li>
+&lt;li>查询时间：O(1)，worst case&lt;/li>
+&lt;/ul>
+&lt;h2 id="perfect-hashing">Perfect Hashing
+&lt;/h2>&lt;p>两层的哈希表，第一层用于解决冲突，第二层用于存储数据。&lt;/p>
+&lt;p>第一层m=n，第二层m=n^2。&lt;/p>
+&lt;ul>
+&lt;li>预处理时间：O(n)&lt;/li>
+&lt;li>空间消耗：O(n)&lt;/li>
+&lt;li>查询时间：O(1)，worst case&lt;/li>
+&lt;/ul>
+&lt;h2 id="cuckoo-hashing">Cuckoo Hashing
+&lt;/h2>&lt;p>布谷鸟，k个表，插值时，如果发生冲突，就把原来的元素挤出去，直到找到空位。&lt;/p>
+&lt;ul>
+&lt;li>插入时间：期望为 O(1)&lt;/li>
+&lt;li>删除时间：最坏情况下为 O(1)&lt;/li>
+&lt;li>查询时间：最坏情况下为 O(1)&lt;/li>
+&lt;li>构建时间：期望为 O(n)&lt;/li>
+&lt;li>空间消耗：最坏情况下为 O(n)&lt;/li>
+&lt;/ul></description></item><item><title>Quake Heap</title><link>https://shyu216.github.io/aquamega/p/quake-heap/</link><pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/quake-heap/</guid><description>&lt;ul>
+&lt;li>数据在leaf，整个堆用priority维护，跟实际数据无关&lt;/li>
+&lt;li>Insertion: O(1) expected, O(log n) worst case&lt;/li>
+&lt;li>Search: N/A (or O(n) if heap is traversed)&lt;/li>
+&lt;li>Decrease Key: O(1) expected, O(n) worst case&lt;/li>
+&lt;li>Deletion (Delete Min): O(log n) expected, O(n) worst case&lt;/li>
+&lt;/ul>
+&lt;p>Quake Heaps 是一种优先队列数据结构，它在处理动态集合中的元素和执行相关操作（如插入、删除、查找最小元素等）时，提供了良好的时间复杂性。Quake Heaps 的一个关键特性是它们的删除操作的摊还时间复杂度为 $O(\log n)$，这使得它们在需要频繁删除操作的应用中非常有用。&lt;/p>
+&lt;p>以下是一些可能使用 Quake Heaps 的应用：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>图算法&lt;/strong>：许多图算法，如 Dijkstra 的最短路径算法和 Prim 的最小生成树算法，需要使用优先队列来高效地找到下一个要处理的节点。在这些算法中，Quake Heaps 可以用来提高性能。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>事件驱动的模拟&lt;/strong>：在事件驱动的模拟中，事件是按照它们发生的时间顺序处理的。Quake Heaps 可以用来存储和检索这些事件，以确保它们按照正确的顺序被处理。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>任务调度&lt;/strong>：在任务调度问题中，我们需要根据任务的优先级来决定执行顺序。Quake Heaps 可以用来存储和检索任务，以确保优先级最高的任务首先被执行。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>请注意，虽然 Quake Heaps 在理论上有很好的性能，但在实践中，由于它们的实现复杂性，可能会选择其他更简单但性能稍差的数据结构，如 Fibonacci heaps 或 binary heaps。&lt;/p>
+&lt;h2 id="tournament-trees">Tournament Trees
+&lt;/h2>&lt;p>Quake Heaps 是基于 Tournament Trees 的一种改进。Tournament Trees 是一种完全二叉树，其中每个节点都包含一个元素，并且树的叶子节点是输入元素。在 Tournament Trees 中，每个节点都存储了其子树中的最小元素。这使得 Tournament Trees 可以用来高效地找到最小元素。&lt;/p>
+&lt;h2 id="pointers">Pointers
+&lt;/h2>&lt;p>P即T的最后一层，每个节点都是一个元素。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>元素指针&lt;/strong>：在优先队列 P 中，每个元素都保持一个指向 Tournament Tree T 中概念上存储其优先级的最高节点（即，高度最大的节点）的指针。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>节点指针&lt;/strong>：在 Tournament Tree T 中，每个节点 u 都有一个指向优先队列 P 中的元素的指针，u 概念上存储了该元素的优先级。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="node-number-at-height-invariant">Node-Number-at-Height Invariant
+&lt;/h2>&lt;p>在 Quake Heaps 中，有一个重要的不变性，即“高度 h 处的节点数目”不变性。&lt;/p>
+&lt;p>有一个constant $c$，上一层的节点数目是下一层的节点数目的 $c$ 倍。这个不变性保证了 Quake Heaps 的高效性。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">c = 0.6
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n5 = 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n4 = 3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n3 = 5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n2 = 9
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n1 = 15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>$n_{h+1} \leq c \cdot n_h$&lt;/p>
+&lt;h2 id="log-n">log n
+&lt;/h2>&lt;ol>
+&lt;li>最后一层至多n个&lt;/li>
+&lt;li>每层会少c倍&lt;/li>
+&lt;li>层数至多$\log_{1/c} n$&lt;/li>
+&lt;/ol>
+&lt;h2 id="operations">Operations
+&lt;/h2>&lt;h3 id="link">Link
+&lt;/h3>&lt;p>将两个 Tournament Trees 连接成一个更大的 Tournament Tree。这个操作的时间复杂度是 $O(1)$。&lt;/p>
+&lt;p>条件：两个 Tournament Trees 的高度相同。&lt;/p>
+&lt;h3 id="cut">Cut
+&lt;/h3>&lt;p>切根和较大的子节点。这个操作的时间复杂度是 $O(1)$。&lt;/p>
+&lt;h3 id="insert">Insert
+&lt;/h3>&lt;p>直接插入，建个新树。这个操作的时间复杂度是 $O(1)$。&lt;/p>
+&lt;h3 id="decrease-key">Decrease Key
+&lt;/h3>&lt;p>降低一个元素的优先级。把它的值减小，找到它指的树中的节点，然后cut。这个操作的时间复杂度是 $O(1)$。&lt;/p>
+&lt;h3 id="delete-min">Delete Min
+&lt;/h3>&lt;p>找到最小的元素，删掉整个path。通常先经过decrease key，使目标数据有最小priority，操作更方便。要是有same height，link起来。&lt;/p>
+&lt;p>这个操作的时间复杂度是 $O(\log n)$，可以用admortized analysis证明。&lt;/p>
+&lt;ul>
+&lt;li>跟树的数量，和path的长度有关。&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>找到具有最小键值的元素。
+&lt;ul>
+&lt;li>有T个树，需T步&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>删除这个元素。
+&lt;ul>
+&lt;li>如path长L，有L步&lt;/li>
+&lt;li>1和2共T+L&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>同一高度的树合并。while loop
+&lt;ul>
+&lt;li>T-1个其他树，切掉path后有L个新树，共T+L-1步&lt;/li>
+&lt;li>仅需T+L-2个合并，因为至少剩下一个树&lt;/li>
+&lt;li>$T^{(1)} \leq 2h^{(0)}_{max}$，合并后的树的数量小于等于合并前最高的树的高度的2倍&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>保持不变性。
+&lt;ul>
+&lt;li>只会删node，而不加，把不符的高层整层删掉，$\Delta N &amp;lt; 0$&lt;/li>
+&lt;li>新增的树不会比新的最高层的node多，$\Delta T \leq n^{(0)}_h$&lt;/li>
+&lt;li>只会删坏节点，而不加，按层删的，所以就算往上一层h+1坏节点。这一层的节点数是两倍上一层的好节点和一倍上一层的坏节点，所以$n_h = 2(n_{h+1} - b_{h+1}) + 1*b_{h+1}$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="admortized-analysis">Admortized Analysis
+&lt;/h2>&lt;p>N个元素，T个树，B个坏节点（只有一个孩子）&lt;/p>
+&lt;p>$\Phi = N + 3T + \frac{3}{2\alpha -1}B$&lt;/p>
+&lt;h2 id="t1-leq-2h0_max">$T^{(1)} \leq 2h^{(0)}_{max}$
+&lt;/h2>&lt;ul>
+&lt;li>每种高度的树最多有一个，不然就被合并了&lt;/li>
+&lt;li>合并后的高度至多是原来的两倍&lt;/li>
+&lt;li>合并前至多有$h^{(0)}&lt;em>{max}$种高度的树，每种合并一次，最后高度会是$2h^{(0)}&lt;/em>{max}$&lt;/li>
+&lt;/ul></description></item><item><title>Range Search</title><link>https://shyu216.github.io/aquamega/p/range-search/</link><pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/range-search/</guid><description>&lt;ul>
+&lt;li>用于范围查询（一次多个值）&lt;/li>
+&lt;/ul>
+&lt;p>对于二维数据：&lt;/p>
+&lt;ul>
+&lt;li>构建时间：O(n log n)&lt;/li>
+&lt;li>空间消耗：O(n log n)，log n层，每层至多n个&lt;/li>
+&lt;li>查询时间：O(k + log n)，其中 k 是报告的点的数量。&lt;/li>
+&lt;/ul>
+&lt;h2 id="查询算法">查询算法
+&lt;/h2>&lt;p>给定一个查询范围 Q = [a1, b1] × [a2, b2]，我们可以通过以下步骤报告所有在 P ∩ Q 中的点：&lt;/p>
+&lt;ol>
+&lt;li>在 Tx 中找到 a&amp;rsquo; = succ(a1) 和 b&amp;rsquo; = pred(b1)；&lt;/li>
+&lt;li>让 usplit = LCA(a&amp;rsquo;, b&amp;rsquo;)，La1 是从 usplit 的左孩子到 a&amp;rsquo; 的路径，Lb1 是从 usplit 的右孩子到 b&amp;rsquo; 的路径；&lt;/li>
+&lt;li>如果 usplit ∈ Q，报告 usplit；&lt;/li>
+&lt;li>对于路径 La1 上的每个节点 u：
+&lt;ul>
+&lt;li>如果 u ∈ Q，报告 u；&lt;/li>
+&lt;li>如果 a&amp;rsquo; ≤ u.x，那么报告 u 的右子树中所有 y 坐标在 [a2, b2] 范围内的点；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>对于路径 Lb1 上的每个节点 u：
+&lt;ul>
+&lt;li>如果 u ∈ Q，报告 u；&lt;/li>
+&lt;li>如果 b&amp;rsquo; ≥ u.x，那么报告 u 的左子树中所有 y 坐标在 [a2, b2] 范围内的点。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>这个算法的基本思想是首先在 x 轴上找到查询范围的边界，然后在这个范围内的每个节点上进行 y 轴的范围搜索。这是一个有效的方法，因为它可以利用二维空间的结构来减少搜索的复杂性。&lt;/p>
+&lt;p>在开始时，我们承诺可以在 $O(k + \log n)$ 时间内完成二维轴平行矩形范围查询。然而，当前的查询成本是 $O(k + \log^2 n)$，这违反了我们的承诺。&lt;/p>
+&lt;p>为了将查询时间从 $O(k + \log^2 n)$ 降低到 $O(k + \log n)$，我们需要应用一种称为分数级联（Fractional Cascading）的技术。&lt;/p>
+&lt;p>分数级联是一种用于优化多层次数据结构查询的技术。通过在每一层都保留一部分信息，我们可以避免在每一层都进行完全的二分查找，从而将查询时间从 $\log^2 n$ 降低到 $\log n$。这种技术在处理二维范围查询、最近邻查询等问题时非常有用。&lt;/p>
+&lt;h2 id="fractional-cascading">Fractional Cascading
+&lt;/h2>&lt;p>分数级联是一种技术，用于加速范围查询。它通过在不同层次的数据结构之间共享信息来减少查询时间。&lt;/p>
+&lt;p>succ和pred指针，指向下一层的元素。&lt;/p>
+&lt;p>这段文字是在描述如何通过应用分数级联（Fractional Cascading）技术来优化二维轴平行矩形范围查询的时间复杂度。&lt;/p>
+&lt;p>基于上述观察，我们可以将所有的次级树替换为排序数组，并应用分数级联技术，以将 $O(k + \log^2 n)$ 的查询时间降低到 $O(\log n + k + \log n) = O(k + \log n)$。&lt;/p>
+&lt;p>分数级联的基本思想是在每一层的数据结构中保留一部分信息，以便在查询时可以快速定位到下一层的查询位置，从而避免在每一层都进行完全的二分查找。在这个上下文中，我们将次级树替换为排序数组，然后在每个数组中保留一部分信息，以便在查询时可以快速定位到下一个数组的查询位置。&lt;/p>
+&lt;p>这种方法可以将查询时间从 $O(k + \log^2 n)$ 降低到 $O(k + \log n)$，从而满足我们在开始时的承诺。&lt;/p>
+&lt;h2 id="实现">实现
+&lt;/h2>&lt;p>在范围树中实现分数级联（Fractional Cascading）可以有效地减少查询时间。以下是一个简单的实现步骤：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在构建范围树时，每个节点都存储其子节点的最大和最小值。这样，我们可以快速确定一个查询范围是否与一个子树有交集。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于每个节点，我们在其左右子节点中存储一个指向其父节点的指针。这样，我们可以从一个子节点快速跳转到其父节点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>当我们进行范围查询时，我们首先在树的根节点开始。我们检查查询范围是否与左右子树有交集。如果有交集，我们就跟踪这个子树，并更新查询范围以排除已经检查过的部分。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>当我们跟踪一个子树时，我们使用存储在节点中的指针，快速跳转到其父节点。然后，我们重复步骤3，直到我们检查了所有与查询范围有交集的子树。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最后，我们返回所有在查询范围内的节点。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>通过这种方式，我们可以在 O(log n + k) 的时间内完成查询，其中 n 是树中的节点数量，k 是查询返回的节点数量。这比没有使用分数级联的 O(n log n + k) 快得多。&lt;/p></description></item><item><title>Splay Tree</title><link>https://shyu216.github.io/aquamega/p/splay-tree/</link><pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/splay-tree/</guid><description>&lt;ul>
+&lt;li>越常访问，越靠近root&lt;/li>
+&lt;li>一种balanced BST，但不保证平衡&lt;/li>
+&lt;li>Insertion: O(log n) expected, O(n) worst case&lt;/li>
+&lt;li>Search: O(log n) expected, O(n) worst case&lt;/li>
+&lt;li>Deletion: O(log n) expected, O(n) worst case&lt;/li>
+&lt;/ul>
+&lt;h2 id="zig-zig-and-zag-zag">Zig-Zig and Zag-Zag
+&lt;/h2>&lt;p>left-left/right-right turns to right-right/left-left&lt;/p>
+&lt;h2 id="zig-zag-and-zag-zig">Zig-Zag and Zag-Zig
+&lt;/h2>&lt;p>turns to middle&lt;/p>
+&lt;h2 id="zig-and-zag">Zig and Zag
+&lt;/h2>&lt;p>just swap&lt;/p>
+&lt;h2 id="successful-search-only-sequence">Successful-search-only sequence
+&lt;/h2>&lt;p>&amp;ldquo;Successful-search-only sequence&amp;rdquo; 是一种特定的操作序列，其中只包含成功的搜索操作。在这种序列中，所有的搜索操作都能找到它们正在寻找的元素。&lt;/p>
+&lt;p>这种操作序列在分析某些数据结构的性能时非常有用。例如，当我们分析哈希表的性能时，我们可能会考虑最坏情况下的操作序列，其中包含大量的失败的搜索操作。然而，在实际应用中，失败的搜索操作可能非常少，因此，考虑 &amp;ldquo;successful-search-only sequence&amp;rdquo; 可能会给出更准确的性能分析。&lt;/p>
+&lt;p>在 &amp;ldquo;successful-search-only sequence&amp;rdquo; 中，由于所有的搜索操作都是成功的，所以数据结构的性能主要取决于如何高效地存储和检索元素。因此，这种操作序列对于理解和优化数据结构的性能非常有用。&lt;/p>
+&lt;h2 id="information-theory">Information theory
+&lt;/h2>&lt;p>信息理论能够帮助我们理解数据结构的性能。在信息理论中，我们可以使用熵来衡量数据的不确定性。熵越高，数据的不确定性就越大。&lt;/p>
+&lt;p>它可以用来界定最优的成本界限。&lt;/p></description></item><item><title>Tree</title><link>https://shyu216.github.io/aquamega/p/tree/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/tree/</guid><description>&lt;h2 id="tree">Tree
+&lt;/h2>&lt;p>连着的没有方向的没有圈圈的图&lt;/p>
+&lt;h2 id="rooted-tree">Rooted Tree
+&lt;/h2>&lt;p>有一个根节点&lt;/p>
+&lt;h3 id="parent-child-sibling">Parent, Child, Sibling
+&lt;/h3>&lt;ul>
+&lt;li>Parent: 父节点&lt;/li>
+&lt;li>Child: 子节点&lt;/li>
+&lt;li>Sibling: 兄弟节点&lt;/li>
+&lt;li>Leaf: 没有子节点的节点&lt;/li>
+&lt;/ul>
+&lt;h3 id="ancestor-descendant">Ancestor, Descendant
+&lt;/h3>&lt;ul>
+&lt;li>Ancestor: 祖先节点，一个path到根节点，我是我自己的祖先&lt;/li>
+&lt;li>Proper Ancestor: 除了自己的祖先&lt;/li>
+&lt;li>Descendant: 子孙节点&lt;/li>
+&lt;li>Proper Descendant: 除了自己的子孙&lt;/li>
+&lt;/ul>
+&lt;h3 id="node-depth">Node depth
+&lt;/h3>&lt;p>depth是对node说的，proper ancestor的数量，根节点的depth是0&lt;/p>
+&lt;h3 id="height">Height
+&lt;/h3>&lt;p>height是对整个tree说的，最大的depth+1&lt;/p>
+&lt;h2 id="binary-tree">Binary Tree
+&lt;/h2>&lt;p>每个节点最多有两个子节点的rooted tree&lt;/p>
+&lt;h2 id="binary-search-tree">Binary Search Tree
+&lt;/h2>&lt;ul>
+&lt;li>每个node都有一个key，可以重复&lt;/li>
+&lt;li>对于每个node，左子树的key都小于这个node的key，右子树的key都大于这个node的key&lt;/li>
+&lt;/ul>
+&lt;h2 id="balanced-binary-tree">Balanced Binary Tree
+&lt;/h2>&lt;p>一啪啦实现方法，尽量让树的高度小，比如AVL tree，Red-Black tree&lt;/p>
+&lt;ul>
+&lt;li>O(log n)的search, insert, delete&lt;/li>
+&lt;li>O(n)的space&lt;/li>
+&lt;/ul></description></item><item><title>COMP90077</title><link>https://shyu216.github.io/aquamega/p/comp90077/</link><pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/comp90077/</guid><description>&lt;p>Learn some advanced algorithms and data structures.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Treap&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Admortized Analysis: Prepaid/Potential&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Quake Heap&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Splay Tree&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Perfect Hashing/Cuckoo Hashing&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Range Tree&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Min Cut/Max Flow&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Karger&amp;rsquo;s algorithm: 找最小割, 找多次取最优, 随机地找两个节点合并, 直到只剩下两个节点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ford-Fulkerson algorithm: 最早的最大流算法, 重复地找增广路径, 直到找不到&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edmonds-Karp algorithm: 用BFS找增广路径, complexity更低&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hall&amp;rsquo;s theorem: 一个二分图存在完美匹配当且仅当对于每一个子集, 子集的大小大于等于子集的邻居的大小&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="readings">Readings
+&lt;/h2>&lt;ul>
+&lt;li>Karger&amp;rsquo;s Randomised Contraction algorithm: Chapter 13.2 of [KT]&lt;/li>
+&lt;li>Flow networks, max flow, min cut and basic Ford-Fulkerson: Chapter 7.1 - 7.2 of [KT] and also Chapter 10.1 - 10.4 of [JE]&lt;/li>
+&lt;li>Flow network applications (Bipartite Matching and Disjoint Paths): Chapter 7.5-7.6 of [KT]&lt;/li>
+&lt;li>Capacity-Scaling: Chapter 7.3 of [KT]Edmonds-Karps algorithms: Chapter 10.6 of [JE]&lt;/li>
+&lt;li>Circulation with demands: Chapter 7.7 of [KT]&lt;/li>
+&lt;li>Linear Programming: &lt;a class="link" href="https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf" target="_blank" rel="noopener"
+>https://jeffe.cs.illinois.edu/teaching/algorithms/notes/H-lp.pdf&lt;/a>&lt;/li>
+&lt;li>Approximation Algorithms: Chapter 1 of &lt;a class="link" href="https://www.designofapproxalgs.com/book.pdf" target="_blank" rel="noopener"
+>https://www.designofapproxalgs.com/book.pdf&lt;/a> and see also Approximation Algorithms by Vazirani&lt;/li>
+&lt;li>[JE] = &lt;a class="link" href="https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf" target="_blank" rel="noopener"
+>https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf&lt;/a>&lt;/li>
+&lt;li>[KT] = Algorithm Design by Kleinberg and Tardos&lt;/li>
+&lt;/ul>
+&lt;h2 id="vocabs">Vocabs
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>asymptotic notation: 渐进符号&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>subtle: 微妙的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>conjecture: 猜想&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>concave: 凹的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>invalidate: 使无效&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>conceptual: 概念上的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>dominate: 支配&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>trial: 尝试&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>prime: 素数&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>evict: 驱逐&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>disjoint: 不相交的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>fraction: 分数&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>cascadinng: 级联&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>auxilinary: 辅助的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>sink: 汇点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>discrepency: 差异&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>incoporate: 合并&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>converse: 相反的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>sought: 寻找&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>polytope: 多面体&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>incident: 相邻的&lt;/p>
+&lt;ul>
+&lt;li>&amp;ldquo;Incident&amp;rdquo;：当我们说一条边和一个顶点是&amp;quot;incident&amp;quot;（相邻），意味着这条边的一个端点就是这个顶点。&lt;/li>
+&lt;li>&amp;ldquo;Adjacent&amp;rdquo;：当我们说两个顶点是&amp;quot;adjacent&amp;quot;（邻接），意味着存在一条边连接这两个顶点。同样，当我们说两条边是&amp;quot;adjacent&amp;quot;（邻接），意味着这两条边共享一个公共顶点。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>feasible: 可行的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>polynomial: 多项式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>comprise: 包括&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>logarithmic: 对数的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>rounding: 四舍五入&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>infeasible: 不可行的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>unbounded: 无界的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>reciprocal: 倒数&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>incremental: 增量的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>conservation: 保守&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>slackness: 松弛&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>conservation node: 保守节点, a node that has the same flow in and out&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>residual graph: 残余图, a graph that represents the remaining capacity of each edge&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>augmenting path: 增广路径, a path from source to sink in the residual graph&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>feasible flow: 可行流, a flow that satisfies the capacity constraints and conservation constraints&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>perfect matching: 完美匹配, a matching that covers all the nodes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>bipartite graph: 二分图, a graph that can be divided into two sets such that all edges are between the two sets&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>disjoint paths: 不相交路径, paths that do not share any nodes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>vertex cover: 顶点覆盖, a set of vertices that covers all the edges&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>maximal matching: 最大匹配, a matching that cannot be extended by adding another edge&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>cardinality 基数，集合中元素的数量&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Dynamic Array</title><link>https://shyu216.github.io/aquamega/p/dynamic-array/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/dynamic-array/</guid><description>&lt;ul>
+&lt;li>Insertion: O(1) expected, O(n) worst case&lt;/li>
+&lt;li>Search: O(n) expected, O(n) worst case&lt;/li>
+&lt;li>Deletion: O(n) expected, O(n) worst case&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">DynamicArray&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="c1"># Number of elements&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1"># Initial capacity&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_make_array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__len__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__getitem__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">k&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">k&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">raise&lt;/span> &lt;span class="ne">IndexError&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;invalid index&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">insert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> element = (id,key)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_resize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">element&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">delete&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span> &lt;span class="o">//&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_resize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span> &lt;span class="o">//&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">search&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keysch&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">element&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[:&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">keysch&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">element&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_resize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">new_cap&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">B&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_make_array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">new_cap&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">k&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">B&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">A&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">B&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">capacity&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">new_cap&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_make_array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">new_cap&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">new_cap&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Treap</title><link>https://shyu216.github.io/aquamega/p/treap/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/treap/</guid><description>&lt;ul>
+&lt;li>Tree + Heap = Treap&lt;/li>
+&lt;li>Insertion: O(log n) expected, O(n) worst case&lt;/li>
+&lt;li>Search: O(log n) expected, O(n) worst case&lt;/li>
+&lt;li>Deletion: O(log n) expected, O(n) worst case&lt;/li>
+&lt;/ul>
+&lt;p>treap的key是有用的数据；priority是随机生成的值，用于保持treap的平衡。&lt;/p>
+&lt;h2 id="operations">Operations
+&lt;/h2>&lt;h3 id="insertion">Insertion
+&lt;/h3>&lt;p>加到叶子节点，然后向上旋转，直到满足treap的性质。&lt;/p>
+&lt;h3 id="deletion">Deletion
+&lt;/h3>&lt;p>找到要删除的节点，把priority设为无穷大，然后旋转，直到满足treap的性质。此时，要删除的节点就变成了叶子节点，然后删除。&lt;/p>
+&lt;h3 id="search">Search
+&lt;/h3>&lt;p>和BST一样，递归地搜索左子树或右子树。&lt;/p>
+&lt;h3 id="join">Join
+&lt;/h3>&lt;p>搞一个假的节点，priority设为无穷大，然后把两个treap的根节点作为左右子树，然后旋转，直到满足treap的性质。&lt;/p>
+&lt;h3 id="split">Split
+&lt;/h3>&lt;p>把要split的key找到，设成无穷小，然后旋转，直到满足treap的性质。此时，这个key到根节点了。&lt;/p>
+&lt;h2 id="implementation">Implementation
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">random&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Node&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">priority&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">key&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">priority&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Treap&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_left_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">right_child&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">node&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">right_child&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">right_child&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">right_child&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_right_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">left_child&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">node&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">left_child&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">left_child&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">left_child&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">insert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">node&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">element&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">random&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_insert_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_insert_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_insert_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_right_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_insert_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">node&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_left_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">root&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">delete&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">keydel&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="n">keydel&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">priority&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_right_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_left_rotate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_delete_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">keydel&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">root&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">search&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_search_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">_search_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="n">key&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_search_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">left&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_search_node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">right&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

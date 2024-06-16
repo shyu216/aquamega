@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP90054 on Dale的水硕日记</title><link>https://shyu216.github.io/aquamega/categories/comp90054/</link><description>Recent content in COMP90054 on Dale的水硕日记</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shyu216.github.io/aquamega/categories/comp90054/index.xml" rel="self" type="application/rss+xml"/><item><title>COMP90054</title><link>https://shyu216.github.io/aquamega/p/comp90054/</link><pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/comp90054/</guid><description>&lt;ul>
+&lt;li>classical planning (blind/heuristic): &lt;a class="link" href="https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf" target="_blank" rel="noopener"
+>https://fai.cs.uni-saarland.de/hoffmann/papers/ki11.pdf&lt;/a>&lt;/li>
+&lt;li>PDDL&lt;/li>
+&lt;li>relaxation&lt;/li>
+&lt;li>reinforcement learning: &lt;a class="link" href="https://gibberblot.github.io/rl-notes/index.html" target="_blank" rel="noopener"
+>https://gibberblot.github.io/rl-notes/index.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vocabs">Vocabs
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>acyclic 无环&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>systematics 系统的 / local 局部&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>heuristic 启发式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>monotonic 单调&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>priority queue = min heap&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>conformant 符合的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>policy 策略，map from state to action, denoted by $\pi$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>negation 否定&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>precondition 前提条件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>propositional 命题&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>predicate 谓词，return true/false&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>schema 模式，define somthing&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>misplace 放错&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>dominate 支配&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>corollary 推论&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>point-wise 逐点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>pessimistic 悲观&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>benchmark 基准&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>novelty 新颖性&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>prune 修剪&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>velocity 速度&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>stochastic 随机&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>tabular 表格&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>dilemma 困境&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>equilibria 平衡&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>, set minus operation&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>payoff 收益&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>utility 效用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Nondeterministic Polynomial: 不确定多项式，没有已知的多项式时间算法可以在所有情况下找到一个解&lt;/p>
+&lt;ul>
+&lt;li>non-deterministic: countless outcomes&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>mixed strategy equilibria: 混合策略均衡&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>nash equilibrium: 纳什均衡，每个玩家都在最佳响应下(pure strategy)，没有人会改变策略&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="安全目标感知可接受一致性">安全/目标感知/可接受/一致性
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>$h$ remaining cost to reach the goal, $*$ optimal&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, G)$，并且$h$是$\Pi$的一个启发式。如果启发式满足以下条件，那么它被称为：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>安全（Safe）：如果对于所有$h(s) = \infty$的状态$s \in S$，都有$h^*(s) = \infty$，则启发式被称为安全。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>目标感知（Goal-aware）：如果对于所有目标状态$s \in S_G$，都有$h(s) = 0$，则启发式被称为目标感知。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可接受（Admissible）：如果对于所有状态$s \in S$，都有$h(s) \leq h^*(s)$，则启发式被称为可接受。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>一致（Consistent）：如果对于所有$s \xrightarrow{a} s&amp;rsquo;$的转移，都有$h(s) \leq h(s&amp;rsquo;) + c(a)$，则启发式被称为一致。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>命题：假设$\Pi$是一个计划任务，具有状态空间$\Theta_{\Pi} = (S, L, c, T, I, S_G)$，并且$h$是$\Pi$的一个启发式。&lt;/p>
+&lt;ul>
+&lt;li>如果$h$是一致的和目标感知的，则$h$是可接受的。&lt;/li>
+&lt;li>如果$h$是可接受的，则$h$是目标感知的。&lt;/li>
+&lt;li>如果$h$是可接受的，则$h$是安全的。&lt;/li>
+&lt;li>没有其他这种形式的蕴含关系成立。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>不可接受：最优的节点如果被高估，就会优先扩展其他节点，而错过最优。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>一致性：保证最优路径依次访问。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="strips-问题是一个四元组p--langle-foig-rangle">STRIPS: 问题是一个四元组$P = \langle F,O,I,G \rangle$：
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>$F$ fact, 原子, 变量&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$O$ 或 $A$ operator, action, 操作符, 动作&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$I \subseteq F$代表初始情况&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$G \subseteq F$代表目标情况&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>操作符$o \in O$由以下表示：&lt;/p>
+&lt;ul>
+&lt;li>添加列表$Add(o) \subseteq F$&lt;/li>
+&lt;li>删除列表$Del(o) \subseteq F$&lt;/li>
+&lt;li>前提条件列表$Pre(o) \subseteq F$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="relaxiation">Relaxiation:
+&lt;/h2>&lt;p>Goal：Helps compute heuristic function。&lt;/p>
+&lt;p>设$h^* : P \rightarrow R^+_0 \cup {\infty}$是一个函数。$h^&lt;em>$的松弛是一个三元组$R= (P&amp;rsquo;,r,h&amp;rsquo;^&lt;/em>)$，其中$P&amp;rsquo;$是任意集合，$r : P \rightarrow P&amp;rsquo;$和$h&amp;rsquo;^* : P&amp;rsquo; \rightarrow R^+_0 \cup {\infty}$是函数，对于所有的$\Pi \in P$，松弛启发式$h_R(\Pi) := h&amp;rsquo;^&lt;em>(r(\Pi))$满足$h_R(\Pi) \leq h^&lt;/em>(\Pi)$。松弛是：&lt;/p>
+&lt;ul>
+&lt;li>问题$P$：寻路。&lt;/li>
+&lt;li>更简单的问题$P&amp;rsquo;$：鸟类的寻路。&lt;/li>
+&lt;li>$P&amp;rsquo;$的完美启发式$h&amp;rsquo;^*$：直线距离。&lt;/li>
+&lt;li>转换$r$：假装你是一只鸟。&lt;/li>
+&lt;li>原生的，如果$P&amp;rsquo; \subseteq P$且$h&amp;rsquo;^* = h^*$；&lt;/li>
+&lt;li>可有效构造的，如果存在一个多项式时间算法，给定$\Pi \in P$，可以计算$r(\Pi)$；&lt;/li>
+&lt;li>可有效计算的，如果存在一个多项式时间算法，给定$\Pi&amp;rsquo; \in P&amp;rsquo;$，可以计算$h&amp;rsquo;^*(\Pi&amp;rsquo;)$。&lt;/li>
+&lt;/ul>
+&lt;p>提醒：你有一个问题$P$，你希望估计其完美启发式$h^&lt;em>$。你定义了一个更简单的问题$P&amp;rsquo;$，其完美启发式$h&amp;rsquo;^&lt;/em>$可以用来（可接受地！）估计$h^&lt;em>$。你定义了一个从$P$到$P&amp;rsquo;$的转换$r$。给定$\Pi \in P$，你通过$h&amp;rsquo;^&lt;/em>(r(\Pi))$来估计$h^*(\Pi)$。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>notation in this course&lt;/strong>:&lt;/p>
+&lt;p>$\Pi_s$：将初始状态替换为$s$的$\Pi$，即，将$\Pi = (F,A,c,I,G)$更改为$(F,A,c,s,G)$。&lt;/p>
+&lt;ul>
+&lt;li>c: clause, preconditions+effects&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="有关quality-value的一些概念">有关Quality Value的一些概念：
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>Value：在强化学习中，value通常指的是一个状态的价值，也就是从这个状态开始，遵循某个策略能够获得的预期回报。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Q-value：Q-value是对于状态-动作对(state-action pair)的价值的一种评估。也就是说，如果在某个状态下执行某个动作，然后遵循某个策略，能够获得的预期回报。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Q-value table：Q-value table是一种数据结构，用于存储每个状态-动作对的Q-value。在表格型强化学习算法（如Q-learning）中，Q-value table是主要的数据结构。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Q-value function：Q-value function是一个函数，它接受一个状态和一个动作作为输入，返回这个状态-动作对的Q-value。在函数逼近方法（如深度Q网络）中，Q-value function通常由神经网络来表示。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Q-table：Q-table和Q-value table是同一个概念，只是名称不同。&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Game Theory</title><link>https://shyu216.github.io/aquamega/p/game-theory/</link><pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/game-theory/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>pure Strategy: single action&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>mixed Strategy: probability distribution over actions&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>weakly dominate: $\leq$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>strongly dominate: $&amp;lt;$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>a weakly(strictly) dominant strategy: always better than any other strategy&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>nash equilibrium: 每个agent都选了最优策略，其他agent不会改变策略&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>indifference: 通过调整我的策略概率，改变对手的收益（payoff）期望，使无论对手如何选择，他的满意度（utility）都一样&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="utility-function">Utility Function
+&lt;/h2>&lt;p>U_i(a): what can agent i get from action a&lt;/p>
+&lt;h2 id="normal-form-game">Normal Form Game
+&lt;/h2>&lt;p>一轮，不知道对手的策略，只知道对手的utility function&lt;/p>
+&lt;h2 id="extensive-form-game-广义形式博弈">Extensive Form Game 广义形式博弈
+&lt;/h2>&lt;p>轮流决策，所以知道对手的策略&lt;/p>
+&lt;h2 id="subgame-perfect-equilibrium-子博弈完美均衡">Subgame Perfect Equilibrium 子博弈完美均衡
+&lt;/h2>&lt;p>当前玩家在他的回合的最优策略，对手在他的回合的最优策略。。。&lt;/p>
+&lt;h2 id="backward-induction-反向归纳">Backward Induction 反向归纳
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">输入：广义形式博弈 G = (N, Agt, S, s_0, A, T, r)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">输出：每个状态 s ∈ S 的子博弈均衡
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">函数 BackwardInduction(s ∈ S):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 A(s) = ∅，则返回 r(s)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> best_child ← (-∞, ..., -∞)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 对于每个 a ∈ A(s)：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> s&amp;#39; ← T(s,a)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> child_reward ← BackwardInduction(s&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 child_reward(P(s)) &amp;gt; best_child(P(s))，则 best_child ← child_reward
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 返回 best_child
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">返回 BackwardInduction(s_0)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="multi-agent-q-learning">Multi-agent Q-learning
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">输入：随机博弈 G = (S, s_0, A^1, ..., A^n, r^1, ..., r^n, Agt, P, γ)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">输出：Q函数 Q^j，其中 j 是 self agent
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">初始化 Q^j 任意，例如，对于所有的状态 s 和联合动作 a，Q^j(s,a)=0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">重复：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> s ← episode e 的第一个状态
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 重复（对于 episode e 的每一步）：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 选择在 s 中应用的动作 a^j
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 例如，使用 Q^j 和一个多臂老虎机算法，如 ε-greedy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 在状态 s 中执行动作 a^j
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 观察奖励 r^j 和新状态 s&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Q^j(s,a) ← Q^j(s,a) + α * [r^j + γ * max_a&amp;#39; Q^j(s&amp;#39;,a&amp;#39;) - Q^j(s,a)]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> s ← s&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 直到 episode e 结束（一个终止状态）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">直到 Q 收敛
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Greedy Relaxed Planning</title><link>https://shyu216.github.io/aquamega/p/greedy-relaxed-planning/</link><pubDate>Wed, 29 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/greedy-relaxed-planning/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>h*: the optimal heuristic&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h pre&amp;amp;del: the heuristic ignoring preconditions and delete effects, adimissible and consistent, &amp;ldquo;subset sum&amp;rdquo; problem, NP-hard&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h goal_count: the number of goals not yet achieved, neither admissible nor consistent&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h+/h del: admitssible and consistent, 相当于MST, 每个state只访问一遍，也NP-hard&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h add: easily not admissible&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h max: easily too small&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h ff: use h add and h max&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Removing preconditions and delete effects is efficiently constructive but not computable。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>h max和h add的table是不一样的，一个是最大值，一个是累加值。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="delete-relaxation">Delete Relaxation
+&lt;/h2>&lt;p>忽略搜索中所有的delete效果，在发现goal之前减少重复的状态。&lt;/p>
+&lt;ul>
+&lt;li>State Dominance: 如果一个状态支配另一个状态，那么我们可以忽略支配状态。被包含了。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">greedyRelaxedPlan&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PriorityQueue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">init_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">viewed&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="c1"># ignore cost as we are blind&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">child_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">child_action&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Neither admissible nor consistent. 因为不保证optimal，只保证能找到解决方案。&lt;/p>
+&lt;p>Optimal的都NP-hard。&lt;/p>
+&lt;h2 id="additive-and-max-heuristics">Additive and Max Heuristics
+&lt;/h2>&lt;ul>
+&lt;li>Additive: 相加子目标的启发式，明显不是admissible。&lt;/li>
+&lt;/ul>
+&lt;p>$h^{add}(s, g) =
+\begin{cases}
+0 &amp;amp; \text{if } g \subseteq s \
+\min_{a \in A, g \in add_a} (c(a) + h^{add}(s, pre_a)) &amp;amp; \text{if } |g| = 1 \
+\sum_{g&amp;rsquo; \in g} h^{add}(s, {g&amp;rsquo;}) &amp;amp; \text{if } |g| &amp;gt; 1
+\end{cases}$&lt;/p>
+&lt;ul>
+&lt;li>Max: 选择子目标中最大的启发式。最难解决的子节点。&lt;/li>
+&lt;/ul>
+&lt;p>$h^{max}(s, g) =
+\begin{cases}
+0 &amp;amp; \text{if } g \subseteq s \
+\max_{a \in A, g \in add_a} (c(a) + h^{max}(s, pre_a)) &amp;amp; \text{if } |g| = 1 \
+\max_{g&amp;rsquo; \in g} h^{max}(s, {g&amp;rsquo;}) &amp;amp; \text{if } |g| &amp;gt; 1
+\end{cases}$&lt;/p>
+&lt;p>都goal-aware，因为h+ ∞时，h也是∞。&lt;/p>
+&lt;h2 id="best-supporter-heuristic">Best Supporter Heuristic
+&lt;/h2>&lt;p>$bs_{s}^{max}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{max}(s,pre_a)$&lt;br>
+$bs_{s}^{add}(p) = argmin_{a\in A,p \in add_a}c(a)+h^{add}(s,pre_a)$&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>把$h_{add}$和$h_{max}$结合起来，选择最好的支持者。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>argmin: 在一系列动作里，选最小的h。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="bellman-ford-for-hmax-and-hadd">Bellman-Ford for hmax and hadd
+&lt;/h2>&lt;p>Bellman-Ford variant computing hadd for state s&lt;/p>
+&lt;p>反复更新表Tadd，直到表中的值不再改变。在每次迭代中，对于每个目标状态g，都会计算一个新的值fi(g)，这个值是当前状态s到状态g的最短路径的估计值。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">bellmanFordHadd&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">states&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStates&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">actions&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getActions&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">P&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getTransitionProbabilities&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">r&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getRewards&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gamma&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getDiscount&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">theta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.01&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Tadd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">s&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">s&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Tadd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Tadd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">min&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="nb">sum&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">r&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">a&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">s_prime&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">gamma&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">Tadd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s_prime&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">s_prime&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">actions&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">delta&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">abs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">Tadd&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">delta&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">theta&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">Tadd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="iterated-width">Iterated Width
+&lt;/h2>&lt;p>Novelty：只考虑$w(s)$个状态变量atoms的变化情况。&lt;/p>
+&lt;p>搜索直到目标状态的状态变量的数量。&lt;/p>
+&lt;p>一个state的novelty：第一次出现的atom组合中的atom数量。the size of the smallest subset of atoms in s，that is true for the first time in search。&lt;/p></description></item><item><title>UCB and Greedy BFS</title><link>https://shyu216.github.io/aquamega/p/ucb-and-greedy-bfs/</link><pubDate>Wed, 29 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/ucb-and-greedy-bfs/</guid><description>&lt;h2 id="uniform-cost-search">Uniform Cost Search
+&lt;/h2>&lt;p>Priority Queue，最先被探索离起始节点最近（即路径成本最低）的节点。&lt;/p>
+&lt;p>Breath First Search属于Uniform Cost Search的特例，即每个节点的路径成本都是1。&lt;/p>
+&lt;p>UCS只看到了路径成本，没有考虑启发式。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">uniformCostSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PriorityQueue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">init_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">viewed&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_cost&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">child_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">child_action&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getCostOfActions&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="greedy-best-first-search">Greedy Best First Search
+&lt;/h2>&lt;p>BFS只看到了启发式，没有考虑路径成本。&lt;/p>
+&lt;p>If h=0，BFS是什么根据它的Priority Queue的实现。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">bestFirstSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">nullHeuristic&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PriorityQueue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">init_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">viewed&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="c1"># ignore cost as we are blind&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">child_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">child_action&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_pq&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>A* and Hill Climbing</title><link>https://shyu216.github.io/aquamega/p/a-and-hill-climbing/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/a-and-hill-climbing/</guid><description>&lt;h2 id="a算法带有重复检测和重新打开">A*算法（带有重复检测和重新打开）
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">设 open 为新的优先级队列，按照 g(state(σ)) + h(state(σ)) 升序排列
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">open.insert(make-root-node(init()))
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">设 closed 为空集
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">设 best-g 为空集 /* 将状态映射到数字 */
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">当 open 不为空时：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> σ := open.pop-min()
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 state(σ) 不在 closed 中或 g(σ) &amp;lt; best-g(state(σ))：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> /* 如果 g 更好则重新打开；注意所有具有相同状态但 g 较差的 σ′ 都在 open 中位于 σ 后面，并且在轮到它们时将被跳过 */
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> closed := closed ∪{state(σ)}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> best-g(state(σ)) := g(σ)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 is-goal(state(σ))：返回 extract-solution(σ)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 对于每个 (a,s′) ∈succ(state(σ))：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> σ′ := make-node(σ,a,s′)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 h(state(σ′)) &amp;lt; ∞：open.insert(σ′)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">返回 unsolvable
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">aStarSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">nullHeuristic&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;Search the node that has the lowest combined cost and heuristic first.&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PriorityQueue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">startState&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">startNode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">startState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">startNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">startState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">best_g&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">dict&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">node&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">cost&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="ow">not&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">best_g&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="ow">or&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">cost&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">best_g&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">]):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">best_g&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cost&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">succ&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">succAction&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">succCost&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">succ&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">new_cost&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cost&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">succCost&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">newNode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">new_cost&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">succAction&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">newNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">new_cost&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span> &lt;span class="c1"># Goal not found&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>If h=0, A* is equivalent to Uniform Cost Search.&lt;/p>
+&lt;p>If h admissible, A* is optimal. 因为我们的h比最优h小，在达到最优h之前，我们已经尝试过这个状态。&lt;/p>
+&lt;h2 id="weighted-a算法">Weighted A*算法
+&lt;/h2>&lt;p>给heuristic函数加权，以调整搜索的速度。&lt;/p>
+&lt;p>w越大，搜索越快，但可能会错过最优解，w越小，搜索越慢，但更有可能找到最优解。&lt;/p>
+&lt;p>w=0时，等价于Uniform Cost Search。&lt;/p>
+&lt;p>w to ∞时，等价于Greedy Best First Search。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">weightedAStarSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">nullHeuristic&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">weight&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;Search the node that has the lowest combined cost and heuristic first.&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PriorityQueue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">startState&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">startNode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">startState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">startNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">weight&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">startState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">best_g&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">dict&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">node&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">cost&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">node&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="ow">not&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">best_g&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="ow">or&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">cost&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">best_g&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">]):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">best_g&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cost&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">succ&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">succAction&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">succCost&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">succ&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">new_cost&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cost&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">succCost&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">newNode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">new_cost&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">succAction&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">myPQ&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">newNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">weight&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">heuristic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">succState&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">new_cost&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span> &lt;span class="c1"># Goal not found&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="爬山算法">爬山算法
+&lt;/h2>&lt;p>local最优。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">σ := make-root-node(init())
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">永远执行以下操作：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 如果 is-goal(state(σ))：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 返回 extract-solution(σ)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Σ′ := {make-node(σ,a,s′) |(a,s′) ∈succ(state(σ)) }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> σ := 选择 Σ′ 中 h 值最小的元素 /* （随机打破平局） */
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>BFS and DFS</title><link>https://shyu216.github.io/aquamega/p/bfs-and-dfs/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/bfs-and-dfs/</guid><description>&lt;h2 id="广度优先搜索bfs">广度优先搜索（BFS）
+&lt;/h2>&lt;p>队列，先进先出，后进后出。&lt;/p>
+&lt;p>Optimal when costs are uniform&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">breadthFirstSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_queue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Queue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_queue&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">init_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">candidate_queue&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">candidate_queue&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">viewed&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="c1"># ignore cost as we are blind&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">child_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">child_action&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_queue&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="深度优先搜索dfs">深度优先搜索（DFS）
+&lt;/h2>&lt;p>栈，先进后出，后进先出。&lt;/p>
+&lt;p>搜索空间可能无限大（无限深）。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">depthFirstSearch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">problem&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_stack&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">util&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Stack&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getStartState&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">init_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">init_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">candidate_stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">candidate_stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pop&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isGoalState&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">viewed&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">viewed&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">child_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">problem&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getSuccessors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="c1"># ignore cost as we are blind&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">child_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">path&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">child_action&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">candidate_stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="n">child_state&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">child_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MDPs</title><link>https://shyu216.github.io/aquamega/p/mdps/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/mdps/</guid><description>&lt;h2 id="markov-decision-processesmdps马尔可夫决策过程">Markov Decision Processes（MDPs）马尔可夫决策过程
+&lt;/h2>&lt;p>MDP是完全可观察的，概率状态模型：&lt;/p>
+&lt;p>状态空间 $S$ &lt;br>
+初始状态 $s_0 \in S$ &lt;br>
+一组目标状态 $G \subseteq S$ &lt;br>
+在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ &lt;br>
+对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;rsquo;|s)$ &lt;br>
+动作成本 $c(a,s) &amp;gt; 0$&lt;/p>
+&lt;p>其中：&lt;br>
+解决方案是将状态映射到动作的函数（策略）&lt;br>
+最优解最小化预期的前往目标的成本&lt;/p>
+&lt;h2 id="partially-observable-mdps-pomdps-部分可观察的马尔可夫决策过程">Partially Observable MDPs (POMDPs) 部分可观察的马尔可夫决策过程
+&lt;/h2>&lt;p>POMDP是部分可观察的，概率状态模型：&lt;/p>
+&lt;p>状态 $s \in S$ &lt;br>
+在每个状态 $s \in S$ 中可应用的动作 $A(s) \subseteq A$ &lt;br>
+对于 $s \in S$ 和 $a \in A(s)$，有转移概率 $P_a(s&amp;rsquo;|s)$ &lt;br>
+初始信念状态 $b_0$ &lt;br>
+最终信念状态 $b_f$ &lt;br>
+由概率 $P_a(o|s)$，$o \in Obs$ 给出的传感器模型&lt;/p>
+&lt;p>其中：&lt;br>
+信念状态是关于 $S$ 的概率分布 &lt;br>
+解决方案是将信念状态映射到动作的策略 &lt;br>
+最优策略最小化从 $b_0$ 到 $G$ 的预期成本&lt;/p>
+&lt;p>&lt;em>see also&lt;/em>: &lt;a class="link" href="https://gibberblot.github.io/rl-notes/single-agent/MDPs.html" target="_blank" rel="noopener"
+>https://gibberblot.github.io/rl-notes/single-agent/MDPs.html&lt;/a>&lt;/p>
+&lt;h2 id="value-iteration">Value Iteration
+&lt;/h2>&lt;p>一种动态规划算法，用于计算MDP的最优策略。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">value_iteration&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">states&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">actions&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">P&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">r&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">gamma&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">theta&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">V&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">s&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="c1"># Initialize value function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">s&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">V&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">V&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">P&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">a&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">s_prime&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">r&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">a&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">s_prime&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">gamma&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">V&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s_prime&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">s_prime&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">states&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">actions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">delta&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">abs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">V&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">]))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">delta&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">theta&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="c1"># Check for convergence&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">V&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="bellman-optimality-equation">Bellman Optimality Equation
+&lt;/h3>&lt;p>$
+V^*(s) = \max_{a \in A(s)} \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^{*}{(s&amp;rsquo;)} \right]
+$&lt;/p>
+&lt;ul>
+&lt;li>所有可能的下一个状态的概率&lt;/li>
+&lt;li>动作的奖励&lt;/li>
+&lt;li>下一个状态的价值 x 折扣，前一个iteration存储的价值&lt;/li>
+&lt;/ul>
+&lt;h3 id="q-value">Q-Value
+&lt;/h3>&lt;p>对于每个状态 $s \in S$，其一个可能动作 $a \in A(s)$ 的质量是：&lt;br>
+$
+Q(s,a) = \sum_{s&amp;rsquo;} P_a(s&amp;rsquo;|s) \left[ R_a(s&amp;rsquo;|s) + \gamma V^*(s&amp;rsquo;) \right]
+$&lt;/p>
+&lt;p>其中 $\gamma$ 是折扣，越接近1，越重视长期奖励，越接近0，越重视短期奖励。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">0.95, 0.9025, 0.857375, 0.81450625...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0.9, 0.81, 0.729, 0.6561...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0.8, 0.64, 0.512, 0.4096...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0.7, 0.49, 0.343, 0.2401...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="policy">Policy
+&lt;/h3>&lt;p>$\pi(s) = arg max Q(s,a)$&lt;/p>
+&lt;h2 id="multi-armed-bandit">Multi-Armed Bandit
+&lt;/h2>&lt;p>平行地尝试多个动作，平衡exploitation和exploration。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>minimising regret，没有选择最佳动作的损失&lt;/p>
+&lt;p>&lt;strong>输入&lt;/strong>: 多臂老虎机问题 $M = {X_{i,k}, A, T}$ &lt;br>
+&lt;strong>输出&lt;/strong>: Q函数 $Q$ &lt;br>
+初始化 $Q$ 为任意值; 例如，对所有的臂 $a$，$Q(a) \leftarrow 0$ &lt;br>
+初始化 $N$ 为任意值; 例如，对所有的臂 $a$，$N(a) \leftarrow 0$ &lt;br>
+$k \leftarrow 1$ &lt;br>
+&lt;strong>while&lt;/strong> $k \leq T$ &lt;strong>do&lt;/strong>&lt;br>
+$\quad$ $a \leftarrow$ 在第 $k$ 轮选择一个臂&lt;br>
+$\quad$ 在第 $k$ 轮执行臂 $a$ 并观察奖励 $X_{a,k}$&lt;br>
+$\quad$ $N(a) \leftarrow N(a) + 1$&lt;br>
+$\quad$ $Q(a) \leftarrow Q(a) + \frac{1}{N(a)} [X_{a,k} - Q(a)]$&lt;br>
+$\quad$ $k \leftarrow k + 1$&lt;br>
+&lt;strong>end while&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\epsilon$-greedy，以 $1-\epsilon$ 的概率选择最佳动作，以 $\epsilon$ 的概率选择随机动作&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\epsilon$-greedy with decay，随着时间的推移，减少 $\epsilon$ 的值&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>UCB&lt;/p>
+&lt;p>$\text{argmax}_{a}\left(Q(a) + \sqrt{\frac{2 \ln t}{N(a)}}\right)$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="q-learning">Q-Learning
+&lt;/h2>&lt;p>&lt;strong>Input&lt;/strong>: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br>
+&lt;strong>Output&lt;/strong>: Q-function $Q$ &lt;br>
+Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br>
+&lt;strong>repeat&lt;/strong>&lt;br>
+$\quad$ $s \leftarrow$ the first state in episode $e$&lt;br>
+$\quad$ &lt;strong>repeat&lt;/strong> (for each step in episode $e$)&lt;br>
+$\quad\quad$ Select action $a$ to apply in $s$; e.g. using $Q$ and a multi-armed bandit algorithm such as $\epsilon$-greedy&lt;br>
+$\quad\quad$ Execute action $a$ in state $s$&lt;br>
+$\quad\quad$ Observe reward $r$ and new state $s&amp;rsquo;$&lt;br>
+$\quad\quad$ $\delta \leftarrow r + \gamma \cdot \max_{a&amp;rsquo;} Q(s&amp;rsquo;, a&amp;rsquo;) - Q(s, a)$&lt;br>
+$\quad\quad$ $Q(s, a) \leftarrow Q(s, a) + \alpha \cdot \delta$&lt;br>
+$\quad\quad$ $s \leftarrow s&amp;rsquo;$&lt;br>
+$\quad$ &lt;strong>until&lt;/strong> $s$ is the last state of episode $e$ (a terminal state)&lt;br>
+&lt;strong>until&lt;/strong> $Q$ converges&lt;/p>
+&lt;ul>
+&lt;li>$max_{a&amp;rsquo;} Q(s&amp;rsquo;, a&amp;rsquo;)$ 也可以写成 $V(s&amp;rsquo;)$，即下一个状态的价值&lt;/li>
+&lt;/ul>
+&lt;h2 id="sarsa">SARSA
+&lt;/h2>&lt;p>&lt;strong>Input&lt;/strong>: MDP $M = \langle S, s_0, A, P_a(s&amp;rsquo; | s), r(s, a, s&amp;rsquo;) \rangle$ &lt;br>
+&lt;strong>Output&lt;/strong>: Q-function $Q$ &lt;br>
+Initialise $Q$ arbitrarily; e.g., $Q(s, a) \leftarrow 0$ for all $s$ and $a$ &lt;br>
+&lt;strong>repeat&lt;/strong>&lt;br>
+$\quad$ $s \leftarrow$ the first state in episode $e$&lt;br>
+$\quad$ Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy)&lt;br>
+$\quad$ &lt;strong>repeat&lt;/strong> (for each step in episode $e$)&lt;br>
+$\quad\quad$ Take action $a$, observe $r$, $s&amp;rsquo;$&lt;br>
+$\quad\quad$ Choose $a&amp;rsquo;$ from $s&amp;rsquo;$ using policy derived from $Q$ (e.g., $\epsilon$-greedy)&lt;br>
+$\quad\quad$ $\delta \leftarrow r + \gamma \cdot Q(s&amp;rsquo;, a&amp;rsquo;) - Q(s, a)$&lt;br>
+$\quad\quad$ $Q(s, a) \leftarrow Q(s, a) + \alpha \cdot \delta$&lt;br>
+$\quad\quad$ $s \leftarrow s&amp;rsquo;$, $a \leftarrow a&amp;rsquo;$&lt;br>
+$\quad$ &lt;strong>until&lt;/strong> $s$ is the last state of episode $e$ (a terminal state)&lt;br>
+&lt;strong>until&lt;/strong> $Q$ converges&lt;/p>
+&lt;ul>
+&lt;li>Q-Learning是off-policy，因为on当前策略下的Q值，对当前策略更乐观&lt;/li>
+&lt;li>SARSA是on-policy，所以off了当前策略下的Q值，更保守&lt;/li>
+&lt;/ul>
+&lt;h2 id="n-step-reinforcement-learning">n-step reinforcement learning
+&lt;/h2>&lt;p>记账，在n-step后再一起更新Q值。&lt;/p>
+&lt;h2 id="mcts">MCTS
+&lt;/h2>&lt;ul>
+&lt;li>Selection：选择一个节点，直到找到一个未扩展的节点&lt;/li>
+&lt;li>Expansion：扩展一个未扩展的节点&lt;/li>
+&lt;li>Simulation：模拟一个随机游戏，直到结束&lt;/li>
+&lt;li>Backpropagation：更新所有访问的节点的值&lt;/li>
+&lt;/ul>
+&lt;p>offline：完成所有模拟后再选择最佳动作&lt;/p>
+&lt;p>online：每次模拟后选择最佳动作，继续对新的节点进行模拟。在下次选择时，同时也利用了之前的模拟结果，MCTS是online的。&lt;/p>
+&lt;p>用平均值更新：新Q = 旧Q + 学习率 * 误差，实际上就是平均值&lt;/p>
+&lt;h2 id="uct">UCT
+&lt;/h2>&lt;p>用UCB来select。&lt;/p>
+&lt;p>$\text{argmax}_{a \in A(s)} Q(s,a) + 2 C_p \sqrt{\frac{2 \ln N(s)}{N(s,a)}}$ &lt;br>
+where $C_p$ 自己选，看是更偏向exploration还是exploitation&lt;/p>
+&lt;h2 id="linear-q-functionn-approximation">Linear Q-functionn Approximation
+&lt;/h2>&lt;p>## features = ## states * ## actions&lt;/p>
+&lt;p>$Q(s,a) = f^T w = \sum_{i=1}^{n} f_i(s,a) w_i$&lt;/p>
+&lt;h3 id="update">Update
+&lt;/h3>&lt;p>$w \leftarrow w + \alpha \delta f(s,a)$ &lt;br>
+where &lt;br>
+$\delta = r + \gamma \max_{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if Q-learning &lt;br>
+$\delta = r + \gamma Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)$ if SARSA&lt;/p>
+&lt;h2 id="shaped-reward">Shaped Reward
+&lt;/h2>&lt;p>$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \underbrace{F(s,s&amp;rsquo;)}&lt;em>{\text{additional reward}} + \gamma \max&lt;/em>{a&amp;rsquo;} Q(s&amp;rsquo;,a&amp;rsquo;) - Q(s,a)]$&lt;/p>
+&lt;h3 id="potential-based-reward-shaping">Potential-based Reward Shaping
+&lt;/h3>&lt;p>$F(s,s&amp;rsquo;) = \gamma \Phi(s&amp;rsquo;) - \Phi(s)$&lt;/p>
+&lt;p>For example, in Gridworld, &lt;br>
+$\Phi(s) = 1 - \frac{|x(g) - x(s)| + |y(g) - y(s)|}{width + height - 2}$&lt;/p>
+&lt;h2 id="policy-iteration">Policy Iteration
+&lt;/h2>&lt;p>魔改bellman方程，将所有动作可能性替换成当前策略下的动作。&lt;/p></description></item></channel></rss>

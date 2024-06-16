@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Management on Dale的水硕日记</title><link>https://shyu216.github.io/aquamega/tags/data-management/</link><description>Recent content in Data Management on Dale的水硕日记</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shyu216.github.io/aquamega/tags/data-management/index.xml" rel="self" type="application/rss+xml"/><item><title>GEOM90008</title><link>https://shyu216.github.io/aquamega/p/geom90008/</link><pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/geom90008/</guid><description>&lt;p>Course notebook: &lt;a class="link" href="https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/" target="_blank" rel="noopener"
+>https://tomkom.pages.gitlab.unimelb.edu.au/spatialdatamanagement/&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>postgreSQL&lt;/li>
+&lt;li>postGIS&lt;/li>
+&lt;li>QGIS&lt;/li>
+&lt;/ul>
+&lt;h2 id="vocabs">Vocabs
+&lt;/h2>&lt;ul>
+&lt;li>scope creep: 任务蔓延&lt;/li>
+&lt;li>schema: 数据库的结构&lt;/li>
+&lt;li>query: 查询&lt;/li>
+&lt;li>ACID: Atomicity 原子性, Consistency 一致性, Isolation 隔离性, Durability 持久性&lt;/li>
+&lt;li>waterfall: 瀑布模型, 一次性完成所有工作&lt;/li>
+&lt;li>agile: 敏捷开发, 分阶段完成工作&lt;/li>
+&lt;li>ERD/ERM: Entity Relationship Diagram/Model, 实体关系图/模型&lt;/li>
+&lt;li>entity, attribute, relationship: 实体, 属性, 关系&lt;/li>
+&lt;li>location: space and time&lt;/li>
+&lt;li>position: reference to a coordinate system&lt;/li>
+&lt;li>地理學第一定律: 所有事物都與其他事物相關, 但是近處的事物比遠處的事物更相關&lt;/li>
+&lt;li>longitude: 经度&lt;/li>
+&lt;li>latitude: 纬度&lt;/li>
+&lt;li>altitude: 海拔&lt;/li>
+&lt;li>wgs84: 地球坐标系, 经典的经纬度&lt;/li>
+&lt;li>polynomial: 多项式&lt;/li>
+&lt;li>ployline: 折线&lt;/li>
+&lt;li>polygon: 多边形&lt;/li>
+&lt;li>vertex: 顶点&lt;/li>
+&lt;li>vector: 向量&lt;/li>
+&lt;li>raster: 栅格&lt;/li>
+&lt;li>sphere: 球体&lt;/li>
+&lt;li>spheroid: 椭球体&lt;/li>
+&lt;/ul>
+&lt;h2 id="coordinate-system">Coordinate system
+&lt;/h2>&lt;p>因为板块漂移, 会导致地理坐标系的变化, 所以经纬度总是在更新&lt;/p></description></item></channel></rss>

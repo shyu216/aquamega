@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP90042 on Dale的水硕日记</title><link>https://shyu216.github.io/aquamega/categories/comp90042/</link><description>Recent content in COMP90042 on Dale的水硕日记</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shyu216.github.io/aquamega/categories/comp90042/index.xml" rel="self" type="application/rss+xml"/><item><title>COMP90042</title><link>https://shyu216.github.io/aquamega/p/comp90042/</link><pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/comp90042/</guid><description>&lt;ol>
+&lt;li>Preprocessing
+&lt;ol>
+&lt;li>Sentence segmentation&lt;/li>
+&lt;li>Tokenization, subword tokenization&lt;/li>
+&lt;li>Word normalization
+&lt;ol>
+&lt;li>Inflectional vs derivational morphology&lt;/li>
+&lt;li>Lemmatization vs stemming&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Stopword removal&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>N-gram Language Model
+&lt;ol>
+&lt;li>Derivation&lt;/li>
+&lt;li>Smoothing techniques
+&lt;ol>
+&lt;li>Add-k&lt;/li>
+&lt;li>Absolute discounting&lt;/li>
+&lt;li>Katz backoff&lt;/li>
+&lt;li>Kneser-Ney smoothing&lt;/li>
+&lt;li>Interpolation&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Text Classification
+&lt;ol>
+&lt;li>Build a classifier&lt;/li>
+&lt;li>Task
+&lt;ol>
+&lt;li>Topic classification&lt;/li>
+&lt;li>Sentiment analysis&lt;/li>
+&lt;li>Native language identification&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Algorithms
+&lt;ol>
+&lt;li>Naive Bayes, logistic regression, SVM&lt;/li>
+&lt;li>kNN, neural networks&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Bias vs variance：欠拟合under和过拟合over的取舍&lt;/li>
+&lt;li>Evaluation
+&lt;ol>
+&lt;li>Precision, recall, F1&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Part of Speech Tagging
+&lt;ol>
+&lt;li>English POS
+&lt;ol>
+&lt;li>Closed vs open classes&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Tagsets
+&lt;ol>
+&lt;li>Penn Treebank tagset&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Automatic taggers
+&lt;ol>
+&lt;li>Rule-based&lt;/li>
+&lt;li>Statistical
+&lt;ol>
+&lt;li>Unigram, classifier-based, HMM&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Hidden Markov Model
+&lt;ol>
+&lt;li>Probabilistic formulation:
+&lt;ol>
+&lt;li>Emission &amp;amp; Transition&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Training&lt;/li>
+&lt;li>Viterbi algorithm&lt;/li>
+&lt;li>Generative vs discriminative models&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Feedforward Neural Network
+&lt;ol>
+&lt;li>Formulation&lt;/li>
+&lt;li>Tasks:
+&lt;ol>
+&lt;li>Topic classifcation&lt;/li>
+&lt;li>Language models&lt;/li>
+&lt;li>POS tagging&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Word embeddings&lt;/li>
+&lt;li>Convolutional networks&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Recurrent Neural Network
+&lt;ol>
+&lt;li>Formulation&lt;/li>
+&lt;li>RNN: language models&lt;/li>
+&lt;li>LSTM:
+&lt;ol>
+&lt;li>Functions of gates&lt;/li>
+&lt;li>Variants&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Tasks:
+&lt;ol>
+&lt;li>Text classification: sentiment analysis&lt;/li>
+&lt;li>POS tagging&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Lexical Semantics
+&lt;ol>
+&lt;li>Definition of word sense, gloss&lt;/li>
+&lt;li>Lexical Relationship:
+&lt;ol>
+&lt;li>Synonymy, antonymy, hypernymy, meronymy&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Structure of wordnet&lt;/li>
+&lt;li>Word similarity
+&lt;ol>
+&lt;li>Path lenght&lt;/li>
+&lt;li>Depth information&lt;/li>
+&lt;li>Information content&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Word sense unambiguation
+&lt;ol>
+&lt;li>supervised, unsupervised&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Distributional Semantics
+&lt;ol>
+&lt;li>Matrices:
+&lt;ol>
+&lt;li>VSM, TF-IDF, word-word co-occurrence&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Association measures: PMI, PPMI&lt;/li>
+&lt;li>Count-based method: SVM&lt;/li>
+&lt;li>Neural method: skip-gram, CBOW&lt;/li>
+&lt;li>Evaluation:
+&lt;ol>
+&lt;li>Word similarity, analogy&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Contextual Representation
+&lt;ol>
+&lt;li>Formulation with RNN&lt;/li>
+&lt;li>ELMo&lt;/li>
+&lt;li>BERT
+&lt;ol>
+&lt;li>Objective&lt;/li>
+&lt;li>Fine-tuning for downstream tasks&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Transformers
+&lt;ol>
+&lt;li>Multi-head attention&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>Second half:&lt;/p>
+&lt;ol>
+&lt;li>Attention
+&lt;ol>
+&lt;li>Sequential model with attention&lt;/li>
+&lt;li>Attention variants:
+&lt;ol>
+&lt;li>Concat&lt;/li>
+&lt;li>Dot product&lt;/li>
+&lt;li>Scaled dot product&lt;/li>
+&lt;li>Location-based&lt;/li>
+&lt;li>Cosine similarity&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Global vs local attention&lt;/li>
+&lt;li>Self-attention&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Machine Translation
+&lt;ol>
+&lt;li>Statistical MT&lt;/li>
+&lt;li>Neural MT with teacher forcing&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Transformer
+&lt;ol>
+&lt;li>Mutli-head self-attention&lt;/li>
+&lt;li>Position encoding&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Pretrained Language Models
+&lt;ol>
+&lt;li>Encoder architecture
+&lt;ol>
+&lt;li>BERT&lt;/li>
+&lt;li>bidirectional context&lt;/li>
+&lt;li>good for classification&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Encoder-decoder architecture&lt;/li>
+&lt;li>Decoder architecture
+&lt;ol>
+&lt;li>GPT&lt;/li>
+&lt;li>unidirectional context&lt;/li>
+&lt;li>good for generation&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Large Language Models
+&lt;ol>
+&lt;li>In-context learning&lt;/li>
+&lt;li>Step-by-step reasoning&lt;/li>
+&lt;li>Human-feedback reinforcement&lt;/li>
+&lt;li>Instruction following&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Named Entity Recognition
+&lt;ol>
+&lt;li>Predict entities in a text&lt;/li>
+&lt;li>Traditional ML methods&lt;/li>
+&lt;li>Bi-LSTM with another RNN/CRF&lt;/li>
+&lt;li>Multi-aspect NER&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Coreference Resolution 共指消解
+&lt;ol>
+&lt;li>Coreference, anaphora&lt;/li>
+&lt;li>B-Cubed metric&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Question Answering and Reading Comprehension
+&lt;ol>
+&lt;li>Knowledge-based QA&lt;/li>
+&lt;li>Visual QA&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Spoken Language Understanding
+&lt;ol>
+&lt;li>Attention RNNs&lt;/li>
+&lt;li>Joint BERT&lt;/li>
+&lt;li>Tri-level model&lt;/li>
+&lt;li>Explainable NLU&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Vision Language Pretrained Model
+&lt;ol>
+&lt;li>V-L Interaction Model
+&lt;ol>
+&lt;li>Self-attention, co-attention, VSE&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Constrastive Language-Image Pretraining&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Ethics
+&lt;ol>
+&lt;li>Sotial bias 刻板印象&lt;/li>
+&lt;li>Incivility 仇恨言论&lt;/li>
+&lt;li>Privacy Violation 歧视&lt;/li>
+&lt;li>Misinformation 谣言&lt;/li>
+&lt;li>Technological divide 发展不平衡&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="vocab">Vocab
+&lt;/h2>&lt;ul>
+&lt;li>stemming:词干提取，去掉后缀，通常不是个词&lt;/li>
+&lt;li>lemmatisation:词形还原&lt;/li>
+&lt;li>morphology &lt;strong>詞法學&lt;/strong>&lt;/li>
+&lt;li>lexicon 字典&lt;/li>
+&lt;li>corpus 语料&lt;/li>
+&lt;li>tokenization 分词&lt;/li>
+&lt;li>entailment vs. contradiction 蕴涵与矛盾&lt;/li>
+&lt;li>neutral 中性&lt;/li>
+&lt;li>vanish 消失&lt;/li>
+&lt;li>distill 提炼&lt;/li>
+&lt;li>lexical 词汇的，与词汇或词语有关&lt;/li>
+&lt;li>semantic 语义的，与词语的含义或解释有关&lt;/li>
+&lt;li>syntactic 句法的，与句子结构有关&lt;/li>
+&lt;li>sentiment 情感，对某事物的态度&lt;/li>
+&lt;li>polysemy 一词多义&lt;/li>
+&lt;li>gloss 词义, from dictionary，词典中对词语含义的解释&lt;/li>
+&lt;li>synonymy 同义词&lt;/li>
+&lt;li>antonymy 反义词&lt;/li>
+&lt;li>hypernymy 上义词, is-a，是一个更一般的词&lt;/li>
+&lt;li>hyponymy 一个更具体的词&lt;/li>
+&lt;li>meronymy 下义词, is-part-of&lt;/li>
+&lt;li>spectrum 范围&lt;/li>
+&lt;li>conference 共指，在文本中指代同一实体&lt;/li>
+&lt;li>anaphora 指代，一种语言现象，代替先前提到的词&lt;/li>
+&lt;li>utterence 话语&lt;/li>
+&lt;li>utter 说，发出声音&lt;/li>
+&lt;li>tedious 冗长的工作，乏味，枯燥&lt;/li>
+&lt;li>versality 可以在多种不同的情况和环境中使用，具有很高的适应性和灵活性&lt;/li>
+&lt;li>continuation 相连&lt;/li>
+&lt;li>patch-based 基于块的&lt;/li>
+&lt;li>interpretability 可解释性，白盒&lt;/li>
+&lt;li>explainability 可解释性，黑盒&lt;/li>
+&lt;li>monolingual 只使用一种语言的情况或者系统&lt;/li>
+&lt;li>sinusoidal 正弦的&lt;/li>
+&lt;li>proximal 接近的&lt;/li>
+&lt;li>miscellaneous 混杂的&lt;/li>
+&lt;li>antecedent 先行词, Trump&lt;/li>
+&lt;li>anaphor 指代词, he&lt;/li>
+&lt;li>pronominal 代词的&lt;/li>
+&lt;li>adjective 形容词&lt;/li>
+&lt;li>factoid 事实&lt;/li>
+&lt;li>intent 意图&lt;/li>
+&lt;li>clause 子句&lt;/li>
+&lt;li>toxicity 有毒&lt;/li>
+&lt;li>insult 侮辱&lt;/li>
+&lt;li>humiliation 羞辱&lt;/li>
+&lt;li>altered 改变&lt;/li>
+&lt;li>conjunction 连接词&lt;/li>
+&lt;li>conform 符合&lt;/li>
+&lt;li>genre 风格&lt;/li>
+&lt;li>spurious 伪造的&lt;/li>
+&lt;li>occurrence 出现&lt;/li>
+&lt;li>maginalisation 边缘化&lt;/li>
+&lt;li>nuance 细微差别&lt;/li>
+&lt;/ul>
+&lt;h2 id="information-bottleneck">Information Bottleneck
+&lt;/h2>&lt;p>信息瓶颈问题是指在机器学习模型中，模型在尝试压缩输入数据的同时，还要尽可能保留与目标输出相关的信息。这是一个权衡问题，因为模型需要找到一个平衡点，既能有效地压缩数据，又能保留足够的信息来进行准确的预测。&lt;/p></description></item><item><title>Lexical Semantics and Distributional Semantics</title><link>https://shyu216.github.io/aquamega/p/lexical-semantics-and-distributional-semantics/</link><pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/lexical-semantics-and-distributional-semantics/</guid><description>&lt;h2 id="lexical-semantics">Lexical Semantics
+&lt;/h2>&lt;p>词汇解释&lt;/p>
+&lt;ol>
+&lt;li>Synonymy 同义词&lt;/li>
+&lt;li>Antonymy 反义词&lt;/li>
+&lt;li>Hypernymy 上义词&lt;/li>
+&lt;li>Meronymy 下义词&lt;/li>
+&lt;/ol>
+&lt;h2 id="wordnet">WordNet
+&lt;/h2>&lt;p>A lexical database of English.&lt;/p>
+&lt;h2 id="word-similarity">Word Similarity
+&lt;/h2>&lt;ul>
+&lt;li>路径长度：在WordNet中，两个词之间的路径长度可以用来衡量它们的相似性。&lt;/li>
+&lt;li>深度信息：在WordNet中，词的深度（在词汇树中的位置）也可以用来衡量词的相似性。&lt;/li>
+&lt;li>信息内容：词的信息内容（在语料库中的频率）也可以用来衡量词的相似性。&lt;/li>
+&lt;/ul>
+&lt;h2 id="distributional-semantics">Distributional Semantics
+&lt;/h2>&lt;p>词汇和其上下文的共现信息&lt;/p></description></item><item><title>Neual Networks</title><link>https://shyu216.github.io/aquamega/p/neual-networks/</link><pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/neual-networks/</guid><description>&lt;p>神经网络（Neural Network）是一种模拟人脑神经元工作方式的机器学习模型。它由大量的神经元（也称为节点或单元）组成，这些神经元按照一定的层次结构排列，包括输入层、隐藏层和输出层。&lt;/p>
+&lt;p>每个神经元接收来自上一层神经元的输入，然后通过一个激活函数（如 Sigmoid、ReLU 等）处理这些输入，得到一个输出，这个输出再传递给下一层的神经元。&lt;/p>
+&lt;p>神经网络的训练通常使用反向传播（Backpropagation）算法和梯度下降（Gradient Descent）算法。在训练过程中，神经网络通过不断调整神经元之间的连接权重，来最小化预测值和真实值之间的差异。&lt;/p>
+&lt;p>神经网络可以处理非线性问题，适用于各种复杂的机器学习任务，如图像识别、语音识别、自然语言处理等。但是，神经网络的训练需要大量的数据和计算资源，而且模型的解释性较差，这是它的一些挑战。&lt;/p>
+&lt;p>A Neural Network is a machine learning model that simulates the way neurons in the human brain work. It consists of a large number of neurons (also known as nodes or units) arranged in a certain hierarchical structure, including input layers, hidden layers, and output layers.&lt;/p>
+&lt;p>Each neuron receives input from the neurons in the previous layer, then processes these inputs through an activation function (such as Sigmoid, ReLU, etc.) to produce an output, which is then passed on to the neurons in the next layer.&lt;/p>
+&lt;p>Neural networks are typically trained using the Backpropagation algorithm and the Gradient Descent algorithm. During training, the neural network minimizes the difference between the predicted values and the actual values by continuously adjusting the connection weights between neurons.&lt;/p>
+&lt;p>Neural networks can handle non-linear problems and are suitable for various complex machine learning tasks, such as image recognition, speech recognition, natural language processing, etc. However, the training of neural networks requires a large amount of data and computational resources, and the interpretability of the model is relatively poor, which are some of the challenges.&lt;/p>
+&lt;h2 id="前馈神经网络">前馈神经网络
+&lt;/h2>&lt;p>前馈神经网络是一种基础的神经网络，信息只在一个方向上流动，从输入层到输出层。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>任务：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>主题分类：使用神经网络对文本或其他数据进行主题分类。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>语言模型：使用神经网络来理解和生成语言。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>词性标注：使用神经网络来识别文本中每个词的词性。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>词嵌入：一种表示词汇的技术，将词汇映射到向量空间，使得语义相近的词汇在向量空间中的距离也相近。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>卷积网络：一种特殊的神经网络，特别适合处理网格形式的数据，如图像。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="循环神经网络">循环神经网络
+&lt;/h2>&lt;p>循环神经网络是一种可以处理序列数据的神经网络，它可以利用前面的信息来影响后面的输出。&lt;/p>
+&lt;ol>
+&lt;li>RNN语言模型：使用循环神经网络来理解和生成语言，特别适合处理文本等序列数据。&lt;/li>
+&lt;li>LSTM：
+&lt;ol>
+&lt;li>门的功能：LSTM是一种特殊的RNN，它有三个门（输入门、遗忘门和输出门）来控制信息的流动。&lt;/li>
+&lt;li>变体：LSTM有多种变体，如GRU（门控循环单元），它简化了LSTM的结构。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>任务：
+&lt;ol>
+&lt;li>文本分类：情感分析：使用RNN进行文本分类，如情感分析，判断文本的情感倾向。&lt;/li>
+&lt;li>词性标注：使用RNN来识别文本中每个词的词性。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="非线性激活函数是神经网络中的关键组成部分它可以帮助神经网络学习和逼近复杂的模式非线性激活函数的主要目的是将输入信号转换为输出信号但它不仅仅是复制输入到输出它会修改或者变换输入的方式使得可以适应网络的需要">非线性激活函数是神经网络中的关键组成部分，它可以帮助神经网络学习和逼近复杂的模式。非线性激活函数的主要目的是将输入信号转换为输出信号，但它不仅仅是复制输入到输出。它会修改或者变换输入的方式，使得可以适应网络的需要。
+&lt;/h2>&lt;p>常见的非线性激活函数包括：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ReLU（Rectified Linear Unit）：这是最常用的激活函数，它将所有负值设为0，正值保持不变。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Sigmoid：这个函数将任何数值都映射到0和1之间，它在早期的神经网络中非常流行，但现在已经较少使用，因为它在输入值很大或很小的时候，梯度几乎为0，这会导致梯度消失问题。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tanh（Hyperbolic Tangent）：这个函数将任何数值都映射到-1和1之间，它比sigmoid函数的输出范围更广，因此在某些情况下，它的性能比sigmoid函数更好。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Softmax：这个函数通常用在神经网络的输出层，特别是在处理多分类问题时。它可以将一组数值转换为概率分布。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="regularization-正则化">Regularization 正则化
+&lt;/h2>&lt;ul>
+&lt;li>L1 Norm&lt;/li>
+&lt;li>L2 Norm&lt;/li>
+&lt;li>Dropout&lt;/li>
+&lt;/ul>
+&lt;h2 id="lstm">LSTM
+&lt;/h2>&lt;ul>
+&lt;li>Memory cell：记忆单元，用来存储信息&lt;/li>
+&lt;li>Hidden state：隐藏状态，用来传递信息&lt;/li>
+&lt;li>Forget gate：遗忘门，用来控制记忆单元中的信息是否被遗忘&lt;/li>
+&lt;li>Input gate：输入门，用来控制新的信息是否被存储到记忆单元中&lt;/li>
+&lt;li>Output gate：输出门，用来控制隐藏状态中的信息是否被传递到下一个时间步&lt;/li>
+&lt;/ul></description></item><item><title>Part-of-Speech Tagging</title><link>https://shyu216.github.io/aquamega/p/part-of-speech-tagging/</link><pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/part-of-speech-tagging/</guid><description>&lt;h2 id="part-of-speech词类">Part-of-Speech(词类)
+&lt;/h2>&lt;p>Colourless green ideas sleep furiously.&lt;/p>
+&lt;ul>
+&lt;li>Open Classes (Content Words)
+&lt;ul>
+&lt;li>Noun&lt;/li>
+&lt;li>Verb&lt;/li>
+&lt;li>Adjective&lt;/li>
+&lt;li>Adverb&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Closed Classes (Function Words) (Fixed number of words)
+&lt;ul>
+&lt;li>Preposition&lt;/li>
+&lt;li>Determiner&lt;/li>
+&lt;li>Pronoun&lt;/li>
+&lt;li>Conjunction&lt;/li>
+&lt;li>Interjection&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Ambiguity: A word can have multiple meanings. A sentence can have multiple interpretations.&lt;/p>
+&lt;p>在自然语言处理（NLP）中，POS代表词性标注（Part-of-Speech Tagging）。词性标注是一种将每个词语与其语法范畴（即词性）相关联的过程。它是NLP中的一项基本任务，用于确定句子中每个单词的词类。&lt;/p>
+&lt;p>常见的词性包括名词、动词、形容词、副词、介词、代词、冠词、连词等。通过进行词性标注，可以帮助计算机理解句子的结构和含义，为其他NLP任务（如句法分析、语义分析和机器翻译等）提供基础。&lt;/p>
+&lt;p>以下是一个例子，展示了一句英文句子的词性标注示例：&lt;/p>
+&lt;p>句子：I love eating ice cream.&lt;br>
+词性标注：PRON VERB VERB NOUN NOUN.&lt;/p>
+&lt;p>在这个例子中，&amp;ldquo;I&amp;quot;被标注为代词（PRON），&amp;ldquo;love&amp;quot;和&amp;quot;eating&amp;quot;被标注为动词（VERB），&amp;ldquo;ice&amp;quot;和&amp;quot;cream&amp;quot;被标注为名词（NOUN）。&lt;/p>
+&lt;p>词性标注可以通过使用基于规则的方法、基于统计的机器学习方法（如隐马尔可夫模型）或基于深度学习的方法（如循环神经网络和转换器模型）来实现。这个任务在NLP中具有广泛的应用，对于许多文本处理任务都是重要的预处理步骤。&lt;/p>
+&lt;ul>
+&lt;li>NN（noun）名词：cat（猫）、book（书）、table（桌子）&lt;/li>
+&lt;li>VB（verb）动词：run（跑）、eat（吃）、sleep（睡觉）&lt;/li>
+&lt;li>JJ（adjective）形容词：big（大的）、happy（快乐的）、red（红色的）&lt;/li>
+&lt;li>RB（adverb）副词：quickly（快速地）、well（好地）、very（非常）&lt;/li>
+&lt;li>DT（determiner）限定词：the（定冠词）、this（这个）、some（一些）&lt;/li>
+&lt;li>CD（cardinal number）基数词：one（一）、three（三）、ten（十）&lt;/li>
+&lt;li>IN（preposition）介词：on（在&amp;hellip;上）、with（和&amp;hellip;一起）、at（在&amp;hellip;处）&lt;/li>
+&lt;li>PRP（personal pronoun）人称代词：I（我）、you（你）、he（他）&lt;/li>
+&lt;li>MD（modal）情态动词：can（能够）、should（应该）、will（将会）&lt;/li>
+&lt;li>CC（coordinating conjunction）并列连词：and（和）、but（但是）、or（或者）&lt;/li>
+&lt;li>RP（particle）小品词：up（向上）、down（向下）、out（出去）&lt;/li>
+&lt;li>WH（wh-pronoun）疑问代词：who（谁）、what（什么）、which（哪个）&lt;/li>
+&lt;li>TO（to）不定式标记：to（去）、to（为了）、to（到）&lt;/li>
+&lt;/ul>
+&lt;h2 id="penn-treebank-词性标记集">Penn Treebank 词性标记集
+&lt;/h2>&lt;p>Penn Treebank 的词性标注集（POS tagset）是一种广泛使用的英文词性标注方法。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>CC&lt;/code>：并列连词 (Coordinating conjunction)&lt;/li>
+&lt;li>&lt;code>CD&lt;/code>：基数词 (Cardinal number)&lt;/li>
+&lt;li>&lt;code>DT&lt;/code>：限定词 (Determiner)&lt;/li>
+&lt;li>&lt;code>EX&lt;/code>：存在句引导词 (Existential there)&lt;/li>
+&lt;li>&lt;code>FW&lt;/code>：外来词 (Foreign word)&lt;/li>
+&lt;li>&lt;code>IN&lt;/code>：介词或从属连词 (Preposition or subordinating conjunction)&lt;/li>
+&lt;li>&lt;code>JJ&lt;/code>：形容词 (Adjective)&lt;/li>
+&lt;li>&lt;code>JJR&lt;/code>：比较级形容词 (Adjective, comparative)&lt;/li>
+&lt;li>&lt;code>JJS&lt;/code>：最高级形容词 (Adjective, superlative)&lt;/li>
+&lt;li>&lt;code>LS&lt;/code>：列表项标记 (List item marker)&lt;/li>
+&lt;li>&lt;code>MD&lt;/code>：情态动词 (Modal)&lt;/li>
+&lt;li>&lt;code>NN&lt;/code>：名词, 单数或集数 (Noun, singular or mass)&lt;/li>
+&lt;li>&lt;code>NNS&lt;/code>：名词, 复数 (Noun, plural)&lt;/li>
+&lt;li>&lt;code>NNP&lt;/code>：专有名词, 单数 (Proper noun, singular)&lt;/li>
+&lt;li>&lt;code>NNPS&lt;/code>：专有名词, 复数 (Proper noun, plural)&lt;/li>
+&lt;li>&lt;code>PDT&lt;/code>：前限定词 (Predeterminer)&lt;/li>
+&lt;li>&lt;code>POS&lt;/code>：所有格结束 (Possessive ending)&lt;/li>
+&lt;li>&lt;code>PRP&lt;/code>：人称代词 (Personal pronoun)&lt;/li>
+&lt;li>&lt;code>PRP$&lt;/code>：所有格代词 (Possessive pronoun)&lt;/li>
+&lt;li>&lt;code>RB&lt;/code>：副词 (Adverb)&lt;/li>
+&lt;li>&lt;code>RBR&lt;/code>：副词, 比较级 (Adverb, comparative)&lt;/li>
+&lt;li>&lt;code>RBS&lt;/code>：副词, 最高级 (Adverb, superlative)&lt;/li>
+&lt;li>&lt;code>RP&lt;/code>：小品词 (Particle)&lt;/li>
+&lt;li>&lt;code>SYM&lt;/code>：符号 (Symbol)&lt;/li>
+&lt;li>&lt;code>TO&lt;/code>：to&lt;/li>
+&lt;li>&lt;code>UH&lt;/code>：感叹词 (Interjection)&lt;/li>
+&lt;li>&lt;code>VB&lt;/code>：动词, 原形 (Verb, base form)&lt;/li>
+&lt;li>&lt;code>VBD&lt;/code>：动词, 过去式 (Verb, past tense)&lt;/li>
+&lt;li>&lt;code>VBG&lt;/code>：动词, 现在分词或动名词 (Verb, gerund or present participle)&lt;/li>
+&lt;li>&lt;code>VBN&lt;/code>：动词, 过去分词 (Verb, past participle)&lt;/li>
+&lt;li>&lt;code>VBP&lt;/code>：动词, 非第三人称单数现在式 (Verb, non-3rd person singular present)&lt;/li>
+&lt;li>&lt;code>VBZ&lt;/code>：动词, 第三人称单数现在式 (Verb, 3rd person singular present)&lt;/li>
+&lt;li>&lt;code>WDT&lt;/code>：wh-限定词 (Wh-determiner)&lt;/li>
+&lt;li>&lt;code>WP&lt;/code>：wh-代词 (Wh-pronoun)&lt;/li>
+&lt;li>&lt;code>WP$&lt;/code>：wh-所有格代词 (Wh-pronoun, possessive)&lt;/li>
+&lt;li>&lt;code>WRB&lt;/code>：wh-副词 (Wh-adverb)&lt;/li>
+&lt;/ul></description></item><item><title>Hidden Markov Model</title><link>https://shyu216.github.io/aquamega/p/hidden-markov-model/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/hidden-markov-model/</guid><description>&lt;ul>
+&lt;li>w：word&lt;/li>
+&lt;li>t：tag&lt;/li>
+&lt;li>emission probability: $P(w|t)$ 从tag到word的概率&lt;/li>
+&lt;li>transition probability: $P(t|t&amp;rsquo;)$ 从上一个tag到当前tag的概率&lt;/li>
+&lt;/ul>
+&lt;h2 id="viterbi-algorithm">Viterbi Algorithm
+&lt;/h2>&lt;p>从最开始算起，每个tag的概率是由前一个tag的概率和从前一个tag到当前tag的概率相乘得到的。&lt;/p>
+&lt;p>$\hat{t} = \arg\max_{t} \prod_{i=1}^{n} P(w_i|t)P(t|t&amp;rsquo;)$, $t&amp;rsquo;$是前一个tag, $\hat{t}$是当前的估计值。&lt;/p>
+&lt;h2 id="generative-vs-discriminative-tagger">Generative vs Discriminative Tagger
+&lt;/h2>&lt;ul>
+&lt;li>HMM是generative model，可以用来生成数据，无监督的学习。&lt;/li>
+&lt;li>discriminative model例如CRF，需要有监督的数据，可以学到更丰富的特征，大多数deep learning的模型都是discriminative model。&lt;/li>
+&lt;/ul></description></item><item><title>N-gram Language Model</title><link>https://shyu216.github.io/aquamega/p/n-gram-language-model/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/n-gram-language-model/</guid><description>&lt;h2 id="language-model">Language Model
+&lt;/h2>&lt;p>To explain language, based on probability, for generation.&lt;/p>
+&lt;ul>
+&lt;li>Query completion(搜索引擎)&lt;/li>
+&lt;li>Optical character recognition(OCR)&lt;/li>
+&lt;li>Translation&lt;/li>
+&lt;/ul>
+&lt;h3 id="n-gram">N-gram
+&lt;/h3>&lt;p>$$P(w_1, w_2, \cdots, w_n) = P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \cdots P(w_n|w_1, w_2, \cdots, w_{n-1})$$&lt;/p>
+&lt;ul>
+&lt;li>Maximum Likelihood Estimation&lt;/li>
+&lt;/ul>
+&lt;p>$$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$$&lt;/p>
+&lt;p>Use special tags to denote the beginning and end of a sentence, i.e. &lt;code>&amp;lt;s&amp;gt;&lt;/code>, &lt;code>&amp;lt;/s&amp;gt;&lt;/code>.&lt;/p>
+&lt;h3 id="smoothing">Smoothing
+&lt;/h3>&lt;p>Handle unseen words.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Laplacian (add-one) smoothing&lt;/p>
+&lt;p>$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + 1}{C(w_{i-1}) + V}$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add-k smoothing&lt;/p>
+&lt;p>$P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i) + k}{C(w_{i-1}) + kV}$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lidstone smoothing&lt;/p>
+&lt;ul>
+&lt;li>Generalized Add-k, 所有非负实数&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Absolute discounting&lt;/p>
+&lt;ul>
+&lt;li>Borrow a bit of probability mass from seen words to unseen words， 每个借一点，均摊给没见过的词&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Katz Backoff&lt;/p>
+&lt;ul>
+&lt;li>Use lower-order n-gram&lt;/li>
+&lt;li>Issue：低阶n-gram可能有很高概率，但此n-gram组合显然不会存在&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Knser-Ney&lt;/p>
+&lt;ul>
+&lt;li>Versatility of lower-order n-gram, co-occur with many words&lt;/li>
+&lt;li>让更通用的低阶n-gram有更高的概率&lt;/li>
+&lt;li>contiuation probability $P_{cont}(w_i) = \frac{|{w_{i-1}:C(w_{i-1}, w_i) &amp;gt; 0}|}{\sum_{w_i}C(w_{i-1}, w_i)}$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Interpolation&lt;/p>
+&lt;ul>
+&lt;li>Combine lower-order n-gram&lt;/li>
+&lt;li>给不同阶的n-gram加权，相加&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Preprocessing</title><link>https://shyu216.github.io/aquamega/p/preprocessing/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/preprocessing/</guid><description>&lt;h2 id="preprocessing">Preprocessing
+&lt;/h2>&lt;ul>
+&lt;li>Word&lt;/li>
+&lt;li>Sentence: words&lt;/li>
+&lt;li>Document: sentences&lt;/li>
+&lt;li>Corpus: documents&lt;/li>
+&lt;li>Word Token: word instance&lt;/li>
+&lt;li>Word Type: verb, noun, etc.&lt;/li>
+&lt;li>Lexicon: word types&lt;/li>
+&lt;/ul>
+&lt;h2 id="steps">Steps
+&lt;/h2>&lt;ol>
+&lt;li>Remove unwnated formatting, i.e. HTML tags&lt;/li>
+&lt;li>Sentecne segmentation, break text into sentences&lt;/li>
+&lt;li>Tokenization, break sentences into words&lt;/li>
+&lt;li>Normalization, transform words into canonical form, i.e. lower case&lt;/li>
+&lt;li>Stopword removal, delete unwanted words, i.e., &amp;ldquo;the&amp;rdquo;, &amp;ldquo;I&amp;rdquo;, &amp;ldquo;.&amp;rdquo;, etc.&lt;/li>
+&lt;/ol>
+&lt;h3 id="max-match-algorithm">Max Match Algorithm
+&lt;/h3>&lt;p>Greedily match the longest word in the dictionary. Used in the language withoout space between words, i.e. Chinese.&lt;/p>
+&lt;h3 id="byte-pair-encoding">Byte Pair Encoding
+&lt;/h3>&lt;p>Iteratively merge the most frequent pair of bytes. Used in ChatGPT.&lt;/p>
+&lt;p>Adv:&lt;/p>
+&lt;ul>
+&lt;li>Data-informed tokenization&lt;/li>
+&lt;li>Works for different languages&lt;/li>
+&lt;li>Deals better with unknown words&lt;/li>
+&lt;/ul>
+&lt;p>Disadv:&lt;/p>
+&lt;ul>
+&lt;li>Rarer words will be split into subwords, even individual letter&lt;/li>
+&lt;/ul>
+&lt;h3 id="word-normalization">Word Normalization
+&lt;/h3>&lt;p>Goal: reduce vocabulary size, map different forms of a word to the same form&lt;/p>
+&lt;p>形态处理（Morphological processing）通常包括词干提取（stemming）和词形还原（lemmatization）&lt;/p>
+&lt;ul>
+&lt;li>Lowercasing&lt;/li>
+&lt;li>Remove morphology, i.e. &amp;ldquo;running&amp;rdquo; -&amp;gt; &amp;ldquo;run&amp;rdquo;&lt;/li>
+&lt;li>Correct spelling, i.e. &amp;ldquo;colour&amp;rdquo; -&amp;gt; &amp;ldquo;color&amp;rdquo;&lt;/li>
+&lt;li>Expand abbreviations, i.e. &amp;ldquo;can&amp;rsquo;t&amp;rdquo; -&amp;gt; &amp;ldquo;cannot&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="inflectional-morphology屈折形态">Inflectional Morphology(屈折形态)
+&lt;/h3>&lt;p>It creates grammatical variants of a word, i.e. &amp;ldquo;run&amp;rdquo; -&amp;gt; &amp;ldquo;running&amp;rdquo;, &amp;ldquo;ran&amp;rdquo;, &amp;ldquo;runs&amp;rdquo;&lt;/p>
+&lt;p>Nouns, verbs, adjectives, adverbs&amp;hellip;&lt;/p>
+&lt;h3 id="lemmatization词形还原">Lemmatization(词形还原)
+&lt;/h3>&lt;p>To remove inflection.&lt;/p>
+&lt;p>Lemma(词元): the uninflated form&lt;/p>
+&lt;h3 id="derivational-morphology派生形态">Derivational Morphology(派生形态)
+&lt;/h3>&lt;p>It creates new words.&lt;/p>
+&lt;ul>
+&lt;li>Change the lexical category(), i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;happiness&amp;rdquo;&lt;/li>
+&lt;li>Change the meaning, i.e. &amp;ldquo;happy&amp;rdquo; -&amp;gt; &amp;ldquo;unhappy&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="stemmization词干提取">Stemmization(词干提取)
+&lt;/h3>&lt;p>To remove derivation.&lt;/p>
+&lt;p>Stem(词干): the root form&lt;/p>
+&lt;h3 id="the-porter-stemmer">The Porter Stemmer
+&lt;/h3>&lt;p>most widely used in English&lt;/p>
+&lt;ul>
+&lt;li>C: consonant(辅音)&lt;/li>
+&lt;li>V: vowel(元音)&lt;/li>
+&lt;li>m: measure $&lt;a class="link" href="VC" >C&lt;/a>^m[V]$&lt;/li>
+&lt;/ul>
+&lt;h3 id="stopword-removal">Stopword Removal
+&lt;/h3>&lt;p>Typically in bag-of-words model&lt;/p>
+&lt;p>All closed-class or function words, any high frequency words&lt;/p></description></item><item><title>Text Classification</title><link>https://shyu216.github.io/aquamega/p/text-classification/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/text-classification/</guid><description>&lt;ul>
+&lt;li>Topic classification&lt;/li>
+&lt;li>Sentiment analysis&lt;/li>
+&lt;li>Native language identification&lt;/li>
+&lt;li>Natual language inference&lt;/li>
+&lt;li>Automatic fact-checking&lt;/li>
+&lt;li>Paraphrase&lt;/li>
+&lt;/ul>
+&lt;h2 id="topic-classification">Topic Classification
+&lt;/h2>&lt;ul>
+&lt;li>Motivation: library science, information retrieval, etc.&lt;/li>
+&lt;li>Classes: topic categories&lt;/li>
+&lt;li>Features: bag-of-words, n-grams, etc.&lt;/li>
+&lt;li>Corpus: reuters news corpus, pubmed abstracts, tweets with hashtags&lt;/li>
+&lt;/ul>
+&lt;h2 id="sentiment-analysis">Sentiment Analysis
+&lt;/h2>&lt;ul>
+&lt;li>Motivation: opinion mining, business analytics&lt;/li>
+&lt;li>Classes: positive, negative, neutral&lt;/li>
+&lt;li>Features: n-grams, polarity lexicons, etc.&lt;/li>
+&lt;li>Corpus: movie reviews, SEMEVAL twitter polarity dataset&lt;/li>
+&lt;/ul>
+&lt;h2 id="native-language-identification">Native Language Identification
+&lt;/h2>&lt;ul>
+&lt;li>Motivation: forensic linguistics, educational applications&lt;/li>
+&lt;li>Classes: native languages&lt;/li>
+&lt;li>Features: character n-grams, syntactic features (POS), phonological features&lt;/li>
+&lt;li>Corpus: TOEFL/IELTS essays&lt;/li>
+&lt;/ul>
+&lt;h2 id="natural-language-inference-textual-entailment-文本蕴含">Natural Language Inference (textual entailment 文本蕴含)
+&lt;/h2>&lt;ul>
+&lt;li>Motivation: language understanding&lt;/li>
+&lt;li>Classes: entailment, contradiction, neutral&lt;/li>
+&lt;li>Features: word overlap, length difference, etc.&lt;/li>
+&lt;li>Corpus: SNLI, MultiNLI&lt;/li>
+&lt;/ul>
+&lt;h2 id="build-a-text-classifier">Build a Text Classifier
+&lt;/h2>&lt;ol>
+&lt;li>Identify the task&lt;/li>
+&lt;li>Collect and preprocess data&lt;/li>
+&lt;li>Annotation&lt;/li>
+&lt;li>Select features&lt;/li>
+&lt;li>Select an algorithm&lt;/li>
+&lt;li>Train and tune the model&lt;/li>
+&lt;li>Evaluate the model&lt;/li>
+&lt;/ol>
+&lt;h2 id="naive-bayes-classifier">Naive Bayes Classifier
+&lt;/h2>&lt;p>assume independence between features&lt;/p>
+&lt;p>$$P(c|d) = \frac{P(d|c)P(c)}{P(d)}$$&lt;/p>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Fast, simple&lt;/li>
+&lt;li>Robust, low-variance&lt;/li>
+&lt;li>Optimal if independence holds&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Rarely holds&lt;/li>
+&lt;li>Low accuracy&lt;/li>
+&lt;li>Smoothing needed for unseen&lt;/li>
+&lt;/ul>
+&lt;h2 id="logistic-regression">Logistic Regression
+&lt;/h2>&lt;p>$$P(c|d) = \frac{1}{1 + e^{-\sum_{i=1}^n w_i x_i}}$$&lt;/p>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Better performance&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Slow&lt;/li>
+&lt;li>Scaling needed&lt;/li>
+&lt;li>Regularization needed for overfitting&lt;/li>
+&lt;/ul>
+&lt;h2 id="support-vector-machine">Support Vector Machine
+&lt;/h2>&lt;p>To find the hyperplane that maximizes the margin&lt;/p>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Fast and accurate&lt;/li>
+&lt;li>Non-linear kernel&lt;/li>
+&lt;li>Work well in big data&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Multi-class classification&lt;/li>
+&lt;li>Scaling needed&lt;/li>
+&lt;li>Imbalanced data&lt;/li>
+&lt;li>Interpretability&lt;/li>
+&lt;/ul>
+&lt;h2 id="k-nearest-neighbors">K-Nearest Neighbors
+&lt;/h2>&lt;p>Euclidean distance, cosine similarity&lt;/p>
+&lt;p>Probs:&lt;/p>
+&lt;ul>
+&lt;li>Simple&lt;/li>
+&lt;li>No training needed&lt;/li>
+&lt;li>Multi-class classification&lt;/li>
+&lt;li>Optimal with infinite data&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Set k&lt;/li>
+&lt;li>Imbalanced classes&lt;/li>
+&lt;li>Slow&lt;/li>
+&lt;/ul>
+&lt;h2 id="decision-tree">Decision Tree
+&lt;/h2>&lt;p>Greedy maxmize information gain&lt;/p>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Fast&lt;/li>
+&lt;li>Non-linear&lt;/li>
+&lt;li>Good for small data&lt;/li>
+&lt;li>Feature scaling irrelevant&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Not that interpretable&lt;/li>
+&lt;li>Redundant features&lt;/li>
+&lt;li>Not competitive for big data&lt;/li>
+&lt;/ul>
+&lt;h2 id="random-forest">Random Forest
+&lt;/h2>&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Better than decision tree&lt;/li>
+&lt;li>Parallelizable&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Same as decision tree&lt;/li>
+&lt;/ul>
+&lt;h2 id="neural-network">Neural Network
+&lt;/h2>&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Powerful&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>Hyperparameters&lt;/li>
+&lt;li>Training time&lt;/li>
+&lt;li>Overfitting&lt;/li>
+&lt;/ul>
+&lt;h2 id="evaluation">Evaluation
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>Accuracy&lt;/p>
+&lt;p>$$\frac{TP + TN}{TP + TN + FP + FN}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Precision&lt;/p>
+&lt;p>$$\frac{TP}{TP + FP}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Recall&lt;/p>
+&lt;p>$$\frac{TP}{TP + FN}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>F1-score&lt;/p>
+&lt;p>$$\frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}$$&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

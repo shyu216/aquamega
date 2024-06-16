@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math Proof Tech on Dale的水硕日记</title><link>https://shyu216.github.io/aquamega/tags/math-proof-tech/</link><description>Recent content in Math Proof Tech on Dale的水硕日记</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://shyu216.github.io/aquamega/tags/math-proof-tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Mathematical Induction</title><link>https://shyu216.github.io/aquamega/p/mathematical-induction/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/mathematical-induction/</guid><description>&lt;p>数学归纳法（Mathematical Induction）是一种常用的数学证明技巧（Mathematical Proof Technique），主要用于证明一系列数字或对象具有某种性质。它的基本步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>基础步骤（Base Step）：证明性质对于第一个元素（通常是1或0）成立。&lt;/li>
+&lt;li>归纳步骤（Inductive Step）：假设性质对于某个元素 n 成立，然后证明这个性质对于元素 n+1 也成立。&lt;/li>
+&lt;/ol>
+&lt;p>举个例子，我们可以用数学归纳法证明所有的自然数之和的公式：&lt;/p>
+&lt;p>1 + 2 + 3 + &amp;hellip; + n = n*(n+1)/2&lt;/p>
+&lt;p>证明如下：&lt;/p>
+&lt;ol>
+&lt;li>基础步骤：对于 n=1，左边是1，右边也是1，所以公式成立。&lt;/li>
+&lt;li>归纳步骤：假设公式对于 n=k 成立，即 1 + 2 + 3 + &amp;hellip; + k = k*(k+1)/2，我们需要证明公式对于 n=k+1 也成立。即证明 1 + 2 + 3 + &amp;hellip; + k + (k+1) = (k+1)&lt;em>((k+1)+1)/2。将假设代入左边，我们得到 k&lt;/em>(k+1)/2 + (k+1) = (k+1)*((k+1)+1)/2，简化后可以看到这个等式是成立的。&lt;/li>
+&lt;/ol>
+&lt;p>所以，我们用数学归纳法证明了所有的自然数之和的公式。&lt;/p></description></item><item><title>Proof by Contradiction</title><link>https://shyu216.github.io/aquamega/p/proof-by-contradiction/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://shyu216.github.io/aquamega/p/proof-by-contradiction/</guid><description>&lt;p>反证法（Proof by contradiction）是一种常用的数学证明方法。它的基本思想是假设我们要证明的命题是错误的，然后通过逻辑推理得出矛盾，从而证明该命题是正确的。&lt;/p>
+&lt;p>例如，我们可以用反证法证明 &amp;ldquo;√2 是无理数&amp;rdquo; 这个命题。证明过程如下：&lt;/p>
+&lt;ol>
+&lt;li>假设 √2 是有理数，那么它可以表示为两个互质整数的比，即 √2 = a/b，其中 a 和 b 是没有公因数的整数。&lt;/li>
+&lt;li>将等式两边平方，得到 2 = a^2 / b^2，即 a^2 = 2b^2。&lt;/li>
+&lt;li>这意味着 a^2 是偶数（因为它是2的倍数），所以 a 也是偶数（因为只有偶数的平方是偶数）。&lt;/li>
+&lt;li>因此，我们可以将 a 写成 2k（k 是整数），然后将它代入等式 a^2 = 2b^2，得到 (2k)^2 = 2b^2，即 4k^2 = 2b^2，简化后得到 b^2 = 2k^2。&lt;/li>
+&lt;li>这意味着 b^2 也是偶数，所以 b 也是偶数。&lt;/li>
+&lt;li>但是，我们一开始假设 a 和 b 是互质的，也就是说它们没有公因数。现在我们得出 a 和 b 都是偶数，这是一个矛盾。&lt;/li>
+&lt;li>因此，我们的假设（√2 是有理数）是错误的，所以 √2 是无理数。&lt;/li>
+&lt;/ol>
+&lt;p>这就是反证法的一个例子。&lt;/p></description></item></channel></rss>
